@@ -1,0 +1,169 @@
+
+#################################################################
+# Summary Statistics
+#################################################################
+
+DIC = 511.5307
+
+                                           Mean    SD  2.5%    5%   25%   50%
+family.SD                                 0.204 0.157 0.007 0.017 0.087 0.172
+species.SD                                0.270 0.093 0.120 0.139 0.208 0.261
+p.global.Cyanobacteria                    0.090 0.037 0.028 0.035 0.063 0.087
+p.global.Macroalgae                       0.187 0.051 0.092 0.105 0.153 0.184
+p.global.POM                              0.724 0.042 0.640 0.653 0.697 0.725
+p.Acanthuridae.Cyanobacteria              0.095 0.045 0.025 0.033 0.063 0.089
+p.Anthiadidae.Cyanobacteria               0.085 0.037 0.023 0.030 0.058 0.081
+p.Balistidae.Cyanobacteria                0.089 0.041 0.023 0.030 0.060 0.084
+p.Caesionidae.Cyanobacteria               0.095 0.048 0.024 0.031 0.062 0.088
+p.Chaetodontidae.Cyanobacteria            0.083 0.036 0.023 0.030 0.057 0.080
+p.Kuhliidae.Cyanobacteria                 0.093 0.048 0.023 0.030 0.061 0.087
+p.Microdesmidae.Cyanobacteria             0.090 0.041 0.024 0.031 0.061 0.085
+p.Pomacentridae.Cyanobacteria             0.086 0.035 0.026 0.034 0.062 0.084
+p.Acanthuridae.Macroalgae                 0.189 0.061 0.075 0.091 0.149 0.186
+p.Anthiadidae.Macroalgae                  0.171 0.058 0.062 0.078 0.130 0.169
+p.Balistidae.Macroalgae                   0.186 0.058 0.081 0.096 0.147 0.184
+p.Caesionidae.Macroalgae                  0.191 0.066 0.074 0.092 0.149 0.186
+p.Chaetodontidae.Macroalgae               0.170 0.057 0.065 0.080 0.132 0.168
+p.Kuhliidae.Macroalgae                    0.185 0.062 0.071 0.088 0.144 0.183
+p.Microdesmidae.Macroalgae                0.185 0.062 0.065 0.086 0.144 0.183
+p.Pomacentridae.Macroalgae                0.223 0.058 0.114 0.134 0.185 0.222
+p.Acanthuridae.POM                        0.716 0.056 0.593 0.626 0.685 0.718
+p.Anthiadidae.POM                         0.745 0.054 0.642 0.657 0.707 0.742
+p.Balistidae.POM                          0.725 0.054 0.614 0.633 0.694 0.726
+p.Caesionidae.POM                         0.714 0.065 0.569 0.611 0.681 0.717
+p.Chaetodontidae.POM                      0.747 0.053 0.647 0.664 0.711 0.744
+p.Kuhliidae.POM                           0.722 0.059 0.595 0.626 0.688 0.723
+p.Microdesmidae.POM                       0.725 0.057 0.605 0.630 0.691 0.726
+p.Pomacentridae.POM                       0.690 0.042 0.600 0.618 0.664 0.693
+p.Abudefduf sexfasciatus.Cyanobacteria    0.107 0.046 0.031 0.040 0.074 0.103
+p.Acanthurus thompsoni.Cyanobacteria      0.102 0.051 0.023 0.031 0.065 0.095
+p.Chaetodon trichrous.Cyanobacteria       0.079 0.037 0.019 0.024 0.051 0.075
+p.Chromis atripectoralis.Cyanobacteria    0.091 0.040 0.026 0.032 0.061 0.088
+p.Chromis viridis.Cyanobacteria           0.092 0.044 0.023 0.030 0.060 0.087
+p.Chromis xanthura.Cyanobacteria          0.070 0.031 0.020 0.026 0.047 0.067
+p.Dascyllus flavicaudus.Cyanobacteria     0.093 0.040 0.025 0.032 0.064 0.090
+p.Dascyllus trimaculatus.Cyanobacteria    0.090 0.039 0.024 0.031 0.062 0.088
+p.Hemitaurichthys polylepis.Cyanobacteria 0.073 0.034 0.017 0.023 0.048 0.070
+p.Kuhlia mugil.Cyanobacteria              0.099 0.055 0.020 0.027 0.059 0.090
+p.Mirolabrichthys pascalus.Cyanobacteria  0.075 0.032 0.019 0.026 0.051 0.072
+p.Nemateleotris magnifica.Cyanobacteria   0.086 0.043 0.020 0.026 0.054 0.081
+p.Odonus niger.Cyanobacteria              0.088 0.042 0.020 0.026 0.057 0.084
+p.Ptereleotris evides.Cyanobacteria       0.099 0.053 0.020 0.028 0.060 0.090
+p.Pterocaesio tile.Cyanobacteria          0.102 0.057 0.022 0.029 0.060 0.091
+p.Pycnochromis iomelas.Cyanobacteria      0.059 0.027 0.016 0.022 0.039 0.055
+p.Pycnochromis margaritifer.Cyanobacteria 0.107 0.050 0.026 0.035 0.071 0.101
+p.Abudefduf sexfasciatus.Macroalgae       0.258 0.078 0.116 0.139 0.207 0.255
+p.Acanthurus thompsoni.Macroalgae         0.190 0.066 0.069 0.087 0.144 0.187
+p.Chaetodon trichrous.Macroalgae          0.157 0.061 0.053 0.068 0.115 0.151
+p.Chromis atripectoralis.Macroalgae       0.237 0.076 0.099 0.120 0.186 0.231
+p.Chromis viridis.Macroalgae              0.260 0.083 0.112 0.133 0.205 0.253
+p.Chromis xanthura.Macroalgae             0.185 0.062 0.079 0.092 0.142 0.181
+p.Dascyllus flavicaudus.Macroalgae        0.273 0.071 0.129 0.154 0.228 0.275
+p.Dascyllus trimaculatus.Macroalgae       0.226 0.064 0.103 0.124 0.181 0.224
+p.Hemitaurichthys polylepis.Macroalgae    0.149 0.059 0.051 0.063 0.108 0.144
+p.Kuhlia mugil.Macroalgae                 0.182 0.068 0.065 0.079 0.135 0.177
+p.Mirolabrichthys pascalus.Macroalgae     0.140 0.049 0.052 0.063 0.106 0.137
+p.Nemateleotris magnifica.Macroalgae      0.174 0.074 0.054 0.069 0.124 0.166
+p.Odonus niger.Macroalgae                 0.183 0.054 0.083 0.097 0.145 0.181
+p.Ptereleotris evides.Macroalgae          0.196 0.080 0.060 0.078 0.140 0.188
+p.Pterocaesio tile.Macroalgae             0.200 0.078 0.067 0.085 0.147 0.193
+p.Pycnochromis iomelas.Macroalgae         0.165 0.057 0.072 0.084 0.125 0.160
+p.Pycnochromis margaritifer.Macroalgae    0.298 0.086 0.128 0.157 0.242 0.297
+p.Abudefduf sexfasciatus.POM              0.634 0.056 0.514 0.537 0.603 0.639
+p.Acanthurus thompsoni.POM                0.708 0.060 0.576 0.605 0.671 0.712
+p.Chaetodon trichrous.POM                 0.764 0.056 0.643 0.663 0.729 0.768
+p.Chromis atripectoralis.POM              0.672 0.060 0.541 0.568 0.635 0.677
+p.Chromis viridis.POM                     0.648 0.066 0.503 0.531 0.610 0.654
+p.Chromis xanthura.POM                    0.745 0.057 0.620 0.645 0.710 0.748
+p.Dascyllus flavicaudus.POM               0.634 0.049 0.532 0.551 0.601 0.636
+p.Dascyllus trimaculatus.POM              0.684 0.045 0.590 0.607 0.655 0.687
+p.Hemitaurichthys polylepis.POM           0.777 0.056 0.655 0.680 0.743 0.781
+p.Kuhlia mugil.POM                        0.719 0.068 0.576 0.601 0.676 0.721
+p.Mirolabrichthys pascalus.POM            0.785 0.043 0.696 0.712 0.757 0.786
+p.Nemateleotris magnifica.POM             0.740 0.074 0.581 0.611 0.696 0.744
+p.Odonus niger.POM                        0.729 0.046 0.636 0.651 0.700 0.731
+p.Ptereleotris evides.POM                 0.704 0.079 0.529 0.567 0.658 0.711
+p.Pterocaesio tile.POM                    0.698 0.079 0.538 0.566 0.651 0.703
+p.Pycnochromis iomelas.POM                0.776 0.052 0.661 0.685 0.745 0.779
+p.Pycnochromis margaritifer.POM           0.595 0.062 0.463 0.486 0.555 0.599
+                                            75%   95% 97.5%
+family.SD                                 0.282 0.491 0.594
+species.SD                                0.321 0.442 0.476
+p.global.Cyanobacteria                    0.112 0.154 0.172
+p.global.Macroalgae                       0.220 0.274 0.290
+p.global.POM                              0.751 0.791 0.806
+p.Acanthuridae.Cyanobacteria              0.120 0.175 0.197
+p.Anthiadidae.Cyanobacteria               0.108 0.150 0.168
+p.Balistidae.Cyanobacteria                0.113 0.161 0.181
+p.Caesionidae.Cyanobacteria               0.119 0.185 0.211
+p.Chaetodontidae.Cyanobacteria            0.106 0.149 0.163
+p.Kuhliidae.Cyanobacteria                 0.117 0.176 0.201
+p.Microdesmidae.Cyanobacteria             0.114 0.166 0.185
+p.Pomacentridae.Cyanobacteria             0.109 0.146 0.161
+p.Acanthuridae.Macroalgae                 0.225 0.294 0.320
+p.Anthiadidae.Macroalgae                  0.208 0.269 0.288
+p.Balistidae.Macroalgae                   0.223 0.285 0.307
+p.Caesionidae.Macroalgae                  0.230 0.298 0.328
+p.Chaetodontidae.Macroalgae               0.206 0.265 0.285
+p.Kuhliidae.Macroalgae                    0.222 0.286 0.311
+p.Microdesmidae.Macroalgae                0.224 0.290 0.316
+p.Pomacentridae.Macroalgae                0.261 0.320 0.340
+p.Acanthuridae.POM                        0.751 0.801 0.818
+p.Anthiadidae.POM                         0.781 0.837 0.854
+p.Balistidae.POM                          0.760 0.808 0.826
+p.Caesionidae.POM                         0.752 0.812 0.830
+p.Chaetodontidae.POM                      0.783 0.835 0.851
+p.Kuhliidae.POM                           0.758 0.816 0.838
+p.Microdesmidae.POM                       0.760 0.814 0.837
+p.Pomacentridae.POM                       0.719 0.754 0.767
+p.Abudefduf sexfasciatus.Cyanobacteria    0.136 0.187 0.209
+p.Acanthurus thompsoni.Cyanobacteria      0.134 0.198 0.220
+p.Chaetodon trichrous.Cyanobacteria       0.102 0.146 0.159
+p.Chromis atripectoralis.Cyanobacteria    0.115 0.162 0.179
+p.Chromis viridis.Cyanobacteria           0.118 0.169 0.194
+p.Chromis xanthura.Cyanobacteria          0.089 0.126 0.139
+p.Dascyllus flavicaudus.Cyanobacteria     0.116 0.165 0.184
+p.Dascyllus trimaculatus.Cyanobacteria    0.115 0.163 0.176
+p.Hemitaurichthys polylepis.Cyanobacteria 0.094 0.134 0.149
+p.Kuhlia mugil.Cyanobacteria              0.130 0.198 0.227
+p.Mirolabrichthys pascalus.Cyanobacteria  0.097 0.132 0.145
+p.Nemateleotris magnifica.Cyanobacteria   0.111 0.165 0.185
+p.Odonus niger.Cyanobacteria              0.115 0.166 0.183
+p.Ptereleotris evides.Cyanobacteria       0.131 0.199 0.223
+p.Pterocaesio tile.Cyanobacteria          0.134 0.207 0.236
+p.Pycnochromis iomelas.Cyanobacteria      0.074 0.107 0.120
+p.Pycnochromis margaritifer.Cyanobacteria 0.137 0.200 0.220
+p.Abudefduf sexfasciatus.Macroalgae       0.307 0.393 0.424
+p.Acanthurus thompsoni.Macroalgae         0.232 0.304 0.330
+p.Chaetodon trichrous.Macroalgae          0.193 0.263 0.292
+p.Chromis atripectoralis.Macroalgae       0.284 0.372 0.402
+p.Chromis viridis.Macroalgae              0.310 0.406 0.441
+p.Chromis xanthura.Macroalgae             0.224 0.295 0.322
+p.Dascyllus flavicaudus.Macroalgae        0.321 0.385 0.410
+p.Dascyllus trimaculatus.Macroalgae       0.267 0.331 0.355
+p.Hemitaurichthys polylepis.Macroalgae    0.185 0.255 0.282
+p.Kuhlia mugil.Macroalgae                 0.224 0.300 0.333
+p.Mirolabrichthys pascalus.Macroalgae     0.171 0.224 0.242
+p.Nemateleotris magnifica.Macroalgae      0.216 0.307 0.343
+p.Odonus niger.Macroalgae                 0.218 0.274 0.292
+p.Ptereleotris evides.Macroalgae          0.243 0.343 0.376
+p.Pterocaesio tile.Macroalgae             0.247 0.336 0.370
+p.Pycnochromis iomelas.Macroalgae         0.198 0.267 0.296
+p.Pycnochromis margaritifer.Macroalgae    0.356 0.435 0.470
+p.Abudefduf sexfasciatus.POM              0.671 0.717 0.732
+p.Acanthurus thompsoni.POM                0.747 0.801 0.817
+p.Chaetodon trichrous.POM                 0.802 0.852 0.868
+p.Chromis atripectoralis.POM              0.714 0.763 0.778
+p.Chromis viridis.POM                     0.691 0.749 0.766
+p.Chromis xanthura.POM                    0.783 0.830 0.845
+p.Dascyllus flavicaudus.POM               0.667 0.710 0.725
+p.Dascyllus trimaculatus.POM              0.715 0.752 0.765
+p.Hemitaurichthys polylepis.POM           0.815 0.862 0.875
+p.Kuhlia mugil.POM                        0.765 0.825 0.844
+p.Mirolabrichthys pascalus.POM            0.815 0.855 0.866
+p.Nemateleotris magnifica.POM             0.790 0.850 0.868
+p.Odonus niger.POM                        0.760 0.801 0.813
+p.Ptereleotris evides.POM                 0.758 0.823 0.840
+p.Pterocaesio tile.POM                    0.750 0.815 0.840
+p.Pycnochromis iomelas.POM                0.814 0.852 0.865
+p.Pycnochromis margaritifer.POM           0.638 0.690 0.703

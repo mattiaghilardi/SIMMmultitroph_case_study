@@ -1,0 +1,83 @@
+
+#################################################################
+# Summary Statistics
+#################################################################
+
+DIC = 627.653
+
+                                       Mean    SD  2.5%    5%   25%   50%   75%
+species.SD                            0.471 0.129 0.278 0.301 0.378 0.454 0.540
+p.global.Cyanobacteria                0.520 0.067 0.393 0.411 0.475 0.520 0.565
+p.global.Macroalgae                   0.107 0.073 0.003 0.007 0.048 0.097 0.157
+p.global.POM                          0.373 0.064 0.251 0.270 0.329 0.373 0.417
+p.Calotomus carolinus.Cyanobacteria   0.347 0.057 0.227 0.248 0.310 0.350 0.386
+p.Chlorurus microrhinos.Cyanobacteria 0.351 0.073 0.192 0.219 0.306 0.357 0.402
+p.Chlorurus spilurus.Cyanobacteria    0.665 0.052 0.560 0.576 0.631 0.667 0.700
+p.Scarus altipinnis.Cyanobacteria     0.547 0.069 0.408 0.428 0.502 0.548 0.595
+p.Scarus forsteni.Cyanobacteria       0.448 0.055 0.332 0.355 0.413 0.449 0.485
+p.Scarus frenatus.Cyanobacteria       0.631 0.080 0.475 0.502 0.577 0.632 0.685
+p.Scarus globiceps.Cyanobacteria      0.678 0.067 0.536 0.561 0.637 0.680 0.724
+p.Scarus oviceps.Cyanobacteria        0.561 0.061 0.435 0.456 0.519 0.564 0.604
+p.Scarus psittacus.Cyanobacteria      0.631 0.059 0.511 0.532 0.593 0.633 0.673
+p.Scarus rubroviolaceus.Cyanobacteria 0.427 0.072 0.269 0.299 0.382 0.432 0.477
+p.Scarus schlegeli.Cyanobacteria      0.377 0.064 0.242 0.265 0.336 0.382 0.420
+p.Calotomus carolinus.Macroalgae      0.111 0.087 0.003 0.006 0.042 0.094 0.164
+p.Chlorurus microrhinos.Macroalgae    0.130 0.119 0.003 0.007 0.040 0.093 0.189
+p.Chlorurus spilurus.Macroalgae       0.088 0.067 0.003 0.006 0.034 0.076 0.125
+p.Scarus altipinnis.Macroalgae        0.118 0.093 0.003 0.006 0.045 0.098 0.170
+p.Scarus forsteni.Macroalgae          0.094 0.070 0.003 0.006 0.040 0.082 0.136
+p.Scarus frenatus.Macroalgae          0.092 0.074 0.003 0.006 0.034 0.074 0.132
+p.Scarus globiceps.Macroalgae         0.098 0.078 0.003 0.006 0.037 0.081 0.143
+p.Scarus oviceps.Macroalgae           0.115 0.083 0.003 0.007 0.047 0.102 0.172
+p.Scarus psittacus.Macroalgae         0.110 0.079 0.003 0.007 0.044 0.097 0.166
+p.Scarus rubroviolaceus.Macroalgae    0.129 0.107 0.003 0.007 0.044 0.101 0.187
+p.Scarus schlegeli.Macroalgae         0.117 0.094 0.003 0.006 0.043 0.096 0.170
+p.Calotomus carolinus.POM             0.542 0.057 0.413 0.442 0.507 0.547 0.583
+p.Chlorurus microrhinos.POM           0.519 0.079 0.336 0.370 0.478 0.531 0.574
+p.Chlorurus spilurus.POM              0.247 0.050 0.148 0.165 0.213 0.247 0.281
+p.Scarus altipinnis.POM               0.335 0.063 0.201 0.226 0.295 0.338 0.380
+p.Scarus forsteni.POM                 0.458 0.051 0.353 0.373 0.424 0.461 0.494
+p.Scarus frenatus.POM                 0.277 0.073 0.138 0.157 0.227 0.276 0.327
+p.Scarus globiceps.POM                0.224 0.059 0.110 0.127 0.184 0.224 0.266
+p.Scarus oviceps.POM                  0.324 0.057 0.209 0.228 0.287 0.325 0.362
+p.Scarus psittacus.POM                0.258 0.053 0.154 0.169 0.221 0.258 0.296
+p.Scarus rubroviolaceus.POM           0.444 0.071 0.289 0.315 0.403 0.450 0.493
+p.Scarus schlegeli.POM                0.506 0.061 0.375 0.400 0.470 0.509 0.547
+                                        95% 97.5%
+species.SD                            0.700 0.763
+p.global.Cyanobacteria                0.631 0.658
+p.global.Macroalgae                   0.241 0.268
+p.global.POM                          0.477 0.497
+p.Calotomus carolinus.Cyanobacteria   0.437 0.454
+p.Chlorurus microrhinos.Cyanobacteria 0.458 0.479
+p.Chlorurus spilurus.Cyanobacteria    0.747 0.764
+p.Scarus altipinnis.Cyanobacteria     0.656 0.678
+p.Scarus forsteni.Cyanobacteria       0.535 0.553
+p.Scarus frenatus.Cyanobacteria       0.763 0.791
+p.Scarus globiceps.Cyanobacteria      0.782 0.804
+p.Scarus oviceps.Cyanobacteria        0.655 0.674
+p.Scarus psittacus.Cyanobacteria      0.725 0.741
+p.Scarus rubroviolaceus.Cyanobacteria 0.537 0.558
+p.Scarus schlegeli.Cyanobacteria      0.476 0.492
+p.Calotomus carolinus.Macroalgae      0.277 0.322
+p.Chlorurus microrhinos.Macroalgae    0.373 0.430
+p.Chlorurus spilurus.Macroalgae       0.217 0.245
+p.Scarus altipinnis.Macroalgae        0.300 0.335
+p.Scarus forsteni.Macroalgae          0.225 0.258
+p.Scarus frenatus.Macroalgae          0.240 0.281
+p.Scarus globiceps.Macroalgae         0.253 0.286
+p.Scarus oviceps.Macroalgae           0.268 0.300
+p.Scarus psittacus.Macroalgae         0.260 0.280
+p.Scarus rubroviolaceus.Macroalgae    0.342 0.386
+p.Scarus schlegeli.Macroalgae         0.302 0.348
+p.Calotomus carolinus.POM             0.628 0.641
+p.Chlorurus microrhinos.POM           0.626 0.646
+p.Chlorurus spilurus.POM              0.330 0.343
+p.Scarus altipinnis.POM               0.434 0.450
+p.Scarus forsteni.POM                 0.540 0.555
+p.Scarus frenatus.POM                 0.395 0.420
+p.Scarus globiceps.POM                0.320 0.337
+p.Scarus oviceps.POM                  0.417 0.433
+p.Scarus psittacus.POM                0.343 0.360
+p.Scarus rubroviolaceus.POM           0.551 0.569
+p.Scarus schlegeli.POM                0.599 0.615

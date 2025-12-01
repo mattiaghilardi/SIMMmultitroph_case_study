@@ -1,0 +1,187 @@
+
+#################################################################
+# Summary Statistics
+#################################################################
+
+DIC = 1037.131
+
+                                         Mean    SD  2.5%    5%   25%   50%
+family.SD                               0.234 0.194 0.013 0.021 0.098 0.192
+species.SD                              0.340 0.068 0.224 0.238 0.292 0.334
+p.global.Cyanobacteria                  0.407 0.068 0.287 0.303 0.360 0.403
+p.global.Macroalgae                     0.184 0.080 0.036 0.057 0.125 0.182
+p.global.POM                            0.410 0.069 0.271 0.295 0.366 0.410
+p.Acanthuridae.Cyanobacteria            0.389 0.052 0.294 0.307 0.354 0.385
+p.Kyphosidae.Cyanobacteria              0.383 0.080 0.223 0.251 0.332 0.382
+p.Mugilidae.Cyanobacteria               0.435 0.088 0.289 0.310 0.373 0.426
+p.Pomacentridae.Cyanobacteria           0.442 0.078 0.306 0.324 0.386 0.435
+p.Siganidae.Cyanobacteria               0.379 0.072 0.235 0.261 0.333 0.378
+p.Acanthuridae.Macroalgae               0.170 0.070 0.033 0.051 0.120 0.169
+p.Kyphosidae.Macroalgae                 0.209 0.111 0.029 0.048 0.128 0.201
+p.Mugilidae.Macroalgae                  0.178 0.086 0.031 0.046 0.115 0.172
+p.Pomacentridae.Macroalgae              0.182 0.080 0.033 0.056 0.124 0.182
+p.Siganidae.Macroalgae                  0.175 0.084 0.029 0.046 0.112 0.172
+p.Acanthuridae.POM                      0.441 0.054 0.343 0.353 0.404 0.438
+p.Kyphosidae.POM                        0.408 0.083 0.236 0.267 0.356 0.411
+p.Mugilidae.POM                         0.387 0.084 0.213 0.245 0.333 0.389
+p.Pomacentridae.POM                     0.376 0.079 0.218 0.245 0.324 0.379
+p.Siganidae.POM                         0.446 0.075 0.309 0.330 0.394 0.444
+p.Acanthurus achilles.Cyanobacteria     0.377 0.057 0.268 0.287 0.339 0.377
+p.Acanthurus guttatus.Cyanobacteria     0.472 0.060 0.354 0.373 0.431 0.471
+p.Acanthurus lineatus.Cyanobacteria     0.423 0.054 0.315 0.331 0.388 0.424
+p.Acanthurus nigricans.Cyanobacteria    0.268 0.049 0.174 0.188 0.235 0.267
+p.Acanthurus nigrofuscus.Cyanobacteria  0.412 0.061 0.291 0.309 0.371 0.413
+p.Acanthurus nigroris.Cyanobacteria     0.388 0.065 0.260 0.278 0.345 0.388
+p.Acanthurus olivaceus.Cyanobacteria    0.287 0.061 0.164 0.183 0.246 0.288
+p.Acanthurus pyroferus.Cyanobacteria    0.320 0.056 0.214 0.229 0.282 0.320
+p.Acanthurus triostegus.Cyanobacteria   0.376 0.056 0.269 0.285 0.339 0.373
+p.Ctenochaetus binotatus.Cyanobacteria  0.486 0.092 0.295 0.330 0.426 0.489
+p.Ctenochaetus flavicauda.Cyanobacteria 0.379 0.054 0.276 0.291 0.341 0.378
+p.Ctenochaetus striatus.Cyanobacteria   0.525 0.052 0.422 0.440 0.490 0.524
+p.Ellochelon vaigiensis.Cyanobacteria   0.505 0.070 0.361 0.390 0.461 0.506
+p.Kyphosus cinerascens.Cyanobacteria    0.332 0.072 0.186 0.212 0.286 0.332
+p.Kyphosus vaigiensis.Cyanobacteria     0.380 0.102 0.189 0.215 0.307 0.378
+p.Naso lituratus.Cyanobacteria          0.403 0.057 0.291 0.309 0.365 0.403
+p.Naso unicornis.Cyanobacteria          0.509 0.067 0.374 0.396 0.464 0.512
+p.Siganus argenteus.Cyanobacteria       0.360 0.075 0.210 0.236 0.311 0.363
+p.Siganus spinus.Cyanobacteria          0.320 0.059 0.204 0.223 0.281 0.320
+p.Stegastes albifasciatus.Cyanobacteria 0.554 0.067 0.421 0.445 0.509 0.554
+p.Stegastes nigricans.Cyanobacteria     0.439 0.059 0.328 0.342 0.399 0.439
+p.Zebrasoma scopas.Cyanobacteria        0.307 0.053 0.203 0.221 0.272 0.308
+p.Zebrasoma velifer.Cyanobacteria       0.215 0.045 0.129 0.141 0.183 0.215
+p.Acanthurus achilles.Macroalgae        0.183 0.085 0.032 0.048 0.123 0.179
+p.Acanthurus guttatus.Macroalgae        0.175 0.086 0.027 0.044 0.110 0.167
+p.Acanthurus lineatus.Macroalgae        0.164 0.075 0.029 0.048 0.111 0.160
+p.Acanthurus nigricans.Macroalgae       0.157 0.071 0.029 0.046 0.105 0.151
+p.Acanthurus nigrofuscus.Macroalgae     0.175 0.089 0.031 0.046 0.108 0.164
+p.Acanthurus nigroris.Macroalgae        0.192 0.096 0.029 0.048 0.121 0.185
+p.Acanthurus olivaceus.Macroalgae       0.157 0.093 0.026 0.038 0.087 0.137
+p.Acanthurus pyroferus.Macroalgae       0.169 0.083 0.029 0.046 0.107 0.162
+p.Acanthurus triostegus.Macroalgae      0.203 0.091 0.029 0.052 0.138 0.205
+p.Ctenochaetus binotatus.Macroalgae     0.176 0.093 0.029 0.044 0.106 0.164
+p.Ctenochaetus flavicauda.Macroalgae    0.173 0.077 0.030 0.049 0.118 0.170
+p.Ctenochaetus striatus.Macroalgae      0.155 0.068 0.029 0.046 0.108 0.154
+p.Ellochelon vaigiensis.Macroalgae      0.170 0.090 0.026 0.039 0.105 0.161
+p.Kyphosus cinerascens.Macroalgae       0.198 0.114 0.028 0.043 0.114 0.183
+p.Kyphosus vaigiensis.Macroalgae        0.283 0.165 0.024 0.040 0.134 0.291
+p.Naso lituratus.Macroalgae             0.180 0.084 0.032 0.049 0.118 0.176
+p.Naso unicornis.Macroalgae             0.173 0.099 0.029 0.041 0.095 0.154
+p.Siganus argenteus.Macroalgae          0.174 0.095 0.027 0.041 0.102 0.161
+p.Siganus spinus.Macroalgae             0.169 0.092 0.028 0.040 0.097 0.159
+p.Stegastes albifasciatus.Macroalgae    0.174 0.084 0.027 0.044 0.112 0.167
+p.Stegastes nigricans.Macroalgae        0.194 0.089 0.031 0.053 0.127 0.192
+p.Zebrasoma scopas.Macroalgae           0.154 0.078 0.029 0.042 0.096 0.143
+p.Zebrasoma velifer.Macroalgae          0.135 0.066 0.025 0.038 0.088 0.128
+p.Acanthurus achilles.POM               0.439 0.058 0.328 0.346 0.400 0.438
+p.Acanthurus guttatus.POM               0.353 0.059 0.240 0.257 0.312 0.352
+p.Acanthurus lineatus.POM               0.413 0.055 0.308 0.322 0.376 0.413
+p.Acanthurus nigricans.POM              0.576 0.051 0.476 0.492 0.541 0.576
+p.Acanthurus nigrofuscus.POM            0.414 0.060 0.294 0.315 0.373 0.414
+p.Acanthurus nigroris.POM               0.420 0.067 0.291 0.310 0.375 0.421
+p.Acanthurus olivaceus.POM              0.556 0.065 0.416 0.442 0.517 0.560
+p.Acanthurus pyroferus.POM              0.511 0.057 0.398 0.415 0.474 0.511
+p.Acanthurus triostegus.POM             0.421 0.057 0.314 0.330 0.381 0.420
+p.Ctenochaetus binotatus.POM            0.338 0.079 0.193 0.214 0.282 0.336
+p.Ctenochaetus flavicauda.POM           0.448 0.054 0.347 0.363 0.411 0.446
+p.Ctenochaetus striatus.POM             0.320 0.054 0.223 0.238 0.283 0.316
+p.Ellochelon vaigiensis.POM             0.325 0.067 0.190 0.216 0.281 0.324
+p.Kyphosus cinerascens.POM              0.470 0.083 0.286 0.327 0.422 0.473
+p.Kyphosus vaigiensis.POM               0.336 0.093 0.153 0.185 0.269 0.333
+p.Naso lituratus.POM                    0.417 0.058 0.306 0.323 0.376 0.416
+p.Naso unicornis.POM                    0.318 0.066 0.190 0.209 0.272 0.319
+p.Siganus argenteus.POM                 0.466 0.077 0.308 0.337 0.416 0.469
+p.Siganus spinus.POM                    0.510 0.057 0.397 0.414 0.473 0.511
+p.Stegastes albifasciatus.POM           0.272 0.061 0.159 0.177 0.230 0.269
+p.Stegastes nigricans.POM               0.367 0.060 0.252 0.272 0.326 0.366
+p.Zebrasoma scopas.POM                  0.538 0.054 0.428 0.448 0.503 0.540
+p.Zebrasoma velifer.POM                 0.650 0.052 0.544 0.563 0.615 0.652
+                                          75%   95% 97.5%
+family.SD                               0.316 0.592 0.712
+species.SD                              0.381 0.462 0.493
+p.global.Cyanobacteria                  0.448 0.527 0.551
+p.global.Macroalgae                     0.238 0.314 0.337
+p.global.POM                            0.455 0.525 0.548
+p.Acanthuridae.Cyanobacteria            0.422 0.477 0.496
+p.Kyphosidae.Cyanobacteria              0.432 0.517 0.546
+p.Mugilidae.Cyanobacteria               0.487 0.600 0.636
+p.Pomacentridae.Cyanobacteria           0.492 0.577 0.608
+p.Siganidae.Cyanobacteria               0.426 0.499 0.526
+p.Acanthuridae.Macroalgae               0.221 0.287 0.304
+p.Kyphosidae.Macroalgae                 0.272 0.408 0.460
+p.Mugilidae.Macroalgae                  0.235 0.324 0.356
+p.Pomacentridae.Macroalgae              0.239 0.313 0.335
+p.Siganidae.Macroalgae                  0.232 0.314 0.343
+p.Acanthuridae.POM                      0.476 0.534 0.550
+p.Kyphosidae.POM                        0.462 0.540 0.565
+p.Mugilidae.POM                         0.444 0.520 0.548
+p.Pomacentridae.POM                     0.429 0.505 0.527
+p.Siganidae.POM                         0.496 0.573 0.599
+p.Acanthurus achilles.Cyanobacteria     0.414 0.470 0.492
+p.Acanthurus guttatus.Cyanobacteria     0.513 0.568 0.589
+p.Acanthurus lineatus.Cyanobacteria     0.459 0.511 0.529
+p.Acanthurus nigricans.Cyanobacteria    0.301 0.348 0.365
+p.Acanthurus nigrofuscus.Cyanobacteria  0.452 0.508 0.530
+p.Acanthurus nigroris.Cyanobacteria     0.431 0.494 0.515
+p.Acanthurus olivaceus.Cyanobacteria    0.329 0.384 0.401
+p.Acanthurus pyroferus.Cyanobacteria    0.357 0.410 0.428
+p.Acanthurus triostegus.Cyanobacteria   0.413 0.469 0.488
+p.Ctenochaetus binotatus.Cyanobacteria  0.547 0.633 0.666
+p.Ctenochaetus flavicauda.Cyanobacteria 0.416 0.470 0.487
+p.Ctenochaetus striatus.Cyanobacteria   0.559 0.613 0.628
+p.Ellochelon vaigiensis.Cyanobacteria   0.555 0.618 0.639
+p.Kyphosus cinerascens.Cyanobacteria    0.381 0.449 0.472
+p.Kyphosus vaigiensis.Cyanobacteria     0.455 0.546 0.575
+p.Naso lituratus.Cyanobacteria          0.441 0.495 0.514
+p.Naso unicornis.Cyanobacteria          0.555 0.615 0.634
+p.Siganus argenteus.Cyanobacteria       0.409 0.480 0.503
+p.Siganus spinus.Cyanobacteria          0.362 0.416 0.433
+p.Stegastes albifasciatus.Cyanobacteria 0.600 0.662 0.688
+p.Stegastes nigricans.Cyanobacteria     0.480 0.535 0.553
+p.Zebrasoma scopas.Cyanobacteria        0.344 0.394 0.414
+p.Zebrasoma velifer.Cyanobacteria       0.246 0.291 0.306
+p.Acanthurus achilles.Macroalgae        0.243 0.326 0.355
+p.Acanthurus guttatus.Macroalgae        0.233 0.326 0.356
+p.Acanthurus lineatus.Macroalgae        0.214 0.292 0.320
+p.Acanthurus nigricans.Macroalgae       0.202 0.281 0.309
+p.Acanthurus nigrofuscus.Macroalgae     0.233 0.335 0.368
+p.Acanthurus nigroris.Macroalgae        0.255 0.360 0.396
+p.Acanthurus olivaceus.Macroalgae       0.210 0.339 0.372
+p.Acanthurus pyroferus.Macroalgae       0.224 0.315 0.347
+p.Acanthurus triostegus.Macroalgae      0.267 0.350 0.376
+p.Ctenochaetus binotatus.Macroalgae     0.233 0.347 0.386
+p.Ctenochaetus flavicauda.Macroalgae    0.226 0.300 0.332
+p.Ctenochaetus striatus.Macroalgae      0.201 0.269 0.289
+p.Ellochelon vaigiensis.Macroalgae      0.225 0.331 0.369
+p.Kyphosus cinerascens.Macroalgae       0.263 0.408 0.455
+p.Kyphosus vaigiensis.Macroalgae        0.413 0.543 0.588
+p.Naso lituratus.Macroalgae             0.237 0.325 0.352
+p.Naso unicornis.Macroalgae             0.240 0.358 0.390
+p.Siganus argenteus.Macroalgae          0.231 0.346 0.390
+p.Siganus spinus.Macroalgae             0.231 0.337 0.364
+p.Stegastes albifasciatus.Macroalgae    0.227 0.322 0.350
+p.Stegastes nigricans.Macroalgae        0.257 0.342 0.375
+p.Zebrasoma scopas.Macroalgae           0.204 0.299 0.322
+p.Zebrasoma velifer.Macroalgae          0.176 0.250 0.276
+p.Acanthurus achilles.POM               0.478 0.535 0.555
+p.Acanthurus guttatus.POM               0.394 0.451 0.469
+p.Acanthurus lineatus.POM               0.449 0.505 0.521
+p.Acanthurus nigricans.POM              0.610 0.657 0.676
+p.Acanthurus nigrofuscus.POM            0.454 0.512 0.532
+p.Acanthurus nigroris.POM               0.467 0.528 0.546
+p.Acanthurus olivaceus.POM              0.602 0.657 0.674
+p.Acanthurus pyroferus.POM              0.550 0.603 0.621
+p.Acanthurus triostegus.POM             0.460 0.517 0.534
+p.Ctenochaetus binotatus.POM            0.390 0.470 0.497
+p.Ctenochaetus flavicauda.POM           0.482 0.539 0.557
+p.Ctenochaetus striatus.POM             0.355 0.412 0.429
+p.Ellochelon vaigiensis.POM             0.368 0.434 0.453
+p.Kyphosus cinerascens.POM              0.527 0.596 0.615
+p.Kyphosus vaigiensis.POM               0.406 0.489 0.512
+p.Naso lituratus.POM                    0.456 0.515 0.531
+p.Naso unicornis.POM                    0.363 0.425 0.443
+p.Siganus argenteus.POM                 0.518 0.586 0.607
+p.Siganus spinus.POM                    0.550 0.602 0.616
+p.Stegastes albifasciatus.POM           0.312 0.379 0.398
+p.Stegastes nigricans.POM               0.406 0.470 0.488
+p.Zebrasoma scopas.POM                  0.576 0.625 0.639
+p.Zebrasoma velifer.POM                 0.687 0.731 0.745

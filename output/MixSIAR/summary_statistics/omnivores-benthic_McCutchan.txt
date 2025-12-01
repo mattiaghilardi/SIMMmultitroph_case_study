@@ -1,0 +1,169 @@
+
+#################################################################
+# Summary Statistics
+#################################################################
+
+DIC = 547.5495
+
+                                                  Mean    SD  2.5%    5%   25%
+family.SD                                        0.274 0.170 0.021 0.041 0.153
+species.SD                                       0.322 0.106 0.140 0.167 0.252
+p.global.Cyanobacteria                           0.128 0.048 0.052 0.061 0.094
+p.global.Macroalgae                              0.250 0.074 0.109 0.132 0.200
+p.global.POM                                     0.621 0.059 0.492 0.519 0.586
+p.Ephippidae.Cyanobacteria                       0.141 0.064 0.044 0.056 0.094
+p.Monacanthidae.Cyanobacteria                    0.114 0.046 0.037 0.048 0.082
+p.Ostraciidae.Cyanobacteria                      0.128 0.054 0.043 0.052 0.089
+p.Pomacanthidae.Cyanobacteria                    0.108 0.042 0.037 0.047 0.077
+p.Pomacentridae.Cyanobacteria                    0.116 0.043 0.044 0.051 0.084
+p.Tetraodontidae.Cyanobacteria                   0.163 0.069 0.058 0.070 0.114
+p.Ephippidae.Macroalgae                          0.261 0.097 0.094 0.117 0.192
+p.Monacanthidae.Macroalgae                       0.213 0.074 0.078 0.100 0.162
+p.Ostraciidae.Macroalgae                         0.264 0.091 0.096 0.124 0.202
+p.Pomacanthidae.Macroalgae                       0.217 0.067 0.082 0.106 0.172
+p.Pomacentridae.Macroalgae                       0.251 0.071 0.115 0.137 0.203
+p.Tetraodontidae.Macroalgae                      0.285 0.096 0.107 0.133 0.218
+p.Ephippidae.POM                                 0.597 0.088 0.395 0.437 0.547
+p.Monacanthidae.POM                              0.673 0.066 0.541 0.561 0.630
+p.Ostraciidae.POM                                0.608 0.074 0.446 0.479 0.565
+p.Pomacanthidae.POM                              0.675 0.054 0.566 0.585 0.638
+p.Pomacentridae.POM                              0.633 0.054 0.524 0.543 0.600
+p.Tetraodontidae.POM                             0.551 0.079 0.390 0.418 0.498
+p.Abudefduf septemfasciatus.Cyanobacteria        0.120 0.050 0.038 0.049 0.084
+p.Abudefduf sordidus.Cyanobacteria               0.119 0.055 0.034 0.043 0.079
+p.Aluterus scriptus.Cyanobacteria                0.095 0.042 0.027 0.035 0.064
+p.Cantherhines sandwichiensis.Cyanobacteria      0.108 0.043 0.033 0.042 0.077
+p.Canthigaster bennetti.Cyanobacteria            0.230 0.100 0.062 0.080 0.156
+p.Canthigaster solandri.Cyanobacteria            0.154 0.062 0.049 0.062 0.110
+p.Canthigaster valentini.Cyanobacteria           0.178 0.077 0.054 0.066 0.121
+p.Centropyge bispinosa.Cyanobacteria             0.144 0.073 0.035 0.045 0.089
+p.Centropyge flavissima.Cyanobacteria            0.080 0.034 0.024 0.030 0.055
+p.Centropyge loriculus.Cyanobacteria             0.091 0.040 0.027 0.033 0.062
+p.Chrysiptera brownriggii.Cyanobacteria          0.100 0.045 0.028 0.036 0.067
+p.Ostracion cubicum.Cyanobacteria                0.166 0.079 0.041 0.053 0.107
+p.Ostracion meleagris.Cyanobacteria              0.100 0.043 0.029 0.038 0.068
+p.Platax orbicularis.Cyanobacteria               0.158 0.071 0.039 0.053 0.105
+p.Plectroglyphidodon dickii.Cyanobacteria        0.125 0.058 0.034 0.043 0.081
+p.Plectroglyphidodon fasciolatus.Cyanobacteria   0.099 0.039 0.033 0.041 0.071
+p.Plectroglyphidodon johnstonianus.Cyanobacteria 0.122 0.053 0.036 0.045 0.082
+p.Pomacanthus imperator.Cyanobacteria            0.088 0.037 0.027 0.034 0.060
+p.Pygoplites diacanthus.Cyanobacteria            0.116 0.046 0.036 0.045 0.084
+p.Abudefduf septemfasciatus.Macroalgae           0.310 0.086 0.124 0.163 0.256
+p.Abudefduf sordidus.Macroalgae                  0.275 0.095 0.103 0.124 0.211
+p.Aluterus scriptus.Macroalgae                   0.172 0.068 0.059 0.073 0.122
+p.Cantherhines sandwichiensis.Macroalgae         0.203 0.069 0.078 0.094 0.154
+p.Canthigaster bennetti.Macroalgae               0.346 0.127 0.102 0.139 0.258
+p.Canthigaster solandri.Macroalgae               0.282 0.098 0.100 0.121 0.212
+p.Canthigaster valentini.Macroalgae              0.307 0.117 0.088 0.123 0.225
+p.Centropyge bispinosa.Macroalgae                0.291 0.112 0.086 0.113 0.210
+p.Centropyge flavissima.Macroalgae               0.175 0.062 0.057 0.075 0.130
+p.Centropyge loriculus.Macroalgae                0.178 0.070 0.059 0.073 0.127
+p.Chrysiptera brownriggii.Macroalgae             0.216 0.092 0.066 0.083 0.148
+p.Ostracion cubicum.Macroalgae                   0.328 0.114 0.106 0.137 0.251
+p.Ostracion meleagris.Macroalgae                 0.226 0.092 0.067 0.087 0.161
+p.Platax orbicularis.Macroalgae                  0.276 0.109 0.081 0.108 0.201
+p.Plectroglyphidodon dickii.Macroalgae           0.268 0.096 0.095 0.121 0.201
+p.Plectroglyphidodon fasciolatus.Macroalgae      0.202 0.065 0.076 0.097 0.158
+p.Plectroglyphidodon johnstonianus.Macroalgae    0.257 0.094 0.088 0.115 0.194
+p.Pomacanthus imperator.Macroalgae               0.184 0.066 0.068 0.085 0.138
+p.Pygoplites diacanthus.Macroalgae               0.219 0.072 0.075 0.100 0.170
+p.Abudefduf septemfasciatus.POM                  0.570 0.059 0.444 0.466 0.534
+p.Abudefduf sordidus.POM                         0.605 0.072 0.448 0.479 0.562
+p.Aluterus scriptus.POM                          0.733 0.063 0.600 0.623 0.692
+p.Cantherhines sandwichiensis.POM                0.689 0.050 0.585 0.605 0.658
+p.Canthigaster bennetti.POM                      0.424 0.074 0.272 0.299 0.376
+p.Canthigaster solandri.POM                      0.563 0.066 0.422 0.447 0.523
+p.Canthigaster valentini.POM                     0.514 0.087 0.338 0.366 0.458
+p.Centropyge bispinosa.POM                       0.565 0.091 0.365 0.405 0.510
+p.Centropyge flavissima.POM                      0.745 0.050 0.643 0.660 0.713
+p.Centropyge loriculus.POM                       0.731 0.065 0.594 0.618 0.691
+p.Chrysiptera brownriggii.POM                    0.684 0.092 0.489 0.522 0.625
+p.Ostracion cubicum.POM                          0.507 0.077 0.352 0.376 0.459
+p.Ostracion meleagris.POM                        0.674 0.078 0.502 0.538 0.628
+p.Platax orbicularis.POM                         0.566 0.089 0.368 0.414 0.510
+p.Plectroglyphidodon dickii.POM                  0.607 0.078 0.436 0.474 0.560
+p.Plectroglyphidodon fasciolatus.POM             0.699 0.048 0.602 0.618 0.667
+p.Plectroglyphidodon johnstonianus.POM           0.621 0.079 0.448 0.481 0.572
+p.Pomacanthus imperator.POM                      0.728 0.057 0.605 0.628 0.692
+p.Pygoplites diacanthus.POM                      0.665 0.052 0.560 0.577 0.632
+                                                   50%   75%   95% 97.5%
+family.SD                                        0.250 0.363 0.583 0.676
+species.SD                                       0.313 0.385 0.513 0.562
+p.global.Cyanobacteria                           0.123 0.156 0.217 0.236
+p.global.Macroalgae                              0.248 0.298 0.375 0.403
+p.global.POM                                     0.625 0.660 0.711 0.728
+p.Ephippidae.Cyanobacteria                       0.131 0.177 0.261 0.293
+p.Monacanthidae.Cyanobacteria                    0.110 0.141 0.195 0.216
+p.Ostraciidae.Cyanobacteria                      0.122 0.158 0.226 0.254
+p.Pomacanthidae.Cyanobacteria                    0.105 0.134 0.183 0.201
+p.Pomacentridae.Cyanobacteria                    0.113 0.143 0.192 0.211
+p.Tetraodontidae.Cyanobacteria                   0.154 0.200 0.294 0.322
+p.Ephippidae.Macroalgae                          0.254 0.320 0.432 0.481
+p.Monacanthidae.Macroalgae                       0.208 0.259 0.343 0.367
+p.Ostraciidae.Macroalgae                         0.260 0.321 0.419 0.457
+p.Pomacanthidae.Macroalgae                       0.217 0.260 0.327 0.355
+p.Pomacentridae.Macroalgae                       0.249 0.297 0.370 0.394
+p.Tetraodontidae.Macroalgae                      0.281 0.348 0.450 0.482
+p.Ephippidae.POM                                 0.605 0.656 0.731 0.749
+p.Monacanthidae.POM                              0.674 0.718 0.779 0.802
+p.Ostraciidae.POM                                0.615 0.656 0.718 0.738
+p.Pomacanthidae.POM                              0.676 0.713 0.762 0.778
+p.Pomacentridae.POM                              0.634 0.668 0.720 0.736
+p.Tetraodontidae.POM                             0.556 0.608 0.673 0.693
+p.Abudefduf septemfasciatus.Cyanobacteria        0.115 0.150 0.208 0.233
+p.Abudefduf sordidus.Cyanobacteria               0.112 0.153 0.223 0.243
+p.Aluterus scriptus.Cyanobacteria                0.090 0.121 0.173 0.191
+p.Cantherhines sandwichiensis.Cyanobacteria      0.106 0.137 0.182 0.197
+p.Canthigaster bennetti.Cyanobacteria            0.222 0.295 0.407 0.443
+p.Canthigaster solandri.Cyanobacteria            0.148 0.192 0.267 0.289
+p.Canthigaster valentini.Cyanobacteria           0.171 0.228 0.315 0.346
+p.Centropyge bispinosa.Cyanobacteria             0.132 0.188 0.284 0.311
+p.Centropyge flavissima.Cyanobacteria            0.076 0.101 0.141 0.155
+p.Centropyge loriculus.Cyanobacteria             0.087 0.115 0.161 0.181
+p.Chrysiptera brownriggii.Cyanobacteria          0.095 0.127 0.182 0.200
+p.Ostracion cubicum.Cyanobacteria                0.156 0.216 0.305 0.338
+p.Ostracion meleagris.Cyanobacteria              0.096 0.127 0.175 0.195
+p.Platax orbicularis.Cyanobacteria               0.154 0.205 0.282 0.307
+p.Plectroglyphidodon dickii.Cyanobacteria        0.117 0.161 0.230 0.256
+p.Plectroglyphidodon fasciolatus.Cyanobacteria   0.096 0.124 0.169 0.185
+p.Plectroglyphidodon johnstonianus.Cyanobacteria 0.116 0.157 0.212 0.235
+p.Pomacanthus imperator.Cyanobacteria            0.084 0.112 0.155 0.168
+p.Pygoplites diacanthus.Cyanobacteria            0.113 0.146 0.194 0.210
+p.Abudefduf septemfasciatus.Macroalgae           0.312 0.368 0.447 0.473
+p.Abudefduf sordidus.Macroalgae                  0.272 0.334 0.435 0.477
+p.Aluterus scriptus.Macroalgae                   0.167 0.214 0.295 0.321
+p.Cantherhines sandwichiensis.Macroalgae         0.201 0.248 0.318 0.343
+p.Canthigaster bennetti.Macroalgae               0.347 0.431 0.555 0.591
+p.Canthigaster solandri.Macroalgae               0.283 0.348 0.447 0.476
+p.Canthigaster valentini.Macroalgae              0.302 0.385 0.510 0.550
+p.Centropyge bispinosa.Macroalgae                0.287 0.364 0.476 0.522
+p.Centropyge flavissima.Macroalgae               0.174 0.217 0.280 0.296
+p.Centropyge loriculus.Macroalgae                0.172 0.222 0.302 0.329
+p.Chrysiptera brownriggii.Macroalgae             0.208 0.273 0.382 0.418
+p.Ostracion cubicum.Macroalgae                   0.330 0.406 0.510 0.542
+p.Ostracion meleagris.Macroalgae                 0.219 0.286 0.386 0.428
+p.Platax orbicularis.Macroalgae                  0.269 0.346 0.461 0.505
+p.Plectroglyphidodon dickii.Macroalgae           0.263 0.330 0.431 0.473
+p.Plectroglyphidodon fasciolatus.Macroalgae      0.200 0.245 0.310 0.329
+p.Plectroglyphidodon johnstonianus.Macroalgae    0.250 0.317 0.419 0.464
+p.Pomacanthus imperator.Macroalgae               0.180 0.224 0.302 0.330
+p.Pygoplites diacanthus.Macroalgae               0.221 0.267 0.340 0.360
+p.Abudefduf septemfasciatus.POM                  0.572 0.610 0.666 0.683
+p.Abudefduf sordidus.POM                         0.610 0.654 0.714 0.732
+p.Aluterus scriptus.POM                          0.736 0.776 0.832 0.850
+p.Cantherhines sandwichiensis.POM                0.691 0.723 0.767 0.782
+p.Canthigaster bennetti.POM                      0.427 0.473 0.541 0.563
+p.Canthigaster solandri.POM                      0.567 0.608 0.664 0.678
+p.Canthigaster valentini.POM                     0.520 0.574 0.647 0.669
+p.Centropyge bispinosa.POM                       0.571 0.629 0.706 0.727
+p.Centropyge flavissima.POM                      0.747 0.780 0.826 0.840
+p.Centropyge loriculus.POM                       0.735 0.775 0.833 0.851
+p.Chrysiptera brownriggii.POM                    0.687 0.748 0.825 0.851
+p.Ostracion cubicum.POM                          0.511 0.559 0.624 0.644
+p.Ostracion meleagris.POM                        0.681 0.729 0.786 0.806
+p.Platax orbicularis.POM                         0.571 0.626 0.701 0.725
+p.Plectroglyphidodon dickii.POM                  0.612 0.658 0.724 0.744
+p.Plectroglyphidodon fasciolatus.POM             0.701 0.732 0.773 0.786
+p.Plectroglyphidodon johnstonianus.POM           0.627 0.674 0.739 0.760
+p.Pomacanthus imperator.POM                      0.732 0.767 0.815 0.832
+p.Pygoplites diacanthus.POM                      0.666 0.699 0.749 0.766

@@ -1,0 +1,158 @@
+# source$data_type: raw
+# source$by_factor: NA
+# random effects: 2
+# fixed effects: 0
+# nested factors: FALSE TRUE
+# factors: family species
+# continuous effects: 0
+# error structure: Process only (MixSIR, for N = 1)
+# source$conc_dep: FALSE
+
+var rho[n.sources,n.iso,n.iso], src_cov[n.sources,n.iso,n.iso], src_var[n.sources,n.iso,n.iso], src_Sigma[n.sources,n.iso,n.iso], Sigma.ind[N,n.iso,n.iso], mix.cov[N,n.iso,n.iso];
+
+model{
+  # fit source data (big for loop over sources)
+  for(src in 1:n.sources){
+    # uninformative priors on source means (src_mu vector)
+    for(iso in 1:n.iso){
+      src_mu[src,iso] ~ dnorm(0,.001);
+    }
+
+    # uninformative priors on source variances (src_tau matrix)
+    for(i in 2:n.iso){
+      for(j in 1:(i-1)){
+        src_tau[src,i,j] <- 0;
+        src_tau[src,j,i] <- 0;
+      }
+    }
+    for(i in 1:n.iso){
+      src_tau[src,i,i] ~ dgamma(.001,.001);
+    }
+
+    # uninformative priors on source correlations (rho matrix)
+    for(i in 2:n.iso){
+      for(j in 1:(i-1)){
+        rho[src,i,j] ~ dunif(-1,1);
+        rho[src,j,i] <- rho[src,i,j];
+      }
+    }
+    for(i in 1:n.iso){
+      rho[src,i,i] <- 1;
+    }
+
+    # Construct source precision matrix (src_Sigma)
+    src_var[src,,] <- inverse(src_tau[src,,]);
+    src_cov[src,,] <- src_var[src,,] %*% rho[src,,] %*% src_var[src,,];
+    src_Sigma[src,,] <- inverse(src_cov[src,,]);
+
+    # each source data point is distributed normally according to the source means and precisions
+    for(r in 1:n.rep[src]){
+      SOURCE_array[src,,r] ~ dmnorm(src_mu[src,],src_Sigma[src,,]);
+    }
+  } # end source data fitting loop
+
+    # draw p.global (global proportion means) from an uninformative Dirichlet,
+    # then ilr.global is the ILR-transform of p.global
+    p.global[1:n.sources] ~ ddirch(alpha[1:n.sources]);
+    for(src in 1:(n.sources-1)){
+      gmean[src] <- prod(p.global[1:src])^(1/src);
+      ilr.global[src] <- sqrt(src/(src+1))*log(gmean[src]/p.global[src+1]); # page 296, Egozcue 2003
+    }
+
+   fac1.sig ~ dunif(0,20);
+   fac1.invSig2 <- 1/(fac1.sig*fac1.sig);
+   # draw the fac1 (region) specific ILR terms (random effect)
+   for(f1 in 1:factor1_levels) {
+      for(src in 1:(n.sources-1)) {
+          ilr.fac1[f1,src] ~ dnorm(0,fac1.invSig2);
+      }
+   }
+
+   fac2.sig ~ dunif(0,20);
+   fac2.invSig2 <- 1/(fac2.sig*fac2.sig);
+   # draw the fac2-specific ILR terms (random effect)
+   for(f2 in 1:factor2_levels){
+      for(src in 1:(n.sources-1)){
+          ilr.fac2[f2,src] ~ dnorm(0,fac2.invSig2);
+      }
+   }
+
+   # DON'T generate individual deviates from the global/region/pack mean (but keep same model structure)
+   for(i in 1:N) {
+      for(src in 1:(n.sources-1)) {
+         ilr.ind[i,src] <- 0;
+         ilr.tot[i,src] <- ilr.global[src] + ilr.fac1[Factor.1[i],src] + ilr.fac2[Factor.2[i],src] + ilr.ind[i,src]; # add all effects together for each individual (in ilr-space)
+      }
+   }
+
+   # Inverse ILR math (equation 24, page 294, Egozcue 2003)
+   for(i in 1:N){
+      for(j in 1:(n.sources-1)){
+        cross[i,,j] <- (e[,j]^ilr.tot[i,j])/sum(e[,j]^ilr.tot[i,j]);
+      }
+      for(src in 1:n.sources){
+        tmp.p[i,src] <- prod(cross[i,src,]);
+      }
+      for(src in 1:n.sources){
+        p.ind[i,src] <- tmp.p[i,src]/sum(tmp.p[i,]);
+      }
+   }
+
+   for(src in 1:n.sources) {
+      for(i in 1:N){
+         # these are weights for variances
+         p2[i,src] <- p.ind[i,src]*p.ind[i,src];
+      }
+   }
+
+   # Transform ilr.fac1 into p.fac1 (fac1 not nested within fac2)
+   for(f1 in 1:factor1_levels) {
+      for(src in 1:(n.sources-1)) {
+        ilr.fac1.tot[f1,src] <- ilr.global[src] + ilr.fac1[f1,src];
+        cross.fac1[f1,,src] <- (e[,src]^ilr.fac1.tot[f1,src])/sum(e[,src]^ilr.fac1.tot[f1,src]);
+      }
+      for(src in 1:n.sources) {
+        tmp.p.fac1[f1,src] <- prod(cross.fac1[f1,src,]);
+      }
+      for(src in 1:n.sources){
+        p.fac1[f1,src] <- tmp.p.fac1[f1,src]/sum(tmp.p.fac1[f1,]);
+      }
+   }
+
+     # Transform ilr.fac2 into p.fac2 (fac2 nested within fac1)
+      for(f2 in 1:factor2_levels){
+        for(src in 1:(n.sources-1)){
+            ilr.fac2.tot[f2,src] <- ilr.global[src] + ilr.fac1[factor1_lookup[f2],src] + ilr.fac2[f2,src];
+            cross.fac2[f2,,src] <- (e[,src]^ilr.fac2.tot[f2,src])/sum(e[,src]^ilr.fac2.tot[f2,src]);
+        }
+        for(src in 1:n.sources) {
+          tmp.p.fac2[f2,src] <- prod(cross.fac2[f2,src,]);
+        }
+        for(src in 1:n.sources){
+          p.fac2[f2,src] <- tmp.p.fac2[f2,src]/sum(tmp.p.fac2[f2,]);
+        }
+      }
+  
+
+   # for each isotope and population, calculate the predicted mixtures
+   for(iso in 1:n.iso) {
+      for(i in 1:N) {
+
+         mix.mu[iso,i] <- inprod(src_mu[,iso],p.ind[i,]) + inprod(frac_mu[,iso],p.ind[i,]);
+      }
+   }
+
+
+  # calculate mix variance and likelihood
+  for(i in 1:N){
+    for(iso in 1:n.iso){
+
+      process.var[iso,i] <- inprod(1/src_tau[,iso,iso],p2[i,]) + inprod(frac_sig2[,iso],p2[i,]);
+      mix.prcsn[iso,i] <- 1/process.var[iso,i];
+      X_iso[i,iso] ~ dnorm(mix.mu[iso,i], mix.prcsn[iso,i]);
+      loglik_mat[i,iso] <- logdensity.norm(X_iso[i,iso], mix.mu[iso,i], mix.prcsn[iso,i]);
+    }
+    loglik[i] <- sum(loglik_mat[i,])
+  }
+}  # end model
+

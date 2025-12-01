@@ -1,0 +1,397 @@
+
+#################################################################
+# Summary Statistics
+#################################################################
+
+DIC = 1521.127
+
+                                             Mean    SD  2.5%    5%   25%   50%
+family.SD                                   0.263 0.116 0.039 0.076 0.188 0.257
+species.SD                                  0.299 0.060 0.200 0.213 0.256 0.294
+p.global.Cyanobacteria                      0.366 0.058 0.258 0.275 0.326 0.365
+p.global.Macroalgae                         0.110 0.052 0.024 0.032 0.072 0.107
+p.global.POM                                0.524 0.051 0.426 0.444 0.488 0.524
+p.Apogonidae.Cyanobacteria                  0.338 0.081 0.186 0.208 0.282 0.337
+p.Aulostomidae.Cyanobacteria                0.341 0.077 0.206 0.224 0.286 0.337
+p.Belonidae.Cyanobacteria                   0.372 0.096 0.200 0.224 0.305 0.366
+p.Bothidae.Cyanobacteria                    0.435 0.095 0.264 0.287 0.368 0.430
+p.Carangidae.Cyanobacteria                  0.303 0.070 0.175 0.194 0.254 0.300
+p.Cirrhitidae.Cyanobacteria                 0.324 0.070 0.189 0.209 0.275 0.323
+p.Epinephelidae.Cyanobacteria               0.318 0.057 0.215 0.230 0.278 0.315
+p.Fistulariidae.Cyanobacteria               0.338 0.081 0.183 0.206 0.282 0.337
+p.Holocentridae.Cyanobacteria               0.384 0.065 0.266 0.281 0.337 0.382
+p.Labridae.Cyanobacteria                    0.386 0.071 0.259 0.274 0.335 0.382
+p.Lethrinidae.Cyanobacteria                 0.486 0.096 0.312 0.333 0.414 0.484
+p.Lutjanidae.Cyanobacteria                  0.333 0.061 0.223 0.235 0.291 0.330
+p.Muraenidae.Cyanobacteria                  0.404 0.081 0.258 0.278 0.346 0.399
+p.Priacanthidae.Cyanobacteria               0.333 0.085 0.175 0.201 0.273 0.332
+p.Scombridae.Cyanobacteria                  0.350 0.092 0.180 0.206 0.286 0.347
+p.Scorpaenidae.Cyanobacteria                0.370 0.075 0.232 0.252 0.319 0.366
+p.Sphyraenidae.Cyanobacteria                0.368 0.089 0.207 0.233 0.307 0.363
+p.Synodontidae.Cyanobacteria                0.441 0.089 0.282 0.303 0.377 0.437
+p.Apogonidae.Macroalgae                     0.111 0.060 0.021 0.028 0.066 0.102
+p.Aulostomidae.Macroalgae                   0.102 0.054 0.021 0.028 0.061 0.095
+p.Belonidae.Macroalgae                      0.107 0.061 0.019 0.027 0.061 0.097
+p.Bothidae.Macroalgae                       0.117 0.073 0.020 0.027 0.063 0.103
+p.Carangidae.Macroalgae                     0.113 0.057 0.024 0.032 0.070 0.107
+p.Cirrhitidae.Macroalgae                    0.142 0.077 0.024 0.031 0.083 0.135
+p.Epinephelidae.Macroalgae                  0.120 0.056 0.024 0.032 0.078 0.117
+p.Fistulariidae.Macroalgae                  0.119 0.061 0.025 0.032 0.074 0.113
+p.Holocentridae.Macroalgae                  0.120 0.062 0.022 0.029 0.073 0.114
+p.Labridae.Macroalgae                       0.100 0.052 0.021 0.027 0.060 0.094
+p.Lethrinidae.Macroalgae                    0.096 0.057 0.019 0.024 0.053 0.086
+p.Lutjanidae.Macroalgae                     0.099 0.050 0.021 0.028 0.061 0.093
+p.Muraenidae.Macroalgae                     0.115 0.060 0.024 0.031 0.070 0.107
+p.Priacanthidae.Macroalgae                  0.106 0.059 0.021 0.027 0.063 0.098
+p.Scombridae.Macroalgae                     0.101 0.058 0.019 0.025 0.058 0.093
+p.Scorpaenidae.Macroalgae                   0.114 0.063 0.022 0.029 0.066 0.104
+p.Sphyraenidae.Macroalgae                   0.105 0.060 0.021 0.027 0.060 0.095
+p.Synodontidae.Macroalgae                   0.127 0.075 0.022 0.030 0.071 0.114
+p.Apogonidae.POM                            0.551 0.079 0.390 0.418 0.499 0.553
+p.Aulostomidae.POM                          0.557 0.075 0.406 0.431 0.506 0.558
+p.Belonidae.POM                             0.521 0.094 0.332 0.365 0.462 0.523
+p.Bothidae.POM                              0.448 0.088 0.260 0.299 0.390 0.451
+p.Carangidae.POM                            0.584 0.067 0.452 0.474 0.538 0.585
+p.Cirrhitidae.POM                           0.534 0.062 0.407 0.430 0.492 0.535
+p.Epinephelidae.POM                         0.562 0.051 0.462 0.476 0.528 0.562
+p.Fistulariidae.POM                         0.543 0.077 0.392 0.417 0.490 0.544
+p.Holocentridae.POM                         0.496 0.057 0.386 0.402 0.458 0.495
+p.Labridae.POM                              0.515 0.062 0.389 0.405 0.474 0.518
+p.Lethrinidae.POM                           0.418 0.084 0.256 0.283 0.358 0.418
+p.Lutjanidae.POM                            0.568 0.057 0.455 0.474 0.529 0.571
+p.Muraenidae.POM                            0.482 0.075 0.324 0.352 0.435 0.486
+p.Priacanthidae.POM                         0.561 0.086 0.393 0.420 0.502 0.560
+p.Scombridae.POM                            0.549 0.094 0.366 0.394 0.487 0.547
+p.Scorpaenidae.POM                          0.516 0.071 0.370 0.396 0.467 0.518
+p.Sphyraenidae.POM                          0.527 0.086 0.347 0.383 0.472 0.531
+p.Synodontidae.POM                          0.432 0.082 0.270 0.292 0.376 0.435
+p.Aphareus furca.Cyanobacteria              0.253 0.049 0.158 0.172 0.218 0.252
+p.Aulostomus chinensis.Cyanobacteria        0.302 0.058 0.187 0.207 0.262 0.302
+p.Bothus mancus.Cyanobacteria               0.524 0.091 0.318 0.360 0.470 0.530
+p.Caranx melampygus.Cyanobacteria           0.235 0.056 0.131 0.146 0.196 0.234
+p.Caranx papuensis.Cyanobacteria            0.300 0.085 0.143 0.169 0.239 0.296
+p.Cephalopholis argus.Cyanobacteria         0.385 0.062 0.270 0.285 0.339 0.383
+p.Cephalopholis leopardus.Cyanobacteria     0.259 0.055 0.161 0.173 0.222 0.257
+p.Cephalopholis sexmaculata.Cyanobacteria   0.284 0.075 0.151 0.169 0.231 0.278
+p.Cephalopholis urodeta.Cyanobacteria       0.246 0.046 0.157 0.171 0.215 0.245
+p.Cheilio inermis.Cyanobacteria             0.479 0.087 0.307 0.335 0.420 0.480
+p.Cheilodipterus macrodon.Cyanobacteria     0.300 0.070 0.172 0.190 0.251 0.297
+p.Cirrhitus pinnulatus.Cyanobacteria        0.318 0.068 0.184 0.206 0.274 0.318
+p.Epibulus insidiator.Cyanobacteria         0.377 0.055 0.272 0.289 0.339 0.376
+p.Epinephelus fasciatus.Cyanobacteria       0.285 0.060 0.172 0.190 0.245 0.284
+p.Epinephelus hexagonatus.Cyanobacteria     0.279 0.054 0.175 0.189 0.242 0.278
+p.Epinephelus merra.Cyanobacteria           0.458 0.071 0.318 0.339 0.410 0.459
+p.Fistularia commersonii.Cyanobacteria      0.301 0.075 0.168 0.183 0.250 0.297
+p.Gnathodentex aureolineatus.Cyanobacteria  0.609 0.077 0.457 0.481 0.556 0.609
+p.Gymnosarda unicolor.Cyanobacteria         0.326 0.110 0.140 0.163 0.248 0.315
+p.Gymnothorax fimbriatus.Cyanobacteria      0.476 0.073 0.339 0.356 0.427 0.476
+p.Gymnothorax javanicus.Cyanobacteria       0.444 0.125 0.217 0.247 0.352 0.438
+p.Lethrinus xanthochilus.Cyanobacteria      0.441 0.106 0.247 0.277 0.366 0.435
+p.Lutjanus fulvus.Cyanobacteria             0.363 0.060 0.239 0.261 0.324 0.364
+p.Lutjanus kasmira.Cyanobacteria            0.329 0.056 0.220 0.239 0.292 0.328
+p.Lutjanus monostigma.Cyanobacteria         0.324 0.068 0.193 0.217 0.278 0.323
+p.Monotaxis grandoculis.Cyanobacteria       0.585 0.082 0.422 0.450 0.530 0.587
+p.Neoniphon argenteus.Cyanobacteria         0.472 0.094 0.297 0.323 0.407 0.469
+p.Neoniphon sammara.Cyanobacteria           0.442 0.072 0.300 0.322 0.393 0.444
+p.Oxycheilinus unifasciatus.Cyanobacteria   0.330 0.063 0.209 0.228 0.288 0.328
+p.Paracirrhites forsteri.Cyanobacteria      0.256 0.058 0.142 0.160 0.216 0.256
+p.Paracirrhites hemistictus.Cyanobacteria   0.333 0.068 0.199 0.222 0.285 0.334
+p.Priacanthus hamrur.Cyanobacteria          0.289 0.086 0.143 0.160 0.229 0.284
+p.Pterois radiata.Cyanobacteria             0.407 0.068 0.274 0.294 0.362 0.404
+p.Sargocentron caudimaculatum.Cyanobacteria 0.372 0.077 0.227 0.250 0.322 0.370
+p.Sargocentron microstoma.Cyanobacteria     0.410 0.064 0.288 0.306 0.365 0.411
+p.Sargocentron spiniferum.Cyanobacteria     0.366 0.060 0.249 0.271 0.325 0.365
+p.Sargocentron tiere.Cyanobacteria          0.278 0.051 0.179 0.195 0.243 0.278
+p.Scomberoides lysan.Cyanobacteria          0.281 0.068 0.152 0.172 0.235 0.281
+p.Scorpaenopsis papuensis.Cyanobacteria     0.337 0.085 0.185 0.205 0.278 0.332
+p.Sphyraena barracuda.Cyanobacteria         0.369 0.105 0.177 0.206 0.297 0.365
+p.Synodus binotatus.Cyanobacteria           0.416 0.089 0.248 0.276 0.354 0.414
+p.Synodus jaculum.Cyanobacteria             0.567 0.092 0.380 0.413 0.505 0.571
+p.Tylosurus crocodilus.Cyanobacteria        0.377 0.119 0.161 0.195 0.294 0.370
+p.Uropterygius xanthopterus.Cyanobacteria   0.348 0.088 0.199 0.214 0.286 0.340
+p.Variola louti.Cyanobacteria               0.268 0.065 0.149 0.165 0.221 0.266
+p.Aphareus furca.Macroalgae                 0.088 0.046 0.018 0.024 0.054 0.082
+p.Aulostomus chinensis.Macroalgae           0.092 0.048 0.019 0.026 0.057 0.085
+p.Bothus mancus.Macroalgae                  0.127 0.099 0.017 0.023 0.056 0.097
+p.Caranx melampygus.Macroalgae              0.129 0.067 0.024 0.035 0.081 0.122
+p.Caranx papuensis.Macroalgae               0.113 0.066 0.022 0.029 0.064 0.102
+p.Cephalopholis argus.Macroalgae            0.138 0.065 0.024 0.034 0.090 0.136
+p.Cephalopholis leopardus.Macroalgae        0.121 0.069 0.020 0.028 0.069 0.110
+p.Cephalopholis sexmaculata.Macroalgae      0.110 0.060 0.019 0.028 0.065 0.101
+p.Cephalopholis urodeta.Macroalgae          0.118 0.062 0.020 0.029 0.071 0.111
+p.Cheilio inermis.Macroalgae                0.111 0.068 0.018 0.025 0.059 0.098
+p.Cheilodipterus macrodon.Macroalgae        0.112 0.068 0.019 0.025 0.060 0.100
+p.Cirrhitus pinnulatus.Macroalgae           0.157 0.093 0.022 0.030 0.084 0.145
+p.Epibulus insidiator.Macroalgae            0.077 0.044 0.017 0.022 0.045 0.071
+p.Epinephelus fasciatus.Macroalgae          0.121 0.066 0.020 0.029 0.072 0.115
+p.Epinephelus hexagonatus.Macroalgae        0.128 0.069 0.023 0.030 0.075 0.120
+p.Epinephelus merra.Macroalgae              0.144 0.086 0.023 0.031 0.079 0.127
+p.Fistularia commersonii.Macroalgae         0.134 0.068 0.026 0.036 0.082 0.126
+p.Gnathodentex aureolineatus.Macroalgae     0.087 0.056 0.015 0.020 0.044 0.073
+p.Gymnosarda unicolor.Macroalgae            0.092 0.063 0.015 0.020 0.047 0.077
+p.Gymnothorax fimbriatus.Macroalgae         0.119 0.067 0.023 0.028 0.068 0.109
+p.Gymnothorax javanicus.Macroalgae          0.119 0.075 0.021 0.026 0.063 0.103
+p.Lethrinus xanthochilus.Macroalgae         0.096 0.064 0.016 0.022 0.049 0.081
+p.Lutjanus fulvus.Macroalgae                0.096 0.058 0.019 0.024 0.054 0.085
+p.Lutjanus kasmira.Macroalgae               0.105 0.058 0.019 0.027 0.061 0.096
+p.Lutjanus monostigma.Macroalgae            0.100 0.057 0.019 0.026 0.058 0.090
+p.Monotaxis grandoculis.Macroalgae          0.091 0.070 0.014 0.019 0.043 0.072
+p.Neoniphon argenteus.Macroalgae            0.129 0.081 0.019 0.027 0.068 0.113
+p.Neoniphon sammara.Macroalgae              0.135 0.082 0.020 0.027 0.070 0.123
+p.Oxycheilinus unifasciatus.Macroalgae      0.105 0.063 0.018 0.024 0.057 0.093
+p.Paracirrhites forsteri.Macroalgae         0.151 0.087 0.021 0.028 0.082 0.144
+p.Paracirrhites hemistictus.Macroalgae      0.168 0.094 0.021 0.031 0.092 0.161
+p.Priacanthus hamrur.Macroalgae             0.101 0.064 0.017 0.023 0.054 0.088
+p.Pterois radiata.Macroalgae                0.121 0.075 0.019 0.026 0.063 0.106
+p.Sargocentron caudimaculatum.Macroalgae    0.127 0.079 0.020 0.027 0.068 0.112
+p.Sargocentron microstoma.Macroalgae        0.142 0.079 0.021 0.029 0.079 0.137
+p.Sargocentron spiniferum.Macroalgae        0.107 0.063 0.018 0.024 0.060 0.095
+p.Sargocentron tiere.Macroalgae             0.110 0.060 0.019 0.025 0.065 0.102
+p.Scomberoides lysan.Macroalgae             0.102 0.058 0.019 0.026 0.058 0.093
+p.Scorpaenopsis papuensis.Macroalgae        0.116 0.073 0.020 0.026 0.061 0.101
+p.Sphyraena barracuda.Macroalgae            0.100 0.064 0.017 0.023 0.052 0.085
+p.Synodus binotatus.Macroalgae              0.133 0.087 0.020 0.028 0.068 0.116
+p.Synodus jaculum.Macroalgae                0.141 0.098 0.018 0.026 0.066 0.120
+p.Tylosurus crocodilus.Macroalgae           0.100 0.067 0.016 0.021 0.051 0.086
+p.Uropterygius xanthopterus.Macroalgae      0.116 0.073 0.020 0.027 0.062 0.102
+p.Variola louti.Macroalgae                  0.105 0.056 0.020 0.027 0.063 0.099
+p.Aphareus furca.POM                        0.659 0.040 0.581 0.593 0.632 0.660
+p.Aulostomus chinensis.POM                  0.606 0.049 0.509 0.524 0.572 0.608
+p.Bothus mancus.POM                         0.350 0.066 0.222 0.240 0.305 0.351
+p.Caranx melampygus.POM                     0.635 0.055 0.521 0.541 0.601 0.637
+p.Caranx papuensis.POM                      0.587 0.083 0.408 0.445 0.536 0.592
+p.Cephalopholis argus.POM                   0.477 0.045 0.391 0.406 0.446 0.476
+p.Cephalopholis leopardus.POM               0.620 0.061 0.493 0.513 0.581 0.623
+p.Cephalopholis sexmaculata.POM             0.607 0.079 0.442 0.470 0.556 0.611
+p.Cephalopholis urodeta.POM                 0.636 0.047 0.540 0.558 0.605 0.636
+p.Cheilio inermis.POM                       0.411 0.069 0.268 0.294 0.365 0.413
+p.Cheilodipterus macrodon.POM               0.588 0.069 0.443 0.471 0.545 0.591
+p.Cirrhitus pinnulatus.POM                  0.525 0.062 0.398 0.419 0.484 0.526
+p.Epibulus insidiator.POM                   0.546 0.049 0.448 0.466 0.514 0.547
+p.Epinephelus fasciatus.POM                 0.593 0.055 0.475 0.499 0.559 0.596
+p.Epinephelus hexagonatus.POM               0.593 0.049 0.493 0.514 0.561 0.594
+p.Epinephelus merra.POM                     0.399 0.058 0.289 0.306 0.360 0.398
+p.Fistularia commersonii.POM                0.566 0.065 0.426 0.454 0.523 0.569
+p.Gnathodentex aureolineatus.POM            0.305 0.063 0.183 0.202 0.262 0.304
+p.Gymnosarda unicolor.POM                   0.582 0.118 0.333 0.373 0.504 0.592
+p.Gymnothorax fimbriatus.POM                0.405 0.062 0.282 0.302 0.362 0.407
+p.Gymnothorax javanicus.POM                 0.437 0.115 0.215 0.243 0.357 0.438
+p.Lethrinus xanthochilus.POM                0.463 0.101 0.254 0.290 0.396 0.467
+p.Lutjanus fulvus.POM                       0.541 0.045 0.449 0.464 0.511 0.541
+p.Lutjanus kasmira.POM                      0.566 0.047 0.474 0.488 0.534 0.566
+p.Lutjanus monostigma.POM                   0.577 0.062 0.445 0.473 0.537 0.581
+p.Monotaxis grandoculis.POM                 0.324 0.066 0.195 0.214 0.280 0.325
+p.Neoniphon argenteus.POM                   0.399 0.080 0.244 0.265 0.347 0.402
+p.Neoniphon sammara.POM                     0.423 0.058 0.312 0.329 0.384 0.422
+p.Oxycheilinus unifasciatus.POM             0.565 0.056 0.449 0.469 0.529 0.568
+p.Paracirrhites forsteri.POM                0.593 0.056 0.478 0.496 0.557 0.594
+p.Paracirrhites hemistictus.POM             0.498 0.054 0.395 0.410 0.461 0.499
+p.Priacanthus hamrur.POM                    0.610 0.092 0.406 0.445 0.555 0.617
+p.Pterois radiata.POM                       0.472 0.058 0.357 0.374 0.432 0.473
+p.Sargocentron caudimaculatum.POM           0.501 0.071 0.357 0.377 0.454 0.505
+p.Sargocentron microstoma.POM               0.448 0.052 0.349 0.364 0.412 0.447
+p.Sargocentron spiniferum.POM               0.527 0.052 0.425 0.441 0.493 0.528
+p.Sargocentron tiere.POM                    0.612 0.044 0.526 0.538 0.583 0.613
+p.Scomberoides lysan.POM                    0.617 0.064 0.483 0.507 0.577 0.621
+p.Scorpaenopsis papuensis.POM               0.546 0.084 0.366 0.398 0.495 0.549
+p.Sphyraena barracuda.POM                   0.531 0.103 0.312 0.352 0.467 0.538
+p.Synodus binotatus.POM                     0.451 0.079 0.281 0.314 0.403 0.455
+p.Synodus jaculum.POM                       0.292 0.066 0.166 0.185 0.247 0.290
+p.Tylosurus crocodilus.POM                  0.523 0.118 0.281 0.324 0.446 0.524
+p.Uropterygius xanthopterus.POM             0.536 0.088 0.350 0.386 0.480 0.541
+p.Variola louti.POM                         0.627 0.067 0.486 0.510 0.584 0.630
+                                              75%   95% 97.5%
+family.SD                                   0.331 0.463 0.513
+species.SD                                  0.335 0.408 0.435
+p.global.Cyanobacteria                      0.405 0.461 0.481
+p.global.Macroalgae                         0.143 0.199 0.220
+p.global.POM                                0.558 0.607 0.623
+p.Apogonidae.Cyanobacteria                  0.389 0.482 0.513
+p.Aulostomidae.Cyanobacteria                0.391 0.472 0.496
+p.Belonidae.Cyanobacteria                   0.432 0.546 0.574
+p.Bothidae.Cyanobacteria                    0.497 0.600 0.633
+p.Carangidae.Cyanobacteria                  0.351 0.427 0.447
+p.Cirrhitidae.Cyanobacteria                 0.370 0.439 0.464
+p.Epinephelidae.Cyanobacteria               0.358 0.415 0.431
+p.Fistulariidae.Cyanobacteria               0.391 0.472 0.501
+p.Holocentridae.Cyanobacteria               0.430 0.493 0.513
+p.Labridae.Cyanobacteria                    0.430 0.511 0.532
+p.Lethrinidae.Cyanobacteria                 0.554 0.642 0.670
+p.Lutjanidae.Cyanobacteria                  0.374 0.437 0.456
+p.Muraenidae.Cyanobacteria                  0.455 0.547 0.579
+p.Priacanthidae.Cyanobacteria               0.390 0.475 0.506
+p.Scombridae.Cyanobacteria                  0.409 0.510 0.543
+p.Scorpaenidae.Cyanobacteria                0.420 0.498 0.525
+p.Sphyraenidae.Cyanobacteria                0.422 0.526 0.561
+p.Synodontidae.Cyanobacteria                0.499 0.596 0.622
+p.Apogonidae.Macroalgae                     0.145 0.222 0.253
+p.Aulostomidae.Macroalgae                   0.134 0.200 0.225
+p.Belonidae.Macroalgae                      0.142 0.217 0.245
+p.Bothidae.Macroalgae                       0.153 0.259 0.299
+p.Carangidae.Macroalgae                     0.148 0.218 0.243
+p.Cirrhitidae.Macroalgae                    0.189 0.284 0.312
+p.Epinephelidae.Macroalgae                  0.157 0.217 0.244
+p.Fistulariidae.Macroalgae                  0.156 0.230 0.258
+p.Holocentridae.Macroalgae                  0.158 0.233 0.258
+p.Labridae.Macroalgae                       0.131 0.195 0.220
+p.Lethrinidae.Macroalgae                    0.128 0.203 0.235
+p.Lutjanidae.Macroalgae                     0.132 0.190 0.215
+p.Muraenidae.Macroalgae                     0.150 0.226 0.254
+p.Priacanthidae.Macroalgae                  0.140 0.215 0.245
+p.Scombridae.Macroalgae                     0.132 0.206 0.242
+p.Scorpaenidae.Macroalgae                   0.152 0.227 0.255
+p.Sphyraenidae.Macroalgae                   0.139 0.217 0.246
+p.Synodontidae.Macroalgae                   0.168 0.272 0.313
+p.Apogonidae.POM                            0.605 0.684 0.706
+p.Aulostomidae.POM                          0.609 0.681 0.697
+p.Belonidae.POM                             0.583 0.676 0.703
+p.Bothidae.POM                              0.512 0.584 0.603
+p.Carangidae.POM                            0.629 0.691 0.711
+p.Cirrhitidae.POM                           0.578 0.637 0.655
+p.Epinephelidae.POM                         0.595 0.645 0.658
+p.Fistulariidae.POM                         0.594 0.668 0.692
+p.Holocentridae.POM                         0.536 0.591 0.605
+p.Labridae.POM                              0.559 0.612 0.629
+p.Lethrinidae.POM                           0.478 0.555 0.576
+p.Lutjanidae.POM                            0.607 0.660 0.678
+p.Muraenidae.POM                            0.535 0.599 0.619
+p.Priacanthidae.POM                         0.617 0.703 0.730
+p.Scombridae.POM                            0.612 0.702 0.731
+p.Scorpaenidae.POM                          0.565 0.628 0.652
+p.Sphyraenidae.POM                          0.585 0.663 0.686
+p.Synodontidae.POM                          0.491 0.562 0.586
+p.Aphareus furca.Cyanobacteria              0.287 0.335 0.350
+p.Aulostomus chinensis.Cyanobacteria        0.341 0.398 0.419
+p.Bothus mancus.Cyanobacteria               0.587 0.659 0.686
+p.Caranx melampygus.Cyanobacteria           0.273 0.330 0.344
+p.Caranx papuensis.Cyanobacteria            0.355 0.446 0.478
+p.Cephalopholis argus.Cyanobacteria         0.429 0.487 0.507
+p.Cephalopholis leopardus.Cyanobacteria     0.294 0.351 0.376
+p.Cephalopholis sexmaculata.Cyanobacteria   0.331 0.417 0.443
+p.Cephalopholis urodeta.Cyanobacteria       0.278 0.322 0.338
+p.Cheilio inermis.Cyanobacteria             0.539 0.623 0.648
+p.Cheilodipterus macrodon.Cyanobacteria     0.345 0.422 0.448
+p.Cirrhitus pinnulatus.Cyanobacteria        0.363 0.431 0.450
+p.Epibulus insidiator.Cyanobacteria         0.415 0.468 0.487
+p.Epinephelus fasciatus.Cyanobacteria       0.324 0.389 0.411
+p.Epinephelus hexagonatus.Cyanobacteria     0.315 0.369 0.386
+p.Epinephelus merra.Cyanobacteria           0.508 0.573 0.590
+p.Fistularia commersonii.Cyanobacteria      0.347 0.427 0.464
+p.Gnathodentex aureolineatus.Cyanobacteria  0.660 0.736 0.755
+p.Gymnosarda unicolor.Cyanobacteria         0.397 0.528 0.563
+p.Gymnothorax fimbriatus.Cyanobacteria      0.525 0.599 0.620
+p.Gymnothorax javanicus.Cyanobacteria       0.528 0.653 0.699
+p.Lethrinus xanthochilus.Cyanobacteria      0.509 0.622 0.657
+p.Lutjanus fulvus.Cyanobacteria             0.405 0.460 0.477
+p.Lutjanus kasmira.Cyanobacteria            0.366 0.424 0.438
+p.Lutjanus monostigma.Cyanobacteria         0.369 0.439 0.457
+p.Monotaxis grandoculis.Cyanobacteria       0.642 0.716 0.740
+p.Neoniphon argenteus.Cyanobacteria         0.535 0.628 0.659
+p.Neoniphon sammara.Cyanobacteria           0.493 0.559 0.579
+p.Oxycheilinus unifasciatus.Cyanobacteria   0.374 0.436 0.454
+p.Paracirrhites forsteri.Cyanobacteria      0.297 0.351 0.370
+p.Paracirrhites hemistictus.Cyanobacteria   0.382 0.442 0.459
+p.Priacanthus hamrur.Cyanobacteria          0.343 0.445 0.483
+p.Pterois radiata.Cyanobacteria             0.453 0.520 0.539
+p.Sargocentron caudimaculatum.Cyanobacteria 0.422 0.503 0.532
+p.Sargocentron microstoma.Cyanobacteria     0.455 0.516 0.532
+p.Sargocentron spiniferum.Cyanobacteria     0.407 0.465 0.483
+p.Sargocentron tiere.Cyanobacteria          0.312 0.362 0.376
+p.Scomberoides lysan.Cyanobacteria          0.326 0.393 0.417
+p.Scorpaenopsis papuensis.Cyanobacteria     0.391 0.484 0.521
+p.Sphyraena barracuda.Cyanobacteria         0.437 0.547 0.589
+p.Synodus binotatus.Cyanobacteria           0.473 0.566 0.595
+p.Synodus jaculum.Cyanobacteria             0.632 0.712 0.737
+p.Tylosurus crocodilus.Cyanobacteria        0.453 0.583 0.632
+p.Uropterygius xanthopterus.Cyanobacteria   0.402 0.504 0.534
+p.Variola louti.Cyanobacteria               0.310 0.379 0.401
+p.Aphareus furca.Macroalgae                 0.117 0.172 0.188
+p.Aulostomus chinensis.Macroalgae           0.119 0.179 0.200
+p.Bothus mancus.Macroalgae                  0.167 0.336 0.393
+p.Caranx melampygus.Macroalgae              0.169 0.252 0.277
+p.Caranx papuensis.Macroalgae               0.148 0.244 0.275
+p.Cephalopholis argus.Macroalgae            0.184 0.250 0.268
+p.Cephalopholis leopardus.Macroalgae        0.159 0.250 0.282
+p.Cephalopholis sexmaculata.Macroalgae      0.146 0.218 0.246
+p.Cephalopholis urodeta.Macroalgae          0.156 0.232 0.251
+p.Cheilio inermis.Macroalgae                0.150 0.239 0.275
+p.Cheilodipterus macrodon.Macroalgae        0.148 0.240 0.274
+p.Cirrhitus pinnulatus.Macroalgae           0.216 0.333 0.373
+p.Epibulus insidiator.Macroalgae            0.101 0.160 0.186
+p.Epinephelus fasciatus.Macroalgae          0.163 0.235 0.266
+p.Epinephelus hexagonatus.Macroalgae        0.172 0.252 0.276
+p.Epinephelus merra.Macroalgae              0.196 0.310 0.352
+p.Fistularia commersonii.Macroalgae         0.176 0.256 0.284
+p.Gnathodentex aureolineatus.Macroalgae     0.116 0.195 0.227
+p.Gymnosarda unicolor.Macroalgae            0.121 0.212 0.249
+p.Gymnothorax fimbriatus.Macroalgae         0.157 0.243 0.279
+p.Gymnothorax javanicus.Macroalgae          0.159 0.258 0.296
+p.Lethrinus xanthochilus.Macroalgae         0.127 0.215 0.253
+p.Lutjanus fulvus.Macroalgae                0.125 0.205 0.240
+p.Lutjanus kasmira.Macroalgae               0.139 0.212 0.240
+p.Lutjanus monostigma.Macroalgae            0.131 0.209 0.231
+p.Monotaxis grandoculis.Macroalgae          0.117 0.233 0.286
+p.Neoniphon argenteus.Macroalgae            0.175 0.286 0.332
+p.Neoniphon sammara.Macroalgae              0.183 0.290 0.322
+p.Oxycheilinus unifasciatus.Macroalgae      0.140 0.226 0.253
+p.Paracirrhites forsteri.Macroalgae         0.209 0.311 0.343
+p.Paracirrhites hemistictus.Macroalgae      0.235 0.332 0.361
+p.Priacanthus hamrur.Macroalgae             0.134 0.219 0.258
+p.Pterois radiata.Macroalgae                0.165 0.264 0.300
+p.Sargocentron caudimaculatum.Macroalgae    0.170 0.277 0.316
+p.Sargocentron microstoma.Macroalgae        0.194 0.284 0.307
+p.Sargocentron spiniferum.Macroalgae        0.143 0.226 0.257
+p.Sargocentron tiere.Macroalgae             0.146 0.221 0.245
+p.Scomberoides lysan.Macroalgae             0.133 0.210 0.238
+p.Scorpaenopsis papuensis.Macroalgae        0.158 0.253 0.287
+p.Sphyraena barracuda.Macroalgae            0.132 0.221 0.252
+p.Synodus binotatus.Macroalgae              0.179 0.307 0.350
+p.Synodus jaculum.Macroalgae                0.190 0.349 0.388
+p.Tylosurus crocodilus.Macroalgae           0.134 0.229 0.265
+p.Uropterygius xanthopterus.Macroalgae      0.153 0.256 0.300
+p.Variola louti.Macroalgae                  0.138 0.206 0.233
+p.Aphareus furca.POM                        0.687 0.725 0.737
+p.Aulostomus chinensis.POM                  0.640 0.684 0.700
+p.Bothus mancus.POM                         0.395 0.457 0.475
+p.Caranx melampygus.POM                     0.672 0.723 0.737
+p.Caranx papuensis.POM                      0.646 0.716 0.732
+p.Cephalopholis argus.POM                   0.508 0.555 0.571
+p.Cephalopholis leopardus.POM               0.662 0.715 0.731
+p.Cephalopholis sexmaculata.POM             0.661 0.727 0.744
+p.Cephalopholis urodeta.POM                 0.669 0.712 0.723
+p.Cheilio inermis.POM                       0.458 0.519 0.539
+p.Cheilodipterus macrodon.POM               0.636 0.694 0.714
+p.Cirrhitus pinnulatus.POM                  0.567 0.626 0.644
+p.Epibulus insidiator.POM                   0.578 0.625 0.638
+p.Epinephelus fasciatus.POM                 0.631 0.679 0.693
+p.Epinephelus hexagonatus.POM               0.627 0.672 0.685
+p.Epinephelus merra.POM                     0.437 0.496 0.516
+p.Fistularia commersonii.POM                0.611 0.669 0.683
+p.Gnathodentex aureolineatus.POM            0.348 0.409 0.429
+p.Gymnosarda unicolor.POM                   0.668 0.758 0.789
+p.Gymnothorax fimbriatus.POM                0.449 0.506 0.523
+p.Gymnothorax javanicus.POM                 0.518 0.625 0.663
+p.Lethrinus xanthochilus.POM                0.535 0.619 0.645
+p.Lutjanus fulvus.POM                       0.570 0.614 0.628
+p.Lutjanus kasmira.POM                      0.598 0.642 0.654
+p.Lutjanus monostigma.POM                   0.619 0.672 0.689
+p.Monotaxis grandoculis.POM                 0.369 0.434 0.453
+p.Neoniphon argenteus.POM                   0.453 0.528 0.548
+p.Neoniphon sammara.POM                     0.462 0.519 0.537
+p.Oxycheilinus unifasciatus.POM             0.603 0.656 0.671
+p.Paracirrhites forsteri.POM                0.631 0.683 0.700
+p.Paracirrhites hemistictus.POM             0.535 0.587 0.605
+p.Priacanthus hamrur.POM                    0.673 0.751 0.775
+p.Pterois radiata.POM                       0.513 0.569 0.582
+p.Sargocentron caudimaculatum.POM           0.550 0.610 0.631
+p.Sargocentron microstoma.POM               0.484 0.536 0.553
+p.Sargocentron spiniferum.POM               0.562 0.612 0.627
+p.Sargocentron tiere.POM                    0.642 0.683 0.696
+p.Scomberoides lysan.POM                    0.661 0.716 0.731
+p.Scorpaenopsis papuensis.POM               0.604 0.675 0.696
+p.Sphyraena barracuda.POM                   0.602 0.690 0.717
+p.Synodus binotatus.POM                     0.506 0.573 0.593
+p.Synodus jaculum.POM                       0.337 0.402 0.425
+p.Tylosurus crocodilus.POM                  0.605 0.709 0.738
+p.Uropterygius xanthopterus.POM             0.598 0.673 0.694
+p.Variola louti.POM                         0.674 0.732 0.746

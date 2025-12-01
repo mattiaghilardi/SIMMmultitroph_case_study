@@ -1,0 +1,145 @@
+
+#################################################################
+# Summary Statistics
+#################################################################
+
+DIC = 767.2744
+
+                                           Mean    SD  2.5%    5%   25%   50%
+family.SD                                 0.158 0.143 0.005 0.011 0.054 0.120
+species.SD                                0.292 0.072 0.178 0.191 0.240 0.283
+p.global.Cyanobacteria                    0.162 0.048 0.082 0.092 0.127 0.157
+p.global.Macroalgae                       0.271 0.062 0.152 0.170 0.229 0.272
+p.global.POM                              0.567 0.048 0.473 0.492 0.536 0.565
+p.Blenniidae.Cyanobacteria                0.161 0.050 0.077 0.088 0.125 0.157
+p.Chaetodontidae.Cyanobacteria            0.161 0.045 0.085 0.094 0.128 0.158
+p.Monacanthidae.Cyanobacteria             0.165 0.053 0.080 0.090 0.127 0.159
+p.Tetraodontidae.Cyanobacteria            0.159 0.052 0.067 0.082 0.122 0.155
+p.Zanclidae.Cyanobacteria                 0.161 0.051 0.073 0.085 0.125 0.157
+p.Blenniidae.Macroalgae                   0.279 0.072 0.144 0.165 0.230 0.276
+p.Chaetodontidae.Macroalgae               0.288 0.059 0.168 0.187 0.249 0.291
+p.Monacanthidae.Macroalgae                0.269 0.069 0.137 0.158 0.223 0.268
+p.Tetraodontidae.Macroalgae               0.260 0.068 0.126 0.146 0.214 0.261
+p.Zanclidae.Macroalgae                    0.259 0.067 0.125 0.145 0.215 0.259
+p.Blenniidae.POM                          0.560 0.060 0.432 0.461 0.526 0.562
+p.Chaetodontidae.POM                      0.551 0.036 0.478 0.492 0.528 0.551
+p.Monacanthidae.POM                       0.566 0.058 0.450 0.474 0.532 0.565
+p.Tetraodontidae.POM                      0.581 0.063 0.473 0.491 0.541 0.574
+p.Zanclidae.POM                           0.580 0.059 0.471 0.491 0.542 0.575
+p.Amanses scopas.Cyanobacteria            0.171 0.050 0.081 0.092 0.136 0.169
+p.Arothron meleagris.Cyanobacteria        0.150 0.055 0.055 0.066 0.110 0.146
+p.Chaetodon bennetti.Cyanobacteria        0.174 0.068 0.066 0.076 0.125 0.166
+p.Chaetodon citrinellus.Cyanobacteria     0.168 0.061 0.079 0.088 0.125 0.157
+p.Chaetodon ephippium.Cyanobacteria       0.120 0.039 0.049 0.058 0.092 0.117
+p.Chaetodon lunulatus.Cyanobacteria       0.193 0.060 0.095 0.109 0.151 0.185
+p.Chaetodon ornatissimus.Cyanobacteria    0.165 0.047 0.076 0.091 0.132 0.163
+p.Chaetodon pelewensis.Cyanobacteria      0.110 0.037 0.049 0.056 0.083 0.106
+p.Chaetodon quadrimaculatus.Cyanobacteria 0.146 0.043 0.070 0.081 0.115 0.143
+p.Chaetodon reticulatus.Cyanobacteria     0.144 0.043 0.069 0.078 0.113 0.142
+p.Chaetodon trifascialis.Cyanobacteria    0.190 0.064 0.078 0.094 0.144 0.184
+p.Chaetodon ulietensis.Cyanobacteria      0.174 0.060 0.069 0.081 0.131 0.172
+p.Chaetodon unimaculatus.Cyanobacteria    0.157 0.051 0.070 0.083 0.121 0.152
+p.Exallias brevis.Cyanobacteria           0.157 0.050 0.067 0.080 0.121 0.154
+p.Heniochus chrysostomus.Cyanobacteria    0.210 0.062 0.099 0.115 0.166 0.205
+p.Zanclus cornutus.Cyanobacteria          0.155 0.051 0.063 0.076 0.119 0.152
+p.Amanses scopas.Macroalgae               0.258 0.070 0.124 0.144 0.211 0.254
+p.Arothron meleagris.Macroalgae           0.220 0.066 0.104 0.119 0.175 0.213
+p.Chaetodon bennetti.Macroalgae           0.300 0.087 0.138 0.166 0.238 0.296
+p.Chaetodon citrinellus.Macroalgae        0.455 0.107 0.213 0.259 0.391 0.462
+p.Chaetodon ephippium.Macroalgae          0.197 0.052 0.099 0.115 0.161 0.197
+p.Chaetodon lunulatus.Macroalgae          0.367 0.086 0.187 0.221 0.311 0.370
+p.Chaetodon ornatissimus.Macroalgae       0.283 0.067 0.154 0.176 0.238 0.280
+p.Chaetodon pelewensis.Macroalgae         0.248 0.074 0.117 0.132 0.195 0.243
+p.Chaetodon quadrimaculatus.Macroalgae    0.259 0.066 0.134 0.153 0.214 0.259
+p.Chaetodon reticulatus.Macroalgae        0.257 0.065 0.135 0.153 0.213 0.255
+p.Chaetodon trifascialis.Macroalgae       0.310 0.086 0.147 0.172 0.252 0.308
+p.Chaetodon ulietensis.Macroalgae         0.270 0.072 0.133 0.154 0.221 0.267
+p.Chaetodon unimaculatus.Macroalgae       0.318 0.078 0.162 0.185 0.266 0.319
+p.Exallias brevis.Macroalgae              0.298 0.087 0.136 0.158 0.237 0.295
+p.Heniochus chrysostomus.Macroalgae       0.311 0.085 0.149 0.172 0.252 0.313
+p.Zanclus cornutus.Macroalgae             0.223 0.061 0.106 0.125 0.181 0.224
+p.Amanses scopas.POM                      0.571 0.044 0.476 0.495 0.543 0.574
+p.Arothron meleagris.POM                  0.631 0.067 0.489 0.520 0.587 0.633
+p.Chaetodon bennetti.POM                  0.526 0.069 0.375 0.405 0.483 0.528
+p.Chaetodon citrinellus.POM               0.377 0.061 0.254 0.274 0.337 0.378
+p.Chaetodon ephippium.POM                 0.683 0.046 0.593 0.606 0.653 0.685
+p.Chaetodon lunulatus.POM                 0.440 0.047 0.342 0.361 0.411 0.442
+p.Chaetodon ornatissimus.POM              0.552 0.041 0.466 0.484 0.526 0.554
+p.Chaetodon pelewensis.POM                0.643 0.057 0.521 0.541 0.608 0.645
+p.Chaetodon quadrimaculatus.POM           0.595 0.043 0.505 0.522 0.568 0.597
+p.Chaetodon reticulatus.POM               0.599 0.040 0.514 0.530 0.573 0.601
+p.Chaetodon trifascialis.POM              0.501 0.053 0.381 0.409 0.467 0.504
+p.Chaetodon ulietensis.POM                0.555 0.046 0.459 0.478 0.527 0.557
+p.Chaetodon unimaculatus.POM              0.525 0.047 0.426 0.443 0.495 0.527
+p.Exallias brevis.POM                     0.545 0.059 0.421 0.444 0.508 0.550
+p.Heniochus chrysostomus.POM              0.479 0.044 0.387 0.403 0.450 0.483
+p.Zanclus cornutus.POM                    0.622 0.043 0.532 0.547 0.595 0.624
+                                            75%   95% 97.5%
+family.SD                                 0.217 0.445 0.531
+species.SD                                0.331 0.424 0.454
+p.global.Cyanobacteria                    0.191 0.248 0.266
+p.global.Macroalgae                       0.313 0.372 0.392
+p.global.POM                              0.595 0.646 0.666
+p.Blenniidae.Cyanobacteria                0.191 0.254 0.276
+p.Chaetodontidae.Cyanobacteria            0.188 0.242 0.262
+p.Monacanthidae.Cyanobacteria             0.196 0.258 0.281
+p.Tetraodontidae.Cyanobacteria            0.191 0.251 0.271
+p.Zanclidae.Cyanobacteria                 0.193 0.253 0.272
+p.Blenniidae.Macroalgae                   0.325 0.403 0.432
+p.Chaetodontidae.Macroalgae               0.328 0.383 0.398
+p.Monacanthidae.Macroalgae                0.315 0.383 0.411
+p.Tetraodontidae.Macroalgae               0.306 0.370 0.387
+p.Zanclidae.Macroalgae                    0.305 0.365 0.387
+p.Blenniidae.POM                          0.597 0.655 0.681
+p.Chaetodontidae.POM                      0.575 0.609 0.620
+p.Monacanthidae.POM                       0.600 0.660 0.679
+p.Tetraodontidae.POM                      0.616 0.697 0.729
+p.Zanclidae.POM                           0.615 0.683 0.710
+p.Amanses scopas.Cyanobacteria            0.203 0.255 0.273
+p.Arothron meleagris.Cyanobacteria        0.186 0.245 0.264
+p.Chaetodon bennetti.Cyanobacteria        0.217 0.299 0.329
+p.Chaetodon citrinellus.Cyanobacteria     0.199 0.286 0.317
+p.Chaetodon ephippium.Cyanobacteria       0.145 0.190 0.201
+p.Chaetodon lunulatus.Cyanobacteria       0.229 0.306 0.331
+p.Chaetodon ornatissimus.Cyanobacteria    0.195 0.247 0.266
+p.Chaetodon pelewensis.Cyanobacteria      0.131 0.177 0.195
+p.Chaetodon quadrimaculatus.Cyanobacteria 0.174 0.220 0.240
+p.Chaetodon reticulatus.Cyanobacteria     0.172 0.222 0.237
+p.Chaetodon trifascialis.Cyanobacteria    0.231 0.303 0.328
+p.Chaetodon ulietensis.Cyanobacteria      0.213 0.280 0.298
+p.Chaetodon unimaculatus.Cyanobacteria    0.189 0.250 0.273
+p.Exallias brevis.Cyanobacteria           0.190 0.246 0.263
+p.Heniochus chrysostomus.Cyanobacteria    0.249 0.322 0.341
+p.Zanclus cornutus.Cyanobacteria          0.188 0.242 0.260
+p.Amanses scopas.Macroalgae               0.303 0.378 0.406
+p.Arothron meleagris.Macroalgae           0.262 0.334 0.363
+p.Chaetodon bennetti.Macroalgae           0.354 0.454 0.485
+p.Chaetodon citrinellus.Macroalgae        0.530 0.617 0.642
+p.Chaetodon ephippium.Macroalgae          0.232 0.286 0.303
+p.Chaetodon lunulatus.Macroalgae          0.426 0.503 0.529
+p.Chaetodon ornatissimus.Macroalgae       0.329 0.397 0.415
+p.Chaetodon pelewensis.Macroalgae         0.296 0.379 0.406
+p.Chaetodon quadrimaculatus.Macroalgae    0.303 0.369 0.393
+p.Chaetodon reticulatus.Macroalgae        0.301 0.366 0.391
+p.Chaetodon trifascialis.Macroalgae       0.368 0.454 0.484
+p.Chaetodon ulietensis.Macroalgae         0.318 0.392 0.416
+p.Chaetodon unimaculatus.Macroalgae       0.371 0.443 0.469
+p.Exallias brevis.Macroalgae              0.354 0.444 0.478
+p.Heniochus chrysostomus.Macroalgae       0.369 0.452 0.481
+p.Zanclus cornutus.Macroalgae             0.262 0.324 0.343
+p.Amanses scopas.POM                      0.603 0.637 0.650
+p.Arothron meleagris.POM                  0.678 0.739 0.755
+p.Chaetodon bennetti.POM                  0.575 0.631 0.652
+p.Chaetodon citrinellus.POM               0.418 0.476 0.496
+p.Chaetodon ephippium.POM                 0.714 0.757 0.767
+p.Chaetodon lunulatus.POM                 0.472 0.511 0.524
+p.Chaetodon ornatissimus.POM              0.581 0.615 0.625
+p.Chaetodon pelewensis.POM                0.682 0.730 0.746
+p.Chaetodon quadrimaculatus.POM           0.623 0.663 0.673
+p.Chaetodon reticulatus.POM               0.626 0.661 0.672
+p.Chaetodon trifascialis.POM              0.537 0.582 0.594
+p.Chaetodon ulietensis.POM                0.587 0.624 0.636
+p.Chaetodon unimaculatus.POM              0.557 0.596 0.609
+p.Exallias brevis.POM                     0.586 0.634 0.652
+p.Heniochus chrysostomus.POM              0.510 0.547 0.560
+p.Zanclus cornutus.POM                    0.652 0.691 0.704
