@@ -1,13 +1,15 @@
 #' Fitting mixing models with MixSIAR
 #'
 #' @param consumers_clean List of paths to consumer csv files
-#' @param sources Paths to sources csv file
-#' @param TDF Paths to TDF csv file
+#' @param sources Path to sources csv file
+#' @param TDF Path to TDF csv file
 #' @param run The `run` argument passed to [run_model_parallel()]
-#' @param alpha.prior Dirichlet prior on p.global (i.e. global source proportions) (default = 1, uninformative)
-#' @param TDF_source A string; "Post" or "McCutchan", the TDF used of trophic position estimation
-#' @param guild Trophic guilds for which models should be fitted. Either "all"
-#' to fit models to all trophic guilds, or one or more of 
+#' @param alpha.prior Dirichlet prior on p.global (i.e. global source proportions).
+#' Must be a numeric vector of length 1 or equal to the number of sources,
+#' or a named list of numeric vectors, one for each guild (default = 1, uninformative)
+#' @param TDF_source A string; "Post" or "McCutchan", the TDF used for trophic position estimation
+#' @param guild Trophic guilds for which models should be fitted. 
+#' Either "all" to fit models to all trophic guilds, or one or more of 
 #' "macrocarnivores", "microphages", "herbivores-detritivores", "planktivores",
 #' "invertivores-benthic", "invertivores-sessile", "omnivores-benthic", "omnivores-pelagic"
 #' 
@@ -25,7 +27,7 @@ run_MixSIAR_models <- function(consumers_clean,
   TDF_source <- rlang::arg_match(TDF_source)
   
   # Trophic guilds
-  guild_names <- names(consumers_clean$path[[TDF_source]]) |>
+  guild_names <- names(consumers_clean[[TDF_source]]) |>
     purrr::set_names()
   
   # Check guild names
@@ -105,7 +107,7 @@ run_MixSIAR_models <- function(consumers_clean,
     function(i) 
       purrr::map(
         model_types[[i]], 
-        ~MixSIAR::load_mix_data(filename = consumers_clean$path[[TDF_source]][[i]], 
+        ~MixSIAR::load_mix_data(filename = consumers_clean[[TDF_source]][[i]], 
                                 iso_names = c("d13C", "d15N"), 
                                 factors = .x[["factors"]], 
                                 fac_random = .x[["fac_random"]], 
@@ -115,14 +117,14 @@ run_MixSIAR_models <- function(consumers_clean,
   )
   
   # Load source data - same for all trophic guilds
-  source <- MixSIAR::load_source_data(filename = sources$sources$path, 
+  source <- MixSIAR::load_source_data(filename = sources, 
                                       source_factors = NULL,
                                       conc_dep = FALSE, 
                                       data_type = "raw", 
                                       mix[[1]][["full"]]) # mix only used to check isotope names
   
   # Load discrimination data - same for all trophic guilds
-  discr <- MixSIAR::load_discr_data(filename = TDF$path,
+  discr <- MixSIAR::load_discr_data(filename = TDF,
                                     mix[[1]][["full"]]) # mix only used to check isotope names
   
   # Write models
@@ -134,7 +136,7 @@ run_MixSIAR_models <- function(consumers_clean,
     function(i) 
       purrr::map(
         model_types[[i]],
-        ~ here::here("mixing_models", paste0("MixSIAR_", i, "_", .x[["name"]], ".txt"))
+        ~ paste0("mixing_models/MixSIAR_", i, "_", .x[["name"]], ".txt")
       )
   )
   resid_err <- resid_err
@@ -152,6 +154,50 @@ run_MixSIAR_models <- function(consumers_clean,
       )
   )
   
+  # Priors
+  
+  # Check priors
+  # Class must be numeric or list
+  prior_class <- class(alpha.prior)
+  prior_class %in% c("numeric", "list") ||
+    cli::cli_abort(c(
+      "{.var alpha.prior} must be a numeric vector or a list of numeric vectors."
+    ))
+  # Numeric must be of length 1 or same as the sources
+  if (prior_class == "numeric") {
+    length(alpha.prior) %in% c(1, source$n.sources) ||
+      cli::cli_abort(c(
+        "{.var alpha.prior} must be a numeric vector of length 1 or equal to the number of sources."
+      ))
+  } else {
+    # If list, must be the same length as the guilds
+    length(alpha.prior) == length(guild_names) ||
+      cli::cli_abort(c(
+        "{.var alpha.prior} must be a list of numeric vectors of length equal to the number of guilds."
+      ))
+    # Names must be the same as the guilds
+    all(names(alpha.prior) == guild_names) ||
+      cli::cli_abort(c(
+        "{.var alpha.prior} must be a named list with names equal to the guilds."
+      ))
+    # Each element must be a numeric vector of length 1 or same as the sources
+    all(sapply(alpha.prior, function(i) is.numeric(i))) & 
+      all(sapply(alpha.prior, function(i) length(i) %in% c(1, source$n.sources))) ||
+      cli::cli_abort(c(
+        "{.var alpha.prior} must be a list of numeric vectors each of length 1 or equal to the number of sources."
+      ))
+  }
+  
+  cli::cli_inform("Setting priors")
+  
+  # Make prior list if a single vector is supplied
+  if (is.numeric(alpha.prior)) {
+    # Same prior for all guilds
+    priors <- purrr::map(guild_names, ~ alpha.prior)
+  } else {
+    priors <- alpha.prior
+  }
+  
   # Fit models
   cli::cli_inform("Fitting models")
   
@@ -167,8 +213,8 @@ run_MixSIAR_models <- function(consumers_clean,
                                     source, 
                                     discr, 
                                     model_names[[i]][[j[["name"]]]], 
-                                    alpha.prior = alpha.prior,
-                                    seed = 123)
+                                    alpha.prior = priors[[i]],
+                                    jags.seed = 123) # default seed
           cli::cli_progress_update()
           fit
         }
@@ -181,28 +227,18 @@ run_MixSIAR_models <- function(consumers_clean,
        discr = discr)
 }
 
-#' Save combined isospace plot
+#' Make combined isospace plot
 #'
 #' @param mix Mixture data. List returned by [run_MixSIAR_models()]
 #' @param source Source data. List returned by [run_MixSIAR_models()]
 #' @param discr Discrimination data. List returned by [run_MixSIAR_models()]
-#' @param filename Name of file to save
-#' @param TDF_source A string; "Post" or "McCutchan", the TDF used of trophic position estimation
-#' @param height Plot height
-#' @param width Plot width
-#' @param units Units for height and width
-#' @param type File type (default to png)
+#' @param TDF_source A string; "Post" or "McCutchan", the TDF used for trophic position estimation
 #' 
-#' @return Path to the saved file
+#' @return A patchwork object
 plot_isospace_mixsiar <- function(mix,
                                   source,
-                                  discr,
-                                  filename = "isospace", 
-                                  TDF_source = c("Post", "McCutchan"),
-                                  width = 18, 
-                                  height = 20, 
-                                  units = "cm", 
-                                  type = "png") {
+                                  discr, 
+                                  TDF_source = c("Post", "McCutchan")) {
   
   TDF_source <- rlang::arg_match(TDF_source)
   
@@ -221,34 +257,36 @@ plot_isospace_mixsiar <- function(mix,
                                color_sources = "firebrick")
   )
   
-  patchwork::wrap_plots(
+  final_plot <- patchwork::wrap_plots(
     purrr::map(
       1:length(isospace), 
-      ~ isospace[[.x]] +
-        ggtitle(names(isospace)[.x]) +
-        guides(color = guide_legend(label.theme = element_text(size = 6),
-                                    keywidth = 0.1,
-                                    keyheight = 0.1,
-                                    direction = "vertical",
-                                    default.unit = "line",
-                                    ncol = 1)) +
-        theme(plot.title = element_text(size = 8,
-                                        face = "bold",
-                                        hjust = 0.5),
-              legend.position = "right", 
-              legend.box.spacing = unit(0, "lines"),
-              axis.title = element_text(size = 8),
-              axis.text = element_text(size = 8)) +
-      scale_color_viridis_d(breaks = levels(factor(mix[[.x]][["full"]]$FAC[[1]]$values)),
-                            labels = mix[[.x]][["full"]]$FAC[[1]]$labels)
-    ), 
-    ncol = 2)
+      function(.x) {
+        guild_name <- names(isospace)[.x]
+        isospace[[.x]]$data <- isospace[[.x]]$data |> 
+          mutate(trophic_guild = guild_name)
+        
+        isospace[[.x]] +
+          facet_wrap(~trophic_guild) +
+          guides(color = guide_legend(label.theme = element_text(size = 6),
+                                      keywidth = 0.1,
+                                      keyheight = 0.1,
+                                      direction = "vertical",
+                                      default.unit = "line",
+                                      ncol = 1)) +
+          theme(strip.text = element_text(face = "bold"),
+                legend.position = "right", 
+                legend.box.spacing = unit(0, "lines"),
+                axis.title = element_text(size = 8),
+                axis.text = element_text(size = 8)) +
+          ggthemes::scale_color_tableau(palette = "Tableau 20",
+                                        breaks = levels(factor(mix[[.x]][["full"]]$FAC[[1]]$values)),
+                                        labels = mix[[.x]][["full"]]$FAC[[1]]$labels)
+        }
+      ), 
+    ncol = 2) + 
+    patchwork::plot_layout(axes = "collect")
   
-  path <- here::here("output", "figures", paste0(filename, "_", TDF_source, ".", type))
-  
-  ggsave(path, width = width, height = height, units = units)
-  
-  return(path)
+  return(final_plot)
 }
 
 #' Best MixSIAR model selection with LOO
@@ -288,23 +326,24 @@ select_best_models <- function(models) {
 #'
 #' @param best_models Output from [select_best_models()]
 #' @param filename Name of csv file which will be saved in `/output/tables`
-#' @param TDF_source A string; "Post" or "McCutchan", the TDF used of trophic position estimation
+#' @param TDF_source A string; "Post" or "McCutchan", the TDF used for trophic position estimation
 #'
-#' @return A data frame
+#' @return Path to the csv file
 make_model_comparison_table <- function(best_models, 
                                         filename = "summary_MixSIAR_comparison", 
                                         TDF_source = c("Post", "McCutchan")) {
   
   TDF_source <- rlang::arg_match(TDF_source)
   
+  # Make table
   out <- purrr::map(best_models, 
                     ~ .x$loo_summary |> 
                       mutate(across(where(is.double), function(i) round(i, 2)))) |> 
     bind_rows(.id = "trophic_guild")
   
-  path <- here::here("output", "tables", paste0(filename, "_", TDF_source, ".csv"))
-  
-  write_csv(out, path)
+  # Save table
+  path <- paste0("output/tables/", filename, "_", TDF_source, ".csv")
+  readr::write_csv(out, path)
   
   return(path)
 }
@@ -370,7 +409,7 @@ set_output_options <- function(summary_save = FALSE,
 #' @param best_models Output from [select_best_models()]
 #' @param mix Mixture data used for the best models. List returned by [run_MixSIAR_models()]
 #' @param source Source data used for the best models. List returned by [run_MixSIAR_models()]
-#' @param TDF_source A string; "Post" or "McCutchan", the TDF used of trophic position estimation
+#' @param TDF_source A string; "Post" or "McCutchan", the TDF used for trophic position estimation
 #'
 #' @return Paths to the saved txt files
 save_MixSIAR_stats_diag <- function(best_models, 
@@ -380,22 +419,31 @@ save_MixSIAR_stats_diag <- function(best_models,
   
   TDF_source <- rlang::arg_match(TDF_source)
   
+  # Main output folder
   folder <- "output/MixSIAR"
+  
+  # Save files
   out <- purrr::map(
     names(best_models),
-    function(x) {
-      model_type <- best_models[[x]]$name_best_model
-      output_JAGS_custom(best_models[[x]]$best_model, 
-                         mix[[x]][[model_type]], 
+    function(.x) {
+      # Get best model name
+      model_type <- best_models[[.x]]$name_best_model
+      # Make paths
+      path_stats <- paste0(folder, "/summary_statistics/", .x, "_", TDF_source)
+      path_diag <- paste0(folder, "/diagnostics/", .x, "_", TDF_source)
+      # Save
+      output_JAGS_custom(best_models[[.x]]$best_model, 
+                         mix[[.x]][[model_type]], 
                          source,
                          output_options = set_output_options(
                            summary_save = TRUE,
-                           summary_name = paste0(folder, "/summary_statistics/", x, "_", TDF_source),
+                           summary_name = path_stats,
                            diag_save = TRUE,
-                           diag_name = paste0(folder, "/diagnostics/", x, "_", TDF_source),
+                           diag_name = path_diag,
                            sup_post_resid = TRUE))
-      c(here::here(folder, "summary_statistics", paste0(x, "_", TDF_source, ".txt")),
-        here::here(folder, "diagnostics", paste0(x, "_", TDF_source, ".txt")))
+      # Return paths
+      return(c(paste0(path_stats, ".txt"), 
+               paste0(path_diag, ".txt")))
     }
   )
   
@@ -414,14 +462,15 @@ make_MixSIAR_stats <- function(best_models,
                                mix, 
                                source) {
   
-  purrr::map(
+  # Get statistics for each trophic guild
+  stats_list <- purrr::map(
     names(best_models) |> 
       purrr::set_names(),
-    function(x) {
-      model_type <- best_models[[x]]$name_best_model
+    function(.x) {
+      model_type <- best_models[[.x]]$name_best_model
       capture.output(
-        stats <- MixSIAR::output_stats(best_models[[x]]$best_model, 
-                                       mix[[x]][[model_type]], 
+        stats <- MixSIAR::output_stats(best_models[[.x]]$best_model, 
+                                       mix[[.x]][[model_type]], 
                                        source, 
                                        output_options = set_output_options(
                                          summary_save = FALSE,
@@ -430,8 +479,13 @@ make_MixSIAR_stats <- function(best_models,
       stats |>
         as.data.frame() |>
         tibble::rownames_to_column("parameter")
-      }) |>
+      })
+  
+  # Merge into a single data frame
+  stats_combined <- stats_list |> 
     bind_rows(.id = "trophic_guilds")
+  
+  return(stats_combined)
 }
 
 #' Save summary table with proportions for each trophic guild, family and species
@@ -439,7 +493,7 @@ make_MixSIAR_stats <- function(best_models,
 #' @param MixSIAR_stats Output from [make_MixSIAR_stats()]
 #' @param consumers_clean List of paths to consumer csv files
 #' @param filename Name of csv file which will be saved in `/output/tables`
-#' @param TDF_source A string; "Post" or "McCutchan", the TDF used of trophic position estimation
+#' @param TDF_source A string; "Post" or "McCutchan", the TDF used for trophic position estimation
 #'
 #' @return Path to the saved csv file
 make_MixSIAR_summary_table <- function(MixSIAR_stats,
@@ -449,8 +503,14 @@ make_MixSIAR_summary_table <- function(MixSIAR_stats,
   
   TDF_source <- rlang::arg_match(TDF_source)
   
-  consumers <- consumers_clean$data[[TDF_source]]
+  # Consumers
+  consumers <- purrr::map(
+    consumers_clean[[TDF_source]],
+    ~ readr::read_csv(.x)
+  ) |> 
+    bind_rows()
   
+  # Make table
   out <- MixSIAR_stats |>
     dplyr::filter(startsWith(parameter, "p.")) |>
     dplyr::mutate(parameter = gsub("p\\.", "", parameter)) |>
@@ -467,8 +527,9 @@ make_MixSIAR_summary_table <- function(MixSIAR_stats,
     dplyr::select("Trophic\nguild" = trophic_guilds, Family = family, Species = species, source, value) |>
     tidyr::pivot_wider(names_from = source, values_from = value)
   
-  path <- here::here("output", "tables", paste0(filename, "_", TDF_source, ".csv"))
-  write_csv(out, path)
+  # Save table
+  path <- paste0("output/tables/", filename, "_", TDF_source, ".csv")
+  readr::write_csv(out, path)
   
   return(path)
 }
@@ -476,41 +537,82 @@ make_MixSIAR_summary_table <- function(MixSIAR_stats,
 #' Make combined plot with isospace and relative source contributions
 #' to each trophic guild
 #'
-#' @param consumers_clean List of paths to consumer csv files
-#' @param models Output from [run_MixSIAR_models()]
 #' @param best_models Output from [select_best_models()]
-#' @param TDF_source A string; "Post" or "McCutchan", the TDF used of trophic position estimation
-#' @param colors Vector of colors with length equal to the number of trophic guilds
-#' @param filename Name of the file to save
-#' @param type File type (default to png)
+#' @param mix Mixture data. List returned by [run_MixSIAR_models()]
+#' @param source Source data. List returned by [run_MixSIAR_models()]
+#' @param discr Discrimination data. List returned by [run_MixSIAR_models()]
+#' @param combine_sources Logical; if sources should be combined
+#' @param prior_list Only if `combine_sources = TRUE`. Output from [prepare_prior_list()]
+#' @param groups Only if `combine_sources = TRUE`. Named list; which sources to combine, 
+#' and what names to give the new combined sources
+#' @param colours Vector of colours to use for sources, plotted in alphabetic order.
+#' If NULL (default), the default ggplot2 colour palette will be used
 #'
-#' @return Path to the saved file
-plot_isospace_and_rel_contributions <- function(consumers_clean, 
-                                                models, 
-                                                best_models, 
-                                                TDF_source = c("Post", "McCutchan"),
-                                                colors = RColorBrewer::brewer.pal(length(consumers_clean$path[[TDF_source]]), "Dark2"), 
-                                                filename = "source_contribution_by_trophic_guild",
-                                                type = "png") {
+#' @return A patchwork object
+plot_isospace_and_rel_contributions <- function(best_models,
+                                                mix, 
+                                                source,
+                                                discr,
+                                                combine_sources = FALSE,
+                                                prior_list = NULL,
+                                                groups = NULL,
+                                                colours = NULL) {
   
-  TDF_source <- rlang::arg_match(TDF_source)
+  ## Checks
   
-  mix <- consumers_clean$data[[TDF_source]]
+  # Get sources names and number
+  n_sources <- source$n.sources
+  source_names <- source$source_names
   
-  source <- data.frame(source = models$source$source_names) |>
-    bind_cols(models$source$S_MU |> 
+  # Check combined sources
+  if (combine_sources) {
+    is.list(groups) ||
+      cli::cli_abort("If {.arg combine_sources} is TRUE, {.arg groups} must be a named list.")
+    
+    all(source_names %in% unlist(groups)) ||
+      cli::cli_abort(c("{.arg groups} does not include all initial sources.",
+                       "Please correct source groups."))
+    
+    # New source names
+    source_names <- names(groups)
+    n_sources <- length(groups)
+  }
+  
+  # Check colours
+  if (!is.null(colours)) {
+    length(colours) == n_sources ||
+      cli::cli_abort(
+        c("{.arg colours} length incorrect.", 
+          "You provided {.value {length(colours)}} colours, but there are {.value {n_sources}} sources.")
+      )
+  }
+  
+  ## Prepare data
+  
+  # Consumers
+  consumers <- purrr::map(
+    mix,
+    ~ .x[[1]][["data"]]
+  ) |> 
+    bind_rows()
+  
+  # Sources
+  sources <- data.frame(source = source$source_names) |>
+    bind_cols(source$S_MU |> 
                 as.data.frame() |> 
                 dplyr::rename_with(~ paste("mean", .x, sep = "_"), starts_with("d"))) |>
-    bind_cols(models$source$S_SIG |> 
+    bind_cols(source$S_SIG |> 
                 as.data.frame() |> 
                 dplyr::rename_with(~ paste("sd", .x, sep = "_"), starts_with("d")))
   
-  tdf <- models$discr$mu |> 
+  # TDFs
+  tdf <- discr$mu |> 
     as.data.frame() |> 
     tibble::rownames_to_column("source") |> 
-    bind_cols(models$discr$sig2)
+    bind_cols(discr$sig2)
   
-  source_tdf_corrected <- source |>
+  # Source + TDF
+  source_tdf_corrected <- sources |>
     left_join(tdf, by = "source") |>
     mutate(mean_d13C = mean_d13C + Meand13C,
            mean_d15N = mean_d15N + Meand15N,
@@ -518,32 +620,33 @@ plot_isospace_and_rel_contributions <- function(consumers_clean,
            sd_d15N = sqrt(sd_d15N^2 + SDd15N)) |>
     select(1:5)
   
-  p <- purrr::map2(
-    .x = 1:length(names(models$mix)),
-    .y = colors,
-    function(.x, .y) {
-      guild <- names(models$mix)[.x]
+  if (combine_sources) {
+    source_tdf_corrected <- source_tdf_corrected |> 
+      bind_rows(data.frame(source = "Algae (combined)"))
+  }
+  
+  ## Plot isospace + source contributions for each trophic guild
+  
+  # Colours for trophic guilds
+  guild_colours = RColorBrewer::brewer.pal(length(mix), "Dark2")
+  
+  p <- purrr::map(
+    1:length(mix),
+    function(.x) {
       
+      # Guild name
+      guild <- names(mix)[.x]
+      
+      # Isospace
       p1 <- source_tdf_corrected |>
         ggplot(aes(x = mean_d13C, 
                    y = mean_d15N)) +
-        geom_point(data = mix |>
+        # Add all consumers
+        geom_point(data = consumers |>
                      select(mean_d13C = d13C,
                             mean_d15N = d15N),
-                   color = "grey",
+                   colour = "grey80",
                    alpha = 0.2) +
-        geom_point(data = mix |>
-                     filter(trophic_guild == guild) |>
-                     rename(mean_d13C = d13C,
-                            mean_d15N = d15N),
-                   fill = .y,
-                   alpha = 0.6,
-                   shape = 21) +
-        geom_linerange(aes(ymin = mean_d15N - sd_d15N,
-                           ymax = mean_d15N + sd_d15N)) +
-        geom_linerange(aes(xmin = mean_d13C - sd_d13C,
-                           xmax = mean_d13C + sd_d13C)) +
-        geom_point(aes(shape = source), size = 2.5, show.legend = FALSE) +
         facet_wrap(~trophic_guild) +
         theme_bw() +
         labs(x = "&delta;<sup>13</sup>C (&permil;)",
@@ -551,40 +654,131 @@ plot_isospace_and_rel_contributions <- function(consumers_clean,
         theme(axis.title.x = ggtext::element_markdown(size = 10),
               axis.title.y = ggtext::element_markdown(size = 10), 
               strip.text = element_text(face = "bold", size = 10),
-              plot.margin = margin(1, 0, 1, 1, "pt"))
+              legend.position = "bottom", 
+              legend.title.position = "left",
+              legend.title = element_text(hjust = 0.5),plot.margin = margin(1, 0, 1, 1, "pt"))
       
-      R2jags::attach.jags(best_models[[guild]]$best_model)
+      # Adjust sources and consumers colours and shape  if combined sources
+      if (combine_sources) {
+        p1 <- p1 + 
+          # Highlight consumers of this guild
+          geom_point(data = consumers |>
+                       filter(trophic_guild == guild) |>
+                       rename(mean_d13C = d13C,
+                              mean_d15N = d15N),
+                     fill = "white",
+                     alpha = 0.6,
+                     shape = 21) +
+          # Add sources
+          geom_linerange(aes(ymin = mean_d15N - sd_d15N,
+                             ymax = mean_d15N + sd_d15N,
+                             colour = source),
+                         na.rm = TRUE) +
+          geom_linerange(aes(xmin = mean_d13C - sd_d13C,
+                             xmax = mean_d13C + sd_d13C,
+                             colour = source),
+                         na.rm = TRUE) +
+          geom_point(aes(shape = source, fill = source), 
+                     size = 2.5,
+                     colour = "black",
+                     na.rm = TRUE) +
+          scale_shape_manual(values = 21:25) + 
+          scale_fill_manual(values = c("#117733", "#000000", "#999933", "#56B4E9", "#D55E00"),
+                            aesthetics = c("colour", "fill")) +
+          labs(fill = "Source",
+               colour = "Source",
+               shape = "Source")
+      } else {
+        p1 <- p1 + 
+          # Highlight consumers of this guild
+          geom_point(data = consumers |>
+                       filter(trophic_guild == guild) |>
+                       rename(mean_d13C = d13C,
+                              mean_d15N = d15N),
+                     fill = guild_colours[.x],
+                     alpha = 0.6,
+                     shape = 21) +
+          # Add sources
+          geom_linerange(aes(ymin = mean_d15N - sd_d15N,
+                             ymax = mean_d15N + sd_d15N)) +
+          geom_linerange(aes(xmin = mean_d13C - sd_d13C,
+                             xmax = mean_d13C + sd_d13C)) +
+          geom_point(aes(shape = source), 
+                     size = 2.5,
+                     fill = "white") +
+          scale_shape_manual(values = 22:25) +
+          labs(shape = "Source")
+      }
       
-      p2 <- p.global |> 
-        as.data.frame() |> 
-        rlang::set_names(source_tdf_corrected$source) |>
-        tidyr::pivot_longer(cols = everything(), 
-                            names_to = "source", 
-                            values_to = "value") |>
-        ggplot(aes(x = source, y = value, shape = source)) +
-        ggdist::stat_gradientinterval(aes(fill_ramp = after_stat(y/max(y))),
-                                      point_interval = "median_qi",
-                                      .width = c(0.5, 0.95),
-                                      point_size = 2.5,
-                                      fill_type = "gradient", 
-                                      scale = 0.7) + 
-        ggdist::scale_fill_ramp_continuous(guide = ggdist::guide_rampbar(title = "Normalised density")) +
-        labs(y = "Relative contribution",
-             shape = "Source") +
+      # Source relative contributions
+      # Get posteriors
+      model_type <- best_models[[.x]]$name_best_model
+      if (combine_sources) {
+        combined <- combine_sources_custom(best_models[[.x]]$best_model, 
+                                           mix[[.x]][[model_type]], 
+                                           source, 
+                                           alpha.prior = prior_list[[.x]], 
+                                           groups = groups,
+                                           plot_prior = FALSE)
+        post <- combined$post
+      } else {
+        post <- best_models[[.x]]$best_model$BUGSoutput$sims.matrix
+      }
+      
+      # Make data frame with source names
+      source_labels <- data.frame(source_index = 1:n_sources,
+                                  source = source_names)
+      
+      # Wrangle posterior
+      p2_data <- post |> 
+        as.data.frame() |>
+        dplyr::select(dplyr::starts_with("p.global")) |> 
+        tidyr::pivot_longer(dplyr::everything(), names_to = "parameter") |> 
+        mutate(source_index = stringr::str_extract(parameter, "(?<=\\[).*?(?=\\])"), 
+               source_index = as.numeric(source_index)) |> 
+        left_join(source_labels, by = "source_index")
+      
+      # Plot
+      p2 <- p2_data |> 
+        ggplot(aes(x = source, y = value)) +
+        labs(y = "Relative contribution") +
         theme_classic() +
         theme(axis.title.y = element_text(size = 10),
               axis.title.x = element_blank(),
               axis.line.x = element_blank(),
               axis.ticks.x = element_blank(),
               axis.text.x = element_blank(),
-              legend.position = "bottom", 
-              legend.title.position = "top",
-              legend.title = element_text(hjust = 0.5),
-              plot.margin = margin(1, 1, 1, 0, "pt"))
+              plot.margin = margin(1, 1, 1, 0, "pt")) + 
+        coord_cartesian(clip = "off")
       
+      # Add sources
+      if (combine_sources) {
+        p2 <- p2 +
+          ggdist::stat_pointinterval(aes(colour = source, fill = source, shape = source),
+                                     .width = c(0.5, 0.95), 
+                                     point_colour = "black",
+                                     stroke = 0.5,
+                                     show.legend = FALSE) +
+          scale_shape_manual(values = c(21, 22, 24))
+      } else {
+        p2 <- p2 +
+          ggdist::stat_pointinterval(aes(shape = source),
+                                     .width = c(0.5, 0.95), 
+                                     fill = "white",
+                                     show.legend = FALSE) +
+          scale_shape_manual(values = 22:25)
+      }
+      
+      if (combine_sources & !is.null(colours)) {
+        p2 <- p2 +
+          scale_colour_manual(values = colours, aesthetics = c("colour", "fill"))
+      }
+      
+      # Remove title x axis p1
       if (.x %in% 1:6) p1 <- p1 + theme(axis.title.x = element_blank())
       
-      if (.x %in% seq(1, length(unique(mix$trophic_guild)), by = 2)) {
+      # Adjust y axes position and limits and combine plots
+      if (.x %in% seq(1, length(mix), by = 2)) {
         p1 <- p1 + scale_y_continuous(position = "right")
         p2 <- p2 + scale_y_continuous(limits = c(0, 1), 
                                       expand = c(0, 0), 
@@ -600,130 +794,251 @@ plot_isospace_and_rel_contributions <- function(consumers_clean,
     }
   )
   
+  ## Combine all plots
   p <- patchwork::wrap_plots(p, ncol = 2) + 
     patchwork::plot_layout(guides = "collect") & 
     theme(legend.position = 'bottom')
   
-  path <- here::here("output", 
-                     "figures", 
-                     paste0(filename, "_", TDF_source, ".", type))
-  
-  ggsave(path, p, width = 7, height = 9)
-  
-  path
+  return(p)
 }
 
 #' Plot relative source contributions for each species, family and trophic guild
 #'
-#' @param stats_df Output from [make_MixSIAR_stats()]
-#' @param TDF_source A string; "Post" or "McCutchan", the TDF used of trophic position estimation
+#' @param best_models Output from [select_best_models()]
+#' @param mix Mixture data. List returned by [run_MixSIAR_models()]
+#' @param source Source data. List returned by [run_MixSIAR_models()]
+#' @param combine_sources Logical; if sources should be combined
+#' @param prior_list Only if `combine_sources = TRUE`. Output from [prepare_prior_list()]
+#' @param groups Only if `combine_sources = TRUE`. Named list; which sources to combine, 
+#' and what names to give the new combined sources
+#' @param colours Vector of colours to use for sources, plotted in alphabetic order.
+#' If NULL (default), the default ggplot2 colour palette will be used
+#' @param TDF_source A string; "Post" or "McCutchan", the TDF used for trophic position estimation
 #' @param filename Name of the file to save
-#' @param type File type (default to png)
+#' @param filetype Type of the file to save (default to png)
 #' 
-#' @return Path to the saved files
-plot_all_rel_contribution <- function(stats_df,
+#' @return A list of paths to saved plots
+plot_all_rel_contribution <- function(best_models,
+                                      mix,
+                                      source,
+                                      combine_sources = FALSE,
+                                      prior_list = NULL,
+                                      groups = NULL,
+                                      colours = NULL,
                                       TDF_source = c("Post", "McCutchan"),
                                       filename = "rel_contributions_",
-                                      type = "png") {
+                                      filetype = "png") {
   
   TDF_source <- rlang::arg_match(TDF_source)
   
-  p <- purrr::map(
-    unique(stats_df$trophic_guilds) |>
+  # Get sources names and number
+  n_sources <- source$n.sources
+  source_names <- source$source_names
+  
+  # Check combined sources
+  if (combine_sources) {
+    is.list(groups) ||
+      cli::cli_abort("If {.arg combine_sources} is TRUE, {.arg groups} must be a named list.")
+    
+    all(source_names %in% unlist(groups)) ||
+      cli::cli_abort(c("{.arg groups} does not include all initial sources.",
+                       "Please correct source groups."))
+    
+    # New source names
+    source_names <- names(groups)
+    n_sources <- length(groups)
+  }
+  
+  # Check colours
+  if (!is.null(colours)) {
+    length(colours) == n_sources ||
+      cli::cli_abort(
+        c("{.arg colours} length incorrect.", 
+          "You provided {.value {length(colours)}} colours, but there are {.value {n_sources}} sources.")
+      )
+  }
+  
+  # Plot point interval for each species, family and trophic guild
+  plots <- purrr::map(
+    names(mix) |>
       rlang::set_names(),
-    ~ stats_df |>
-      dplyr::filter(trophic_guilds == .x & startsWith(parameter, "p.")) |>
-      dplyr::mutate(parameter = gsub("p\\.", "", parameter)) |>
-      tidyr::separate_wider_delim(parameter, delim = ".", names = c("var", "source")) |>
-      mutate(var_type = case_when(var == "global" ~ "",
-                                  stringr::str_detect(var, " ") ~ "species",
-                                  .default = "family"),
-             var_type = factor(var_type, levels = c("", "family", "species")),
-             var = ifelse(var_type == "species", glue::glue("<i>{var}</i>"), var)) |>
-      ggplot(aes(x = `50%`, xmin = `2.5%`, xmax = `97.5%`, y = var, color = source)) +
-      geom_pointrange(position = position_dodge(width = 0.7), fatten = 2) +
-      scale_color_viridis_d() +
-      facet_grid(rows = vars(var_type),
-                 scales = "free_y",
-                 space = "free") +
-      labs(x = "Relative contribution",
-           title = .x) + 
-      theme_bw() +
-      theme(axis.title.y = element_blank(),
-            axis.title.x = element_text(size = 9),
-            axis.text.y = ggtext::element_markdown(size = 7),
-            axis.text.x = element_text(size = 7),
-            plot.title = element_text(size = 12, hjust = 0.5, face = "bold"),
-            legend.position = "bottom", 
-            legend.title = element_text(size = 9),
-            legend.text = element_text(size = 8),
-            legend.box.spacing = unit(0, "lines"))
+    function(.x) {
+      # Get posteriors and number and names of sources
+      model_type <- best_models[[.x]]$name_best_model
+      if (combine_sources) {
+        combined <- combine_sources_custom(best_models[[.x]]$best_model, 
+                                           mix[[.x]][[model_type]], 
+                                           source, 
+                                           alpha.prior = prior_list[[.x]], 
+                                           groups = groups,
+                                           plot_prior = FALSE)
+        post <- combined$post
+      } else {
+        post <- best_models[[.x]]$best_model$BUGSoutput$sims.matrix
+      }
+      
+      # Make data frame with labels of each factor variable
+      fac1_labels <- mix[[.x]][[model_type]]$FAC[[1]]$labels
+      fac_labels <- data.frame(var = rep("fac1", length(fac1_labels)),
+                               fac_name = mix[[.x]][[model_type]]$FAC[[1]]$name,
+                               fac_index = 1:length(fac1_labels),
+                               fac_label = fac1_labels)
+      if (length(mix[[.x]][[model_type]]$factors) == 2) {
+        fac2_labels <- mix[[.x]][[model_type]]$FAC[[2]]$labels
+        fac_labels <- fac_labels |> 
+          dplyr::bind_rows(data.frame(var = rep("fac2", length(fac2_labels)),
+                                      fac_name = mix[[.x]][[model_type]]$FAC[[2]]$name,
+                                      fac_index = 1:length(fac2_labels),
+                                      fac_label = fac2_labels))
+      }
+      
+      # Make data frame with source names
+      source_labels <- data.frame(source_index = 1:n_sources,
+                                  source = source_names)
+      
+      # Wrangle posteriors
+      plot_data <- post |> 
+        as.data.frame() |>
+        dplyr::select(dplyr::starts_with("p.") & !starts_with("p.ind")) |> 
+        tidyr::pivot_longer(dplyr::everything(), names_to = "parameter") |> 
+        dplyr::mutate(parameter = gsub("p\\.", "", parameter)) |>
+        tidyr::separate_wider_delim(parameter, delim = "[", names = c("var", "index")) |> 
+        dplyr::mutate(index = gsub("]", "", index),
+                      index = ifelse(!stringr::str_detect(index, ","), paste0("NA,", index), index)) |> 
+        tidyr::separate_wider_delim(index, delim = ",", names = c("fac_index", "source_index")) |> 
+        dplyr::mutate(fac_index = suppressWarnings(as.numeric(fac_index)),
+                      source_index = suppressWarnings(as.numeric(source_index))) |> 
+        dplyr::left_join(fac_labels, by = c("var", "fac_index")) |> 
+        dplyr::left_join(source_labels, by = "source_index") |> 
+        dplyr::mutate(fac_name = ifelse(is.na(fac_name), "", fac_name),
+                      var_type = factor(fac_name, 
+                                        levels = c("", "family", "species")),
+                      label = dplyr::case_when(fac_name == "species" ~ glue::glue("<i>{fac_label}</i>"), 
+                                               var == "global" ~ var,
+                                               .default = fac_label))
+      
+      # Plot
+      p <- plot_data |> 
+        ggplot(aes(x = value, y = label, colour = source)) +
+        ggdist::stat_pointinterval(.width = c(0.5, 0.95),
+                                   interval_size_range = c(0.4, 0.8),
+                                   point_size = 1.5,
+                                   position = position_dodge(width = 0.7)) +
+        facet_grid(rows = vars(var_type),
+                   scales = "free_y",
+                   space = "free") +
+        labs(x = "Relative contribution",
+             title = .x,
+             colour = "Source") + 
+        theme_bw() +
+        theme(axis.title.y = element_blank(),
+              axis.title.x = element_text(size = 9),
+              axis.text.y = ggtext::element_markdown(size = 7),
+              axis.text.x = element_text(size = 7),
+              plot.title = element_text(size = 12, hjust = 0.5, face = "bold"),
+              legend.position = "bottom", 
+              legend.title = element_text(size = 9),
+              legend.text = element_text(size = 8),
+              legend.box.spacing = unit(0, "lines"))
+      
+      if (!is.null(colours)) {
+        p <- p +
+          scale_colour_manual(values = colours)
+      }
+      
+      return(p)
+    }
   )
   
-  paths <- names(p) |>
+  # Save plots and return paths
+  paths <- names(plots) |>
     purrr::set_names() |>
-    purrr::map(~ here::here("output", "figures", paste0(filename, .x, "_", TDF_source, ".", type)))
+    purrr::map(~ paste0("output/figures/", filename, "_", .x, "_", TDF_source, ".", filetype))
   
-  purrr::map(1:length(p),
-             ~ ggsave(paths[[.x]], p[[.x]], 
+  purrr::map(names(plots),
+             ~ ggsave(paths[[.x]], 
+                      plots[[.x]], 
                       width = 12, 
-                      height = ifelse(names(p)[.x] %in% c("invertivores-benthic", 
-                                                          "macrocarnivores"), 
-                                      24, 18), 
+                      height = ifelse(.x %in% c("invertivores-benthic", "macrocarnivores"), 24, 18), 
                       units = "cm"))
   
-  paths
+  return(paths)
 }
 
 #' Plot total length effect on relative source contributions by trophic guild
 #'
 #' @param models Output from [run_MixSIAR_models()]
 #' @param best_models Output from [select_best_models()]
-#' @param TDF_source A string; "Post" or "McCutchan", the TDF used of trophic position estimation
+#' @param plot_type One of "lineribbon" (Default), "spaghetti", or "lineribbon_gradient"
+#' @param TDF_source A string; "Post" or "McCutchan", the TDF used for trophic position estimation
 #' @param filename Name of the file to save
-#' @param type File type (default to png)
+#' @param filetype Type of the file to save (default to png)
+#' @param colours Vector of colours to use for sources, plotted in alphabetic order.
+#' If NULL (default), the default ggplot2 colour palette will be used
 #' @param ... Arguments passed on to [plot_MixSIAR_continuous()]
 #'
-#' @return Path to the saved file
+#' @return Path to the saved plot
 plot_rel_contribution_vs_tl <- function(models, 
                                         best_models, 
+                                        plot_type = "lineribbon",
                                         TDF_source = c("Post", "McCutchan"), 
-                                        filename = "rel_contributions_vs_tl_",
-                                        type = "png", 
+                                        filename = "rel_contributions_vs_tl",
+                                        filetype = "png",
+                                        colours = NULL,
                                         ...) {
   
-  TDF_source <- rlang::arg_match(TDF_source)
-  
-  p <- purrr::map(
+  # Plot total length effect for guilds with best model "full" or "tl"
+  plots <- purrr::map(
     names(best_models) |> 
       rlang::set_names(),
-    function(x) {
-      name_best_model <- best_models[[x]]$name_best_model
+    function(.x) {
+      name_best_model <- best_models[[.x]]$name_best_model
       if (name_best_model %in% c("full", "tl")) {
-        mod <- best_models[[x]]$best_model
-        source <- models$source
-        mix <- models$mix[[x]][[name_best_model]]
-        plot_MixSIAR_continuous(mod, mix, source, ...) +
-          scale_fill_viridis_d(aesthetics = c("color", "fill")) +
-          theme(panel.grid = element_blank()) + 
-          labs(title = x, 
-               x = "Total length (cm) [natural-log]")
+        p <- plot_MixSIAR_continuous(jags.1 = best_models[[.x]]$best_model, 
+                                     mix = models$mix[[.x]][[name_best_model]], 
+                                     source = models$source, 
+                                     plot_type = plot_type,
+                                     ...) + 
+          labs(x = "Total length (cm) [natural-log]") +
+          theme(panel.grid = element_blank())
+        
+        p$data <- p$data |> 
+          mutate(trophic_guild = .x)
+        
+        p <- p +
+          facet_wrap(~trophic_guild) +
+          theme(strip.text = element_text(face = "bold"))
+        
+        if (!is.null(colours)) {
+          p <- p +
+            scale_colour_manual(name = "Source",
+                                values = colours,
+                                aesthetics = c("colour", "fill"))
+        }
+        
+        return(p)
       }
     }
   )
   
-  path <- here::here("output", "figures", paste0(filename, TDF_source, ".png"))
-  
-  p <- p |> 
+  # Combine plots
+  final_plot <- plots |> 
     purrr::keep(purrr::negate(is.null)) |> 
     patchwork::wrap_plots(ncol = 2) + 
     patchwork::plot_layout(guides = "collect", 
-                           axes = "collect") & 
-    theme(legend.position = "bottom") &
-    guides(fill_ramp = ggdist::guide_rampbar(title = "CI", 
-                                             theme = theme(legend.title = element_text(vjust = 0.8))))
+                           axis_titles = "collect") & 
+    theme(legend.position = "bottom")
   
-  ggsave(path, p, width = 7, height = 9)
+  if (plot_type == "lineribbon_gradient") {
+    final_plot <- final_plot &
+      guides(fill_ramp = ggdist::guide_rampbar(title = "CI", 
+                                               theme = theme(legend.title = element_text(vjust = 0.8))))
+    
+  }
   
-  path
+  # Save plot
+  path <- paste0("output/figures/", filename, "_", TDF_source, ".", filetype)
+  ggsave(path, final_plot, width = 18, height = 22, units = "cm")
+  
+  return(path)
 }

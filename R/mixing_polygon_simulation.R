@@ -115,24 +115,24 @@ mixing_polygon_simulation <- function(sources,
   # FIGURE 1: variance of polygon area during simulation
   p1 <- data.frame(Iterations = 1:its, 
                    Variance = Par_values[, ncol(Par_values)]) |> 
-    ggplot(aes(x = Iterations, y = Variance)) + 
-    geom_line() + 
-    theme_bw()
+    ggplot2::ggplot(ggplot2::aes(x = Iterations, y = Variance)) + 
+    ggplot2::geom_line() + 
+    ggplot2::theme_bw()
   
   # FIGURE 2: proportion of iterations that each consumer was inside mixing polygon
   p2 <- data.frame(Consumer = as.factor(1:ncol(p)), 
                    prob = colSums(p) / its) |> 
     dplyr::mutate(inside = factor(ifelse(prob > threshold, "TRUE", "FALSE"),
                                   levels = c("TRUE", "FALSE"))) |>
-    ggplot(aes(x = Consumer, y = prob, fill = inside)) +
-    geom_col() +
-    geom_hline(yintercept = threshold, linetype = "dashed") +
-    scale_fill_manual(paste0("Probability > ", threshold),
-                      values = c("darkgrey", "firebrick")) +
-    ylab("Probability consumer inside mixing polygon") +
-    ylim(0, 1) +
-    theme_bw() +
-    theme(panel.grid.minor = element_blank())
+    ggplot2::ggplot(ggplot2::aes(x = Consumer, y = prob, fill = inside)) +
+    ggplot2::geom_col() +
+    ggplot2::geom_hline(yintercept = threshold, linetype = "dashed") +
+    ggplot2::scale_fill_manual(paste0("Probability > ", threshold),
+                               values = c("darkgrey", "firebrick")) +
+    ggplot2::ylab("Probability consumer inside mixing polygon") +
+    ggplot2::ylim(0, 1) +
+    ggplot2::theme_bw() +
+    ggplot2::theme(panel.grid.minor = ggplot2::element_blank())
   
   # FIGURE 3: mixing region, consumers, average enriched source signatures
   mix_reg <- mix_reg / its  #convert to 0-1 scale
@@ -158,9 +158,9 @@ mixing_polygon_simulation <- function(sources,
                         mixture_fill = "grey",
                         facet = NULL) {
     p <- mix_regt |> 
-      ggplot(aes(x = d13C, y = d15N))
+      ggplot2::ggplot(ggplot2::aes(x = d13C, y = d15N))
     
-    if (fill) p <- p + geom_raster(aes(fill = density))
+    if (fill) p <- p + ggplot2::geom_raster(ggplot2::aes(fill = density))
     
     breaks <- if(threshold < 0.05) 
       c(threshold, 0.05, seq(0.1, 1, by = 0.1))
@@ -168,31 +168,31 @@ mixing_polygon_simulation <- function(sources,
       c(threshold, seq(0.1, 1, by = 0.1))
     
     p <- p +
-      geom_contour(aes(z = density), 
-                   breaks = breaks, 
-                   color = "black") + 
-      geom_point(data = sources_TEF,
-                 color = source_color, 
-                 shape = 4, size = 4) + 
-      geom_point(data = mixture,
-                 color = mixture_color,
-                 fill = mixture_fill,
-                 shape = 21,
-                 alpha = 0.5) + 
-      labs(x = "&delta;<sup>13</sup>C (&permil;)",
-           y = "&delta;<sup>15</sup>N (&permil;)") +
-      theme_bw() +
-      theme(axis.title.x = ggtext::element_markdown(),
-            axis.title.y = ggtext::element_markdown(),
-            panel.grid = element_blank())
+      ggplot2::geom_contour(ggplot2::aes(z = density), 
+                            breaks = breaks, 
+                            color = "black") + 
+      ggplot2::geom_point(data = sources_TEF,
+                          color = source_color, 
+                          shape = 4, size = 4) + 
+      ggplot2::geom_point(data = mixture,
+                          color = mixture_color,
+                          fill = mixture_fill,
+                          shape = 21,
+                          alpha = 0.5) + 
+      ggplot2::labs(x = "&delta;<sup>13</sup>C (&permil;)",
+                    y = "&delta;<sup>15</sup>N (&permil;)") +
+      ggplot2::theme_bw() +
+      ggplot2::theme(axis.title.x = ggtext::element_markdown(),
+                     axis.title.y = ggtext::element_markdown(),
+                     panel.grid = ggplot2::element_blank())
     
-    if (!is.null(facet)) p <- p + facet_wrap(vars(.data[[facet]]))
+    if (!is.null(facet)) p <- p + ggplot2::facet_wrap(ggplot2::vars(.data[[facet]]))
     
     p
   }
   
   p3 <- make_plot(facet = facet) +
-    scale_fill_viridis_c()
+    ggplot2::scale_fill_viridis_c()
   
   # FIGURE 4: Same as Fig. 3, but black and white
   p4 <- make_plot(fill = FALSE,
@@ -238,42 +238,33 @@ mixing_polygon_simulation <- function(sources,
 #' @param TDF Output of `prepare_TDF_data()`
 #' @param its Number of iterations
 #' @param threshold Probability threshold used to determine point in polygon
-#' @param filename Name of the file to save
-#' @param width Width of the file to save
-#' @param height Height of the file to save
-#' @param units Unit of "width" and "height"
-#' @param type File type (default to png)
 #'
-#' @return A list
+#' @return A list with the output of [mixing_polygon_simulation()] for each TDF
 run_mixing_polygon_simulation <- function(consumers, 
                                           sources, 
                                           TDF, 
                                           its = 5000,
-                                          threshold = 0.05,
-                                          filename,
-                                          width = 18, 
-                                          height = 18, 
-                                          units = "cm", 
-                                          type = "png") {
+                                          threshold = 0.05) {
   
   # Prepare data
-  source <- sources$sources$data |> 
+  source <- sources |> 
+    readr::read_csv() |> 
     dplyr::group_by(source) |>
     dplyr::summarise(mean_d13C = mean(d13C, na.rm = TRUE), 
                      sd_d13C = sd(d13C, na.rm = TRUE),
                      mean_d15N = mean(d15N, na.rm = TRUE),
-                     sd_d15N = sd(d15N, na.rm = TRUE)) |>
-    dplyr::ungroup() |>
+                     sd_d15N = sd(d15N, na.rm = TRUE),
+                     .groups = "drop") |> 
     tibble::column_to_rownames("source")
   
-  tdf <- TDF$data |> 
-    dplyr::arrange(source) |>
+  tdf <- TDF |> 
+    readr::read_csv() |> 
     tibble::column_to_rownames("source")
   
   mixture <- consumers |> 
     purrr::map(~ .x |>
-                 dplyr::select(id, d13C, d15N, trophic_guild) |>
-                 tibble::column_to_rownames("id"))
+                 dplyr::select(sample_id, d13C, d15N, trophic_guild) |>
+                 tibble::column_to_rownames("sample_id"))
   
   # Run simulations
   sim <- purrr::map(
@@ -283,10 +274,10 @@ run_mixing_polygon_simulation <- function(consumers,
                                 TDF = tdf,
                                 its = its, 
                                 min_C = -25, max_C = -1,
-                                min_N = -2, max_N = 8, 
+                                min_N = -2, max_N = 7, 
                                 res = 250,
                                 threshold = threshold,
-                                seed = 123,
+                                seed = NULL, # seed set through targets
                                 facet = "trophic_guild")
     )
   
@@ -329,17 +320,22 @@ run_mixing_polygon_simulation <- function(consumers,
     }
   )
   
-  # Save plots
-  purrr::map(
-    names(sim),
-    ~ ggsave(here::here("output", "figures", paste0(filename, "_", .x , ".", type)),
-             sim[[.x]]$isospace_plot_filled, width = width, height = height, units = units)
-  )
+  return(sim)
+}
+
+#' Plot the probability of consumers to be inside the mixing polygon
+#'
+#' @param simulation_mixing_polygon Output of [run_mixing_polygon_simulation()]
+#'
+#' @returns A ggplot object
+plot_prob_in_mixing_polygon <- function(simulation_mixing_polygon) {
   
-  # Plot histogram of probabilities across methods
-  purrr::map(sim, 
-             ~ .x$consumer_probabilities |> 
-               select(probability)) |> 
+  # Plot histogram of probabilities for each TDF source
+  plot <- purrr::map(
+    simulation_mixing_polygon, 
+    ~ .x$consumer_probabilities |> 
+      select(probability)
+    ) |> 
     bind_rows(.id = "TDF_source") |> 
     ggplot(aes(x = probability)) + 
     geom_histogram(bins = 30, color = "black", fill = "grey") + 
@@ -348,8 +344,74 @@ run_mixing_polygon_simulation <- function(consumers,
     facet_grid(~TDF_source) + 
     theme_bw()
   
-  ggsave(here::here("output", "figures", paste0("probability_inside_mixing_polygon.", type)),
-         width = 18, height = 10, units = units)
-  
-  return(sim)
+  return(plot)
 }
+
+#' Identify consumer outliers
+#' 
+#' @param consumers Output of [prepare_consumer_data()]
+#' @param simulation_mixing_polygon Output of [run_mixing_polygon_simulation()]
+#'
+#' @return A list of data frames
+identify_outliers <- function(simulation_mixing_polygon) {
+  
+  # Get ID of outliers (probability < 0.01)
+  id_outliers <- purrr::map(
+    simulation_mixing_polygon,
+    ~ .x[["consumer_probabilities"]] |>
+      tibble::rownames_to_column("sample_id") |>
+      filter(probability < 0.01) |>
+      select(sample_id, probability)
+  )
+  
+  # # Which has less outliers
+  # n_outliers <- purrr::map(id_outliers, ~ nrow(.x))
+  # min_outliers <- which.min(n_outliers |> purrr::as_vector())
+  
+  return(id_outliers)
+}
+
+#' Plot consumer outliers
+#' 
+#' @param consumers Output of [prepare_consumer_data()]
+#' @param consumer_outliers Output of [identify_outliers()]
+#'
+#' @return A list of ggplot objects
+plot_outliers <- function(consumers, consumer_outliers) {
+  
+  # Plot outliers for each TDF
+  plots <- purrr::map(
+    names(consumer_outliers) |> 
+      rlang::set_names(),
+    function(i) {
+      # Data for plot
+      df_outliers <- consumers[[i]] |> 
+        left_join(consumer_outliers[[i]], by = "sample_id") |> 
+        mutate(outlier = ifelse(is.na(probability), 0, 1)) |> 
+        group_by(species) |> 
+        filter(sum(outlier) > 0)
+      
+      # Compute number of facet columns
+      n_cols <- df_outliers$species |> unique() |> length() |> sqrt() |> round()
+      
+      # Plot
+      ggplot(df_outliers,
+             aes(x = d13C_corrected, y = d15N_raw, fill = factor(outlier))) + 
+        geom_point(shape = 21) + 
+        facet_wrap(~species, ncol = n_cols) + 
+        scale_fill_manual(values = c("white", "red")) + 
+        labs(x = "&delta;<sup>13</sup>C (&permil;)",
+             y = "&delta;<sup>15</sup>N (&permil;)", 
+             fill = "Outside mixing polygon") + 
+        theme_bw() + 
+        theme(panel.grid.minor = element_blank(), 
+              strip.text = element_text(face = "italic", size = 8), 
+              axis.title.x = ggtext::element_markdown(),
+              axis.title.y = ggtext::element_markdown(),
+              legend.position = "top")
+    }
+  )
+  
+  return(plots)
+}
+

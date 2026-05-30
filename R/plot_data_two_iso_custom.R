@@ -100,10 +100,14 @@ plot_data_two_iso_custom <- function(isotopes,
     label = source$source_names
   )
   
+  # Kept only plot required for this project
+  # Removed point shape by factor 2
+  # Only color points by factor 1, even if two factors
+  # Added these parameters: linewidth, text_size, point_size, color_sources
   g <- ggplot2::ggplot(data = df,ggplot2::aes(x = x, y = y)) +
     ggplot2::geom_point(ggplot2::aes(colour = factor(mix$FAC[[1]]$values)), # Factor.1 
                         size = point_size, 
-                        show.legend = T) +   # Factor.2
+                        show.legend = T) +
     ggplot2::scale_colour_discrete(breaks = levels(factor(mix$FAC[[1]]$values)),  # Factor.1
                                    labels = mix$FAC[[1]]$labels) +  # factor1_names
     ggplot2::geom_pointrange(data = df_sources,

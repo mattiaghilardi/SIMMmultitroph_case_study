@@ -3,95 +3,123 @@
 # Summary Statistics
 #################################################################
 
-DIC = 430.7
+DIC = 336.2879
 
-                                           Mean    SD  2.5%    5%   25%   50%
-family.SD                                 0.277 0.240 0.013 0.025 0.113 0.225
-species.SD                                0.274 0.130 0.059 0.090 0.187 0.257
-p.global.Cyanobacteria                    0.241 0.062 0.128 0.148 0.200 0.237
-p.global.Macroalgae                       0.188 0.072 0.063 0.078 0.138 0.183
-p.global.POM                              0.571 0.071 0.426 0.451 0.529 0.574
-p.Acanthuridae.Cyanobacteria              0.215 0.056 0.113 0.129 0.178 0.211
-p.Balistidae.Cyanobacteria                0.256 0.062 0.145 0.163 0.212 0.253
-p.Hemiramphidae.Cyanobacteria             0.236 0.072 0.104 0.126 0.189 0.232
-p.Pomacentridae.Cyanobacteria             0.248 0.054 0.152 0.165 0.211 0.245
-p.Acanthuridae.Macroalgae                 0.159 0.065 0.041 0.054 0.113 0.156
-p.Balistidae.Macroalgae                   0.195 0.077 0.059 0.078 0.142 0.189
-p.Hemiramphidae.Macroalgae                0.185 0.086 0.047 0.064 0.127 0.177
-p.Pomacentridae.Macroalgae                0.205 0.075 0.073 0.090 0.152 0.199
-p.Acanthuridae.POM                        0.626 0.065 0.498 0.516 0.582 0.628
-p.Balistidae.POM                          0.549 0.065 0.419 0.443 0.508 0.551
-p.Hemiramphidae.POM                       0.579 0.088 0.386 0.433 0.529 0.580
-p.Pomacentridae.POM                       0.547 0.071 0.395 0.420 0.502 0.551
-p.Dascyllus aruanus.Cyanobacteria         0.314 0.051 0.218 0.234 0.279 0.310
-p.Hemiramphus depauperatus.Cyanobacteria  0.230 0.071 0.094 0.118 0.182 0.228
-p.Melichthys niger.Cyanobacteria          0.260 0.054 0.155 0.171 0.223 0.260
-p.Melichthys vidua.Cyanobacteria          0.278 0.061 0.156 0.176 0.237 0.277
-p.Naso brevirostris.Cyanobacteria         0.195 0.047 0.104 0.118 0.164 0.195
-p.Naso vlamingii.Cyanobacteria            0.192 0.048 0.101 0.116 0.160 0.192
-p.Pomacentrus coelestis.Cyanobacteria     0.238 0.065 0.112 0.132 0.194 0.237
-p.Pomacentrus pavo.Cyanobacteria          0.224 0.057 0.117 0.134 0.184 0.223
-p.Pomachromis fuscidorsalis.Cyanobacteria 0.225 0.063 0.108 0.127 0.181 0.224
-p.Dascyllus aruanus.Macroalgae            0.256 0.078 0.094 0.121 0.206 0.260
-p.Hemiramphus depauperatus.Macroalgae     0.184 0.095 0.042 0.057 0.116 0.170
-p.Melichthys niger.Macroalgae             0.194 0.079 0.050 0.072 0.137 0.188
-p.Melichthys vidua.Macroalgae             0.214 0.088 0.054 0.075 0.151 0.210
-p.Naso brevirostris.Macroalgae            0.145 0.064 0.034 0.048 0.098 0.142
-p.Naso vlamingii.Macroalgae               0.142 0.063 0.034 0.046 0.098 0.137
-p.Pomacentrus coelestis.Macroalgae        0.200 0.087 0.055 0.073 0.136 0.192
-p.Pomacentrus pavo.Macroalgae             0.196 0.086 0.055 0.069 0.133 0.188
-p.Pomachromis fuscidorsalis.Macroalgae    0.199 0.088 0.051 0.068 0.136 0.191
-p.Dascyllus aruanus.POM                   0.430 0.045 0.342 0.357 0.400 0.428
-p.Hemiramphus depauperatus.POM            0.586 0.095 0.383 0.422 0.530 0.592
-p.Melichthys niger.POM                    0.546 0.048 0.446 0.462 0.516 0.547
-p.Melichthys vidua.POM                    0.508 0.050 0.407 0.425 0.476 0.509
-p.Naso brevirostris.POM                   0.660 0.047 0.563 0.582 0.629 0.660
-p.Naso vlamingii.POM                      0.666 0.051 0.561 0.582 0.632 0.668
-p.Pomacentrus coelestis.POM               0.562 0.091 0.378 0.408 0.503 0.566
-p.Pomacentrus pavo.POM                    0.580 0.086 0.395 0.422 0.528 0.589
-p.Pomachromis fuscidorsalis.POM           0.576 0.094 0.384 0.410 0.514 0.578
-                                            75%   95% 97.5%
-family.SD                                 0.366 0.720 0.897
-species.SD                                0.340 0.509 0.591
-p.global.Cyanobacteria                    0.276 0.352 0.382
-p.global.Macroalgae                       0.230 0.309 0.342
-p.global.POM                              0.615 0.679 0.709
-p.Acanthuridae.Cyanobacteria              0.250 0.310 0.330
-p.Balistidae.Cyanobacteria                0.294 0.362 0.387
-p.Hemiramphidae.Cyanobacteria             0.279 0.359 0.389
-p.Pomacentridae.Cyanobacteria             0.282 0.339 0.359
-p.Acanthuridae.Macroalgae                 0.201 0.273 0.295
-p.Balistidae.Macroalgae                   0.243 0.328 0.359
-p.Hemiramphidae.Macroalgae                0.231 0.335 0.378
-p.Pomacentridae.Macroalgae                0.255 0.335 0.361
-p.Acanthuridae.POM                        0.671 0.730 0.748
-p.Balistidae.POM                          0.592 0.653 0.674
-p.Hemiramphidae.POM                       0.632 0.716 0.746
-p.Pomacentridae.POM                       0.596 0.655 0.676
-p.Dascyllus aruanus.Cyanobacteria         0.346 0.402 0.421
-p.Hemiramphus depauperatus.Cyanobacteria  0.275 0.349 0.379
-p.Melichthys niger.Cyanobacteria          0.296 0.349 0.366
-p.Melichthys vidua.Cyanobacteria          0.319 0.378 0.396
-p.Naso brevirostris.Cyanobacteria         0.226 0.276 0.288
-p.Naso vlamingii.Cyanobacteria            0.226 0.271 0.285
-p.Pomacentrus coelestis.Cyanobacteria     0.281 0.347 0.370
-p.Pomacentrus pavo.Cyanobacteria          0.261 0.319 0.340
-p.Pomachromis fuscidorsalis.Cyanobacteria 0.267 0.325 0.349
-p.Dascyllus aruanus.Macroalgae            0.310 0.380 0.402
-p.Hemiramphus depauperatus.Macroalgae     0.236 0.354 0.403
-p.Melichthys niger.Macroalgae             0.245 0.331 0.359
-p.Melichthys vidua.Macroalgae             0.275 0.363 0.398
-p.Naso brevirostris.Macroalgae            0.186 0.258 0.283
-p.Naso vlamingii.Macroalgae               0.182 0.250 0.276
-p.Pomacentrus coelestis.Macroalgae        0.257 0.351 0.382
-p.Pomacentrus pavo.Macroalgae             0.250 0.353 0.385
-p.Pomachromis fuscidorsalis.Macroalgae    0.253 0.359 0.394
-p.Dascyllus aruanus.POM                   0.459 0.507 0.523
-p.Hemiramphus depauperatus.POM            0.649 0.732 0.753
-p.Melichthys niger.POM                    0.579 0.622 0.637
-p.Melichthys vidua.POM                    0.542 0.588 0.605
-p.Naso brevirostris.POM                   0.691 0.734 0.749
-p.Naso vlamingii.POM                      0.700 0.745 0.762
-p.Pomacentrus coelestis.POM               0.626 0.703 0.736
-p.Pomacentrus pavo.POM                    0.640 0.710 0.731
-p.Pomachromis fuscidorsalis.POM           0.642 0.722 0.750
+                                               Mean    SD  2.5%    5%   25%
+family.SD                                     1.095 0.857 0.064 0.119 0.486
+species.SD                                    0.525 0.245 0.185 0.222 0.357
+p.global.Cyanobacteria                        0.184 0.117 0.026 0.040 0.101
+p.global.Green-Brown algae                    0.225 0.128 0.039 0.057 0.130
+p.global.POM                                  0.479 0.146 0.157 0.214 0.385
+p.global.Red algae                            0.112 0.092 0.005 0.008 0.041
+p.Acanthuridae.Cyanobacteria                  0.121 0.109 0.002 0.005 0.041
+p.Balistidae.Cyanobacteria                    0.149 0.106 0.004 0.011 0.066
+p.Hemiramphidae.Cyanobacteria                 0.150 0.126 0.002 0.006 0.054
+p.Pomacentridae.Cyanobacteria                 0.155 0.082 0.032 0.042 0.094
+p.Acanthuridae.Green-Brown algae              0.107 0.097 0.001 0.004 0.031
+p.Balistidae.Green-Brown algae                0.230 0.125 0.034 0.054 0.139
+p.Hemiramphidae.Green-Brown algae             0.169 0.145 0.003 0.007 0.063
+p.Pomacentridae.Green-Brown algae             0.314 0.178 0.027 0.048 0.181
+p.Acanthuridae.POM                            0.697 0.166 0.341 0.401 0.581
+p.Balistidae.POM                              0.568 0.145 0.264 0.325 0.473
+p.Hemiramphidae.POM                           0.598 0.184 0.207 0.296 0.475
+p.Pomacentridae.POM                           0.326 0.151 0.071 0.093 0.202
+p.Acanthuridae.Red algae                      0.074 0.079 0.001 0.003 0.018
+p.Balistidae.Red algae                        0.053 0.061 0.000 0.001 0.009
+p.Hemiramphidae.Red algae                     0.083 0.092 0.000 0.001 0.016
+p.Pomacentridae.Red algae                     0.205 0.185 0.002 0.007 0.059
+p.Dascyllus aruanus.Cyanobacteria             0.189 0.094 0.044 0.056 0.118
+p.Hemiramphus depauperatus.Cyanobacteria      0.139 0.115 0.001 0.004 0.049
+p.Melichthys niger.Cyanobacteria              0.140 0.101 0.003 0.008 0.058
+p.Melichthys vidua.Cyanobacteria              0.155 0.102 0.003 0.010 0.072
+p.Naso brevirostris.Cyanobacteria             0.115 0.102 0.002 0.005 0.039
+p.Naso vlamingii.Cyanobacteria                0.105 0.108 0.001 0.003 0.029
+p.Pomacentrus coelestis.Cyanobacteria         0.152 0.092 0.021 0.033 0.082
+p.Pomacentrus pavo.Cyanobacteria              0.134 0.083 0.018 0.027 0.072
+p.Pomachromis fuscidorsalis.Cyanobacteria     0.130 0.075 0.020 0.029 0.072
+p.Dascyllus aruanus.Green-Brown algae         0.422 0.216 0.023 0.053 0.259
+p.Hemiramphus depauperatus.Green-Brown algae  0.148 0.137 0.002 0.007 0.051
+p.Melichthys niger.Green-Brown algae          0.209 0.104 0.029 0.051 0.133
+p.Melichthys vidua.Green-Brown algae          0.262 0.119 0.042 0.068 0.177
+p.Naso brevirostris.Green-Brown algae         0.092 0.079 0.001 0.004 0.031
+p.Naso vlamingii.Green-Brown algae            0.076 0.076 0.001 0.003 0.020
+p.Pomacentrus coelestis.Green-Brown algae     0.312 0.193 0.017 0.037 0.160
+p.Pomacentrus pavo.Green-Brown algae          0.302 0.190 0.016 0.035 0.155
+p.Pomachromis fuscidorsalis.Green-Brown algae 0.264 0.166 0.018 0.034 0.137
+p.Dascyllus aruanus.POM                       0.160 0.093 0.031 0.040 0.085
+p.Hemiramphus depauperatus.POM                0.637 0.176 0.223 0.317 0.535
+p.Melichthys niger.POM                        0.602 0.130 0.318 0.377 0.519
+p.Melichthys vidua.POM                        0.538 0.116 0.297 0.337 0.463
+p.Naso brevirostris.POM                       0.718 0.140 0.367 0.439 0.642
+p.Naso vlamingii.POM                          0.755 0.158 0.365 0.451 0.667
+p.Pomacentrus coelestis.POM                   0.333 0.159 0.071 0.093 0.208
+p.Pomacentrus pavo.POM                        0.348 0.174 0.063 0.088 0.201
+p.Pomachromis fuscidorsalis.POM               0.416 0.159 0.129 0.159 0.296
+p.Dascyllus aruanus.Red algae                 0.229 0.197 0.002 0.006 0.065
+p.Hemiramphus depauperatus.Red algae          0.077 0.087 0.000 0.001 0.013
+p.Melichthys niger.Red algae                  0.049 0.063 0.000 0.001 0.007
+p.Melichthys vidua.Red algae                  0.045 0.053 0.000 0.001 0.008
+p.Naso brevirostris.Red algae                 0.074 0.079 0.001 0.002 0.018
+p.Naso vlamingii.Red algae                    0.064 0.074 0.001 0.002 0.013
+p.Pomacentrus coelestis.Red algae             0.203 0.192 0.002 0.005 0.050
+p.Pomacentrus pavo.Red algae                  0.216 0.208 0.002 0.006 0.053
+p.Pomachromis fuscidorsalis.Red algae         0.190 0.176 0.002 0.005 0.048
+                                                50%   75%   95% 97.5%
+family.SD                                     0.916 1.492 2.621 3.181
+species.SD                                    0.479 0.638 0.999 1.128
+p.global.Cyanobacteria                        0.160 0.242 0.421 0.482
+p.global.Green-Brown algae                    0.205 0.293 0.468 0.542
+p.global.POM                                  0.490 0.581 0.702 0.748
+p.global.Red algae                            0.090 0.159 0.297 0.344
+p.Acanthuridae.Cyanobacteria                  0.096 0.169 0.330 0.407
+p.Balistidae.Cyanobacteria                    0.134 0.211 0.345 0.389
+p.Hemiramphidae.Cyanobacteria                 0.125 0.212 0.389 0.462
+p.Pomacentridae.Cyanobacteria                 0.141 0.204 0.304 0.339
+p.Acanthuridae.Green-Brown algae              0.079 0.158 0.304 0.351
+p.Balistidae.Green-Brown algae                0.216 0.305 0.454 0.509
+p.Hemiramphidae.Green-Brown algae             0.134 0.238 0.431 0.533
+p.Pomacentridae.Green-Brown algae             0.299 0.431 0.641 0.702
+p.Acanthuridae.POM                            0.725 0.831 0.922 0.944
+p.Balistidae.POM                              0.570 0.668 0.800 0.841
+p.Hemiramphidae.POM                           0.602 0.729 0.892 0.932
+p.Pomacentridae.POM                           0.322 0.443 0.576 0.614
+p.Acanthuridae.Red algae                      0.048 0.104 0.237 0.292
+p.Balistidae.Red algae                        0.030 0.075 0.179 0.217
+p.Hemiramphidae.Red algae                     0.052 0.117 0.269 0.336
+p.Pomacentridae.Red algae                     0.152 0.297 0.592 0.676
+p.Dascyllus aruanus.Cyanobacteria             0.176 0.248 0.362 0.398
+p.Hemiramphus depauperatus.Cyanobacteria      0.117 0.199 0.351 0.429
+p.Melichthys niger.Cyanobacteria              0.126 0.205 0.321 0.364
+p.Melichthys vidua.Cyanobacteria              0.147 0.223 0.336 0.382
+p.Naso brevirostris.Cyanobacteria             0.091 0.162 0.312 0.370
+p.Naso vlamingii.Cyanobacteria                0.074 0.144 0.324 0.399
+p.Pomacentrus coelestis.Cyanobacteria         0.135 0.204 0.327 0.372
+p.Pomacentrus pavo.Cyanobacteria              0.120 0.183 0.288 0.329
+p.Pomachromis fuscidorsalis.Cyanobacteria     0.119 0.174 0.271 0.307
+p.Dascyllus aruanus.Green-Brown algae         0.432 0.589 0.761 0.803
+p.Hemiramphus depauperatus.Green-Brown algae  0.116 0.205 0.390 0.494
+p.Melichthys niger.Green-Brown algae          0.200 0.274 0.392 0.435
+p.Melichthys vidua.Green-Brown algae          0.257 0.340 0.463 0.504
+p.Naso brevirostris.Green-Brown algae         0.073 0.134 0.248 0.286
+p.Naso vlamingii.Green-Brown algae            0.053 0.106 0.231 0.275
+p.Pomacentrus coelestis.Green-Brown algae     0.284 0.443 0.665 0.728
+p.Pomacentrus pavo.Green-Brown algae          0.279 0.419 0.669 0.740
+p.Pomachromis fuscidorsalis.Green-Brown algae 0.237 0.360 0.583 0.638
+p.Dascyllus aruanus.POM                       0.145 0.219 0.341 0.378
+p.Hemiramphus depauperatus.POM                0.657 0.762 0.888 0.924
+p.Melichthys niger.POM                        0.613 0.695 0.795 0.824
+p.Melichthys vidua.POM                        0.546 0.621 0.719 0.744
+p.Naso brevirostris.POM                       0.744 0.818 0.900 0.918
+p.Naso vlamingii.POM                          0.793 0.875 0.945 0.958
+p.Pomacentrus coelestis.POM                   0.321 0.447 0.608 0.652
+p.Pomacentrus pavo.POM                        0.343 0.480 0.632 0.680
+p.Pomachromis fuscidorsalis.POM               0.417 0.532 0.672 0.710
+p.Dascyllus aruanus.Red algae                 0.178 0.350 0.636 0.695
+p.Hemiramphus depauperatus.Red algae          0.046 0.112 0.253 0.313
+p.Melichthys niger.Red algae                  0.025 0.065 0.177 0.226
+p.Melichthys vidua.Red algae                  0.026 0.064 0.154 0.199
+p.Naso brevirostris.Red algae                 0.049 0.104 0.229 0.285
+p.Naso vlamingii.Red algae                    0.038 0.084 0.219 0.268
+p.Pomacentrus coelestis.Red algae             0.143 0.302 0.603 0.690
+p.Pomacentrus pavo.Red algae                  0.146 0.325 0.654 0.748
+p.Pomachromis fuscidorsalis.Red algae         0.140 0.283 0.556 0.632

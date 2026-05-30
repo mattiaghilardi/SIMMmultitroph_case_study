@@ -1,0 +1,9 @@
+trophic_guild,algae,cyanobacteria,pom
+herbivores-detritivores,70,15,15
+invertivores-benthic,70,10,20
+invertivores-sessile,45,25,30
+macrocarnivores,50,25,25
+microphages,55,30,15
+omnivores-benthic,50,25,25
+omnivores-pelagic,50,25,25
+planktivores,45,20,35

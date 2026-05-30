@@ -1,0 +1,1 @@
+This folder includes intermediate data required by MixSIAR as csv files.

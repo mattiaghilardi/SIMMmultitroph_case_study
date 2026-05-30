@@ -92,12 +92,13 @@ fit_TP_model <- function(data,
 
 #' Estimate trophic position
 #'
-#' @param sia_fish Raw sia_fish data
-#' @param sources Output of [prepare_source_data()]
-#' @param baselines_diet Output of [check_baselines_diet()]
+#' @param sia_fish_corrected Output of [fish_lipid_correction()]
+#' @param sia_baselines_corrected Output of [baselines_lipid_correction()]
 #'
-#' @return A tibble with summary of estimated trophic positions
-estimate_TP <- function(sia_fish, sources, baselines_diet) {
+#' @return A list with 2 elements:
+#'  - "models": a nested list of TP models output (one per species and TDF)
+#'  - "TP_summary": tibble with summary of estimated trophic positions
+estimate_TP <- function(sia_fish_corrected, sia_baselines_corrected) {
   
   # TDFs
   TDF_values <- list(
@@ -111,21 +112,20 @@ estimate_TP <- function(sia_fish, sources, baselines_diet) {
   )
   
   # Prepare data set
-  consumer_df <- sources$invertebrates$data |> 
-    filter(taxon %in% baselines_diet$baselines) |> 
-    bind_rows(sia_fish) |> 
+  consumer_df <- sia_baselines_corrected |> 
+    bind_rows(sia_fish_corrected) |> 
     as.data.frame()
   
   # Extract data by species
   consumer_list <- purrr::map(
     TDF_values,
     ~ tRophicPosition::extractIsotopeData(consumer_df, 
-                                          b1 = baselines_diet$baselines[[1]],
-                                          b2 = baselines_diet$baselines[[2]],
-                                          baselineColumn = "taxon", 
+                                          b1 = "Bivalvia",
+                                          b2 = "Gastropoda",
+                                          baselineColumn = "baseline", 
                                           consumersColumn = "species",
                                           groupsColumn = NULL,
-                                          d13C = "d13C", 
+                                          d13C = "d13C_corrected", 
                                           d15N = "d15N",
                                           deltaC = .x$deltaC,
                                           deltaN = .x$deltaN)
@@ -157,8 +157,20 @@ estimate_TP <- function(sia_fish, sources, baselines_diet) {
       mutate(TDF_source = df$i[.x])) |> 
     bind_rows()
   
-  # Plot correlation
-  TP |> 
+  return(list(models = consumer_models,
+              TP_summary = TP)
+         )
+  
+}
+
+#' Plot TP correlation
+#'
+#' @param TP Output of [estimate_TP()]
+#'
+#' @returns A ggplot object
+plot_TP_correlation <- function(TP) {
+  
+  plot <- TP$TP_summary |> 
     select(consumer, TP, TDF_source) |> 
     tidyr::pivot_wider(names_from = TDF_source,
                        values_from = TP) |> 
@@ -172,13 +184,19 @@ estimate_TP <- function(sia_fish, sources, baselines_diet) {
     theme(panel.grid.minor = element_blank(), 
           plot.title = element_text(hjust = 0.5))
   
-  ggsave(here::here("output", "figures", "TP_comparison.png"), 
-         width = 10, height = 10, units = "cm")
+  return(plot)
+}
+
+#' Plot TP mode and HDI for both TDF sources
+#'
+#' @param TP Output of [estimate_TP()]
+#'
+#' @returns A list of ggplot objects
+plot_TP <- function(TP) {
   
-  # Plot mode and HDI for both TDF sources
   # Split plots in two pages
   TP_long <- purrr::map(
-    consumer_models,
+    TP$models,
     function(i) {
       purrr::map(
         1:length(i),
@@ -193,13 +211,13 @@ estimate_TP <- function(sia_fish, sources, baselines_diet) {
     }
   )
   
-  purrr::map(
-    c("Post", "McCutchan"),
+  plots <- purrr::map(
+    TP_long,
     function(i) {
       purrr::map(
         1:2,
         function(j) {
-          p <- TP_long[[i]] |> 
+          p <- i |> 
             filter(page == j) |> 
             ggplot(aes(y = name, x = value)) +
             ggdist::stat_pointinterval(point_interval = "mode_hdci", 
@@ -212,14 +230,11 @@ estimate_TP <- function(sia_fish, sources, baselines_diet) {
             theme(axis.text.y = element_text(face = "italic", size = 7),
                   axis.title.y = element_blank())
           
-          ggsave(here::here("output", "figures", paste0("TP_", i, "_", j, ".png")), 
-                 p, 
-                 height = 22, width = 14, units = "cm")
-        }
-      )
-    }
-  )
+          return(p)
+          }
+        )
+      }
+    )
   
-  return(TP)
-  
+  return(plots)
 }

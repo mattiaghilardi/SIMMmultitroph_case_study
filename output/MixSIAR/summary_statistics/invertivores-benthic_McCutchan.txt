@@ -3,413 +3,547 @@
 # Summary Statistics
 #################################################################
 
-DIC = 1746.415
+DIC = 1688.191
 
-                                               Mean    SD  2.5%    5%   25%
-family.SD                                     0.243 0.160 0.012 0.023 0.116
-species.SD                                    0.539 0.075 0.408 0.429 0.487
-p.global.Cyanobacteria                        0.132 0.034 0.074 0.081 0.110
-p.global.Macroalgae                           0.262 0.050 0.170 0.184 0.230
-p.global.POM                                  0.606 0.046 0.516 0.533 0.576
-p.Apogonidae.Cyanobacteria                    0.136 0.042 0.068 0.077 0.109
-p.Balistidae.Cyanobacteria                    0.135 0.039 0.067 0.077 0.108
-p.Chaetodontidae.Cyanobacteria                0.146 0.042 0.076 0.084 0.118
-p.Creediidae.Cyanobacteria                    0.112 0.045 0.032 0.041 0.081
-p.Diodontidae.Cyanobacteria                   0.120 0.044 0.038 0.049 0.091
-p.Gobiidae.Cyanobacteria                      0.147 0.047 0.070 0.080 0.116
-p.Holocentridae.Cyanobacteria                 0.116 0.039 0.048 0.056 0.088
-p.Labridae.Cyanobacteria                      0.156 0.037 0.089 0.099 0.130
-p.Mullidae.Cyanobacteria                      0.124 0.041 0.051 0.061 0.096
-p.Pempheridae.Cyanobacteria                   0.122 0.046 0.042 0.053 0.090
-p.Pinguipedidae.Cyanobacteria                 0.145 0.050 0.067 0.076 0.112
-p.Syngnathidae.Cyanobacteria                  0.147 0.051 0.068 0.079 0.114
-p.Apogonidae.Macroalgae                       0.279 0.080 0.141 0.164 0.227
-p.Balistidae.Macroalgae                       0.276 0.061 0.166 0.183 0.235
-p.Chaetodontidae.Macroalgae                   0.291 0.065 0.177 0.194 0.247
-p.Creediidae.Macroalgae                       0.243 0.080 0.083 0.111 0.192
-p.Diodontidae.Macroalgae                      0.260 0.074 0.125 0.147 0.213
-p.Gobiidae.Macroalgae                         0.280 0.081 0.141 0.166 0.228
-p.Holocentridae.Macroalgae                    0.198 0.069 0.067 0.083 0.148
-p.Labridae.Macroalgae                         0.247 0.051 0.154 0.167 0.213
-p.Mullidae.Macroalgae                         0.288 0.065 0.180 0.193 0.245
-p.Pempheridae.Macroalgae                      0.230 0.072 0.084 0.107 0.183
-p.Pinguipedidae.Macroalgae                    0.296 0.087 0.160 0.182 0.237
-p.Syngnathidae.Macroalgae                     0.285 0.087 0.143 0.163 0.228
-p.Apogonidae.POM                              0.585 0.072 0.420 0.457 0.543
-p.Balistidae.POM                              0.589 0.058 0.467 0.490 0.553
-p.Chaetodontidae.POM                          0.563 0.060 0.439 0.456 0.524
-p.Creediidae.POM                              0.646 0.091 0.486 0.513 0.586
-p.Diodontidae.POM                             0.620 0.081 0.460 0.488 0.568
-p.Gobiidae.POM                                0.574 0.075 0.399 0.433 0.532
-p.Holocentridae.POM                           0.686 0.082 0.548 0.562 0.622
-p.Labridae.POM                                0.598 0.043 0.510 0.525 0.570
-p.Mullidae.POM                                0.588 0.059 0.462 0.489 0.550
-p.Pempheridae.POM                             0.648 0.084 0.501 0.525 0.591
-p.Pinguipedidae.POM                           0.560 0.088 0.340 0.394 0.514
-p.Syngnathidae.POM                            0.568 0.083 0.379 0.414 0.524
-p.Anampses caeruleopunctatus.Cyanobacteria    0.177 0.071 0.054 0.067 0.124
-p.Balistapus undulatus.Cyanobacteria          0.078 0.034 0.024 0.031 0.054
-p.Cabillus tongarevae.Cyanobacteria           0.172 0.068 0.055 0.069 0.126
-p.Chaetodon auriga.Cyanobacteria              0.215 0.054 0.122 0.135 0.177
-p.Chaetodon lunula.Cyanobacteria              0.148 0.068 0.040 0.053 0.099
-p.Chaetodon mertensii.Cyanobacteria           0.142 0.059 0.043 0.054 0.096
-p.Chaetodon vagabundus.Cyanobacteria          0.238 0.073 0.112 0.130 0.186
-p.Cheilinus chlorourus.Cyanobacteria          0.249 0.066 0.130 0.145 0.203
-p.Cheilinus oxycephalus.Cyanobacteria         0.087 0.039 0.025 0.032 0.059
-p.Cheilinus trilobatus.Cyanobacteria          0.210 0.056 0.107 0.120 0.171
-p.Coris aygula.Cyanobacteria                  0.241 0.101 0.063 0.081 0.166
-p.Coris gaimard.Cyanobacteria                 0.129 0.055 0.040 0.049 0.089
-p.Corythoichthys flavofasciatus.Cyanobacteria 0.240 0.096 0.068 0.087 0.169
-p.Diodon hystrix.Cyanobacteria                0.075 0.039 0.018 0.023 0.047
-p.Doryrhamphus excisus.Cyanobacteria          0.124 0.052 0.041 0.050 0.086
-p.Forcipiger flavissimus.Cyanobacteria        0.129 0.049 0.044 0.053 0.093
-p.Forcipiger longirostris.Cyanobacteria       0.100 0.039 0.035 0.042 0.071
-p.Fowleria marmorata.Cyanobacteria            0.142 0.056 0.046 0.057 0.102
-p.Gomphosus varius.Cyanobacteria              0.132 0.051 0.044 0.053 0.094
-p.Halichoeres hortulanus.Cyanobacteria        0.303 0.083 0.131 0.160 0.248
-p.Halichoeres marginatus.Cyanobacteria        0.213 0.084 0.063 0.080 0.152
-p.Halichoeres trimaculatus.Cyanobacteria      0.335 0.074 0.198 0.220 0.283
-p.Hemigymnus fasciatus.Cyanobacteria          0.126 0.042 0.048 0.059 0.097
-p.Limnichthys nitidus.Cyanobacteria           0.042 0.024 0.011 0.014 0.026
-p.Mulloidichthys flavolineatus.Cyanobacteria  0.059 0.034 0.018 0.022 0.039
-p.Mulloidichthys vanicolensis.Cyanobacteria   0.197 0.087 0.041 0.060 0.133
-p.Myripristis berndti.Cyanobacteria           0.073 0.028 0.024 0.030 0.053
-p.Myripristis kuntee.Cyanobacteria            0.092 0.036 0.029 0.037 0.065
-p.Myripristis violacea.Cyanobacteria          0.076 0.032 0.023 0.029 0.052
-p.Nectamia savayensis.Cyanobacteria           0.088 0.038 0.030 0.036 0.062
-p.Novaculichthys taeniourus.Cyanobacteria     0.152 0.068 0.043 0.054 0.101
-p.Ostorhinchus angustatus.Cyanobacteria       0.208 0.052 0.112 0.124 0.172
-p.Parapercis millepunctata.Cyanobacteria      0.184 0.067 0.065 0.081 0.138
-p.Parupeneus barberinus.Cyanobacteria         0.138 0.078 0.027 0.037 0.078
-p.Parupeneus ciliatus.Cyanobacteria           0.193 0.105 0.034 0.046 0.109
-p.Parupeneus insularis.Cyanobacteria          0.122 0.054 0.032 0.042 0.081
-p.Parupeneus multifasciatus.Cyanobacteria     0.078 0.037 0.024 0.029 0.052
-p.Pempheris oualensis.Cyanobacteria           0.074 0.036 0.018 0.023 0.047
-p.Priolepis semidoliata.Cyanobacteria         0.109 0.047 0.038 0.044 0.076
-p.Priolepis squamogena.Cyanobacteria          0.083 0.035 0.029 0.035 0.059
-p.Pristiapogon exostigma.Cyanobacteria        0.098 0.042 0.036 0.043 0.070
-p.Pristiapogon fraenatus.Cyanobacteria        0.177 0.069 0.055 0.071 0.128
-p.Pseudocheilinus tetrataenia.Cyanobacteria   0.108 0.043 0.040 0.048 0.078
-p.Pseudodax moluccanus.Cyanobacteria          0.080 0.037 0.021 0.026 0.052
-p.Rhinecanthus aculeatus.Cyanobacteria        0.236 0.073 0.107 0.123 0.184
-p.Rhinecanthus lunula.Cyanobacteria           0.123 0.057 0.033 0.041 0.080
-p.Rhinecanthus rectangulus.Cyanobacteria      0.157 0.061 0.047 0.059 0.111
-p.Sufflamen bursa.Cyanobacteria               0.116 0.047 0.036 0.045 0.082
-p.Thalassoma hardwicke.Cyanobacteria          0.196 0.051 0.103 0.117 0.160
-p.Thalassoma lutescens.Cyanobacteria          0.143 0.059 0.045 0.055 0.099
-p.Thalassoma purpureum.Cyanobacteria          0.154 0.066 0.043 0.055 0.104
-p.Thalassoma quinquevittatum.Cyanobacteria    0.118 0.047 0.040 0.049 0.084
-p.Thalassoma trilobatum.Cyanobacteria         0.156 0.062 0.046 0.060 0.110
-p.Valenciennea strigata.Cyanobacteria         0.347 0.109 0.128 0.165 0.275
-p.Anampses caeruleopunctatus.Macroalgae       0.262 0.104 0.088 0.108 0.188
-p.Balistapus undulatus.Macroalgae             0.280 0.055 0.170 0.193 0.245
-p.Cabillus tongarevae.Macroalgae              0.326 0.161 0.083 0.105 0.201
-p.Chaetodon auriga.Macroalgae                 0.419 0.105 0.209 0.249 0.348
-p.Chaetodon lunula.Macroalgae                 0.406 0.111 0.181 0.223 0.335
-p.Chaetodon mertensii.Macroalgae              0.293 0.108 0.105 0.125 0.216
-p.Chaetodon vagabundus.Macroalgae             0.394 0.108 0.170 0.209 0.325
-p.Cheilinus chlorourus.Macroalgae             0.336 0.099 0.150 0.178 0.271
-p.Cheilinus oxycephalus.Macroalgae            0.163 0.083 0.046 0.056 0.103
-p.Cheilinus trilobatus.Macroalgae             0.298 0.087 0.136 0.161 0.238
-p.Coris aygula.Macroalgae                     0.345 0.124 0.129 0.159 0.256
-p.Coris gaimard.Macroalgae                    0.208 0.069 0.085 0.104 0.160
-p.Corythoichthys flavofasciatus.Macroalgae    0.387 0.156 0.108 0.141 0.267
-p.Diodon hystrix.Macroalgae                   0.232 0.079 0.116 0.129 0.179
-p.Doryrhamphus excisus.Macroalgae             0.282 0.140 0.065 0.087 0.174
-p.Forcipiger flavissimus.Macroalgae           0.285 0.080 0.131 0.155 0.230
-p.Forcipiger longirostris.Macroalgae          0.170 0.055 0.071 0.085 0.132
-p.Fowleria marmorata.Macroalgae               0.336 0.150 0.091 0.116 0.220
-p.Gomphosus varius.Macroalgae                 0.220 0.062 0.103 0.124 0.179
-p.Halichoeres hortulanus.Macroalgae           0.278 0.097 0.113 0.133 0.209
-p.Halichoeres marginatus.Macroalgae           0.314 0.126 0.098 0.121 0.223
-p.Halichoeres trimaculatus.Macroalgae         0.316 0.105 0.121 0.146 0.241
-p.Hemigymnus fasciatus.Macroalgae             0.158 0.054 0.065 0.075 0.120
-p.Limnichthys nitidus.Macroalgae              0.167 0.100 0.034 0.043 0.092
-p.Mulloidichthys flavolineatus.Macroalgae     0.558 0.071 0.435 0.459 0.517
-p.Mulloidichthys vanicolensis.Macroalgae      0.275 0.092 0.113 0.131 0.211
-p.Myripristis berndti.Macroalgae              0.075 0.031 0.024 0.029 0.051
-p.Myripristis kuntee.Macroalgae               0.150 0.057 0.049 0.060 0.108
-p.Myripristis violacea.Macroalgae             0.114 0.040 0.043 0.052 0.086
-p.Nectamia savayensis.Macroalgae              0.257 0.124 0.065 0.086 0.165
-p.Novaculichthys taeniourus.Macroalgae        0.345 0.094 0.179 0.200 0.283
-p.Ostorhinchus angustatus.Macroalgae          0.281 0.101 0.099 0.124 0.208
-p.Parapercis millepunctata.Macroalgae         0.422 0.111 0.188 0.229 0.352
-p.Parupeneus barberinus.Macroalgae            0.291 0.101 0.128 0.153 0.219
-p.Parupeneus ciliatus.Macroalgae              0.323 0.116 0.127 0.149 0.242
-p.Parupeneus insularis.Macroalgae             0.181 0.061 0.066 0.084 0.137
-p.Parupeneus multifasciatus.Macroalgae        0.291 0.056 0.187 0.204 0.255
-p.Pempheris oualensis.Macroalgae              0.118 0.051 0.040 0.048 0.083
-p.Priolepis semidoliata.Macroalgae            0.275 0.138 0.063 0.084 0.169
-p.Priolepis squamogena.Macroalgae             0.237 0.120 0.056 0.074 0.145
-p.Pristiapogon exostigma.Macroalgae           0.269 0.137 0.068 0.088 0.165
-p.Pristiapogon fraenatus.Macroalgae           0.354 0.155 0.092 0.119 0.233
-p.Pseudocheilinus tetrataenia.Macroalgae      0.223 0.112 0.058 0.075 0.142
-p.Pseudodax moluccanus.Macroalgae             0.103 0.055 0.033 0.039 0.068
-p.Rhinecanthus aculeatus.Macroalgae           0.458 0.095 0.272 0.306 0.397
-p.Rhinecanthus lunula.Macroalgae              0.204 0.076 0.076 0.090 0.153
-p.Rhinecanthus rectangulus.Macroalgae         0.258 0.105 0.079 0.097 0.179
-p.Sufflamen bursa.Macroalgae                  0.269 0.074 0.121 0.141 0.221
-p.Thalassoma hardwicke.Macroalgae             0.307 0.090 0.136 0.162 0.249
-p.Thalassoma lutescens.Macroalgae             0.233 0.094 0.080 0.099 0.166
-p.Thalassoma purpureum.Macroalgae             0.212 0.078 0.081 0.097 0.159
-p.Thalassoma quinquevittatum.Macroalgae       0.224 0.108 0.062 0.079 0.143
-p.Thalassoma trilobatum.Macroalgae            0.228 0.085 0.087 0.103 0.167
-p.Valenciennea strigata.Macroalgae            0.362 0.137 0.110 0.143 0.265
-p.Anampses caeruleopunctatus.POM              0.561 0.079 0.385 0.418 0.517
-p.Balistapus undulatus.POM                    0.641 0.037 0.562 0.579 0.617
-p.Cabillus tongarevae.POM                     0.502 0.124 0.240 0.279 0.421
-p.Chaetodon auriga.POM                        0.366 0.070 0.227 0.251 0.318
-p.Chaetodon lunula.POM                        0.446 0.062 0.303 0.337 0.410
-p.Chaetodon mertensii.POM                     0.566 0.070 0.408 0.440 0.527
-p.Chaetodon vagabundus.POM                    0.368 0.056 0.254 0.271 0.331
-p.Cheilinus chlorourus.POM                    0.415 0.050 0.308 0.329 0.384
-p.Cheilinus oxycephalus.POM                   0.750 0.085 0.555 0.597 0.703
-p.Cheilinus trilobatus.POM                    0.492 0.051 0.382 0.402 0.460
-p.Coris aygula.POM                            0.414 0.071 0.247 0.283 0.373
-p.Coris gaimard.POM                           0.663 0.048 0.561 0.581 0.634
-p.Corythoichthys flavofasciatus.POM           0.373 0.086 0.201 0.227 0.316
-p.Diodon hystrix.POM                          0.693 0.081 0.491 0.547 0.653
-p.Doryrhamphus excisus.POM                    0.595 0.120 0.332 0.371 0.523
-p.Forcipiger flavissimus.POM                  0.587 0.048 0.486 0.504 0.557
-p.Forcipiger longirostris.POM                 0.730 0.041 0.642 0.657 0.706
-p.Fowleria marmorata.POM                      0.522 0.113 0.287 0.317 0.447
-p.Gomphosus varius.POM                        0.648 0.043 0.557 0.573 0.621
-p.Halichoeres hortulanus.POM                  0.419 0.048 0.319 0.337 0.389
-p.Halichoeres marginatus.POM                  0.473 0.080 0.297 0.330 0.424
-p.Halichoeres trimaculatus.POM                0.349 0.054 0.244 0.262 0.312
-p.Hemigymnus fasciatus.POM                    0.716 0.037 0.640 0.655 0.693
-p.Limnichthys nitidus.POM                     0.791 0.100 0.552 0.608 0.733
-p.Mulloidichthys flavolineatus.POM            0.383 0.057 0.261 0.285 0.347
-p.Mulloidichthys vanicolensis.POM             0.528 0.056 0.404 0.433 0.495
-p.Myripristis berndti.POM                     0.852 0.026 0.800 0.809 0.835
-p.Myripristis kuntee.POM                      0.758 0.042 0.669 0.686 0.731
-p.Myripristis violacea.POM                    0.809 0.032 0.744 0.756 0.789
-p.Nectamia savayensis.POM                     0.654 0.110 0.402 0.455 0.587
-p.Novaculichthys taeniourus.POM               0.503 0.073 0.341 0.375 0.462
-p.Ostorhinchus angustatus.POM                 0.511 0.066 0.379 0.399 0.467
-p.Parapercis millepunctata.POM                0.394 0.063 0.264 0.293 0.353
-p.Parupeneus barberinus.POM                   0.571 0.095 0.359 0.409 0.514
-p.Parupeneus ciliatus.POM                     0.484 0.088 0.296 0.330 0.431
-p.Parupeneus insularis.POM                    0.697 0.038 0.622 0.635 0.673
-p.Parupeneus multifasciatus.POM               0.631 0.041 0.546 0.561 0.605
-p.Pempheris oualensis.POM                     0.808 0.052 0.701 0.723 0.776
-p.Priolepis semidoliata.POM                   0.616 0.125 0.350 0.389 0.535
-p.Priolepis squamogena.POM                    0.680 0.109 0.438 0.480 0.613
-p.Pristiapogon exostigma.POM                  0.633 0.121 0.362 0.413 0.560
-p.Pristiapogon fraenatus.POM                  0.468 0.108 0.251 0.282 0.396
-p.Pseudocheilinus tetrataenia.POM             0.669 0.103 0.442 0.486 0.607
-p.Pseudodax moluccanus.POM                    0.817 0.065 0.662 0.705 0.785
-p.Rhinecanthus aculeatus.POM                  0.306 0.049 0.208 0.227 0.275
-p.Rhinecanthus lunula.POM                     0.673 0.067 0.516 0.556 0.635
-p.Rhinecanthus rectangulus.POM                0.585 0.062 0.451 0.477 0.547
-p.Sufflamen bursa.POM                         0.615 0.046 0.518 0.536 0.586
-p.Thalassoma hardwicke.POM                    0.497 0.056 0.369 0.398 0.465
-p.Thalassoma lutescens.POM                    0.625 0.078 0.443 0.482 0.582
-p.Thalassoma purpureum.POM                    0.634 0.059 0.505 0.532 0.602
-p.Thalassoma quinquevittatum.POM              0.658 0.099 0.438 0.485 0.597
-p.Thalassoma trilobatum.POM                   0.616 0.069 0.463 0.492 0.578
-p.Valenciennea strigata.POM                   0.291 0.062 0.166 0.187 0.250
-                                                50%   75%   95% 97.5%
-family.SD                                     0.223 0.346 0.534 0.599
-species.SD                                    0.533 0.585 0.667 0.702
-p.global.Cyanobacteria                        0.130 0.153 0.189 0.201
-p.global.Macroalgae                           0.261 0.294 0.343 0.359
-p.global.POM                                  0.605 0.636 0.682 0.699
-p.Apogonidae.Cyanobacteria                    0.133 0.157 0.209 0.227
-p.Balistidae.Cyanobacteria                    0.132 0.157 0.203 0.219
-p.Chaetodontidae.Cyanobacteria                0.142 0.169 0.221 0.243
-p.Creediidae.Cyanobacteria                    0.112 0.141 0.185 0.203
-p.Diodontidae.Cyanobacteria                   0.119 0.148 0.193 0.214
-p.Gobiidae.Cyanobacteria                      0.142 0.170 0.231 0.255
-p.Holocentridae.Cyanobacteria                 0.114 0.140 0.182 0.195
-p.Labridae.Cyanobacteria                      0.152 0.179 0.220 0.238
-p.Mullidae.Cyanobacteria                      0.122 0.150 0.192 0.209
-p.Pempheridae.Cyanobacteria                   0.119 0.150 0.201 0.223
-p.Pinguipedidae.Cyanobacteria                 0.138 0.170 0.234 0.264
-p.Syngnathidae.Cyanobacteria                  0.142 0.171 0.236 0.261
-p.Apogonidae.Macroalgae                       0.272 0.322 0.419 0.475
-p.Balistidae.Macroalgae                       0.272 0.314 0.384 0.409
-p.Chaetodontidae.Macroalgae                   0.287 0.331 0.405 0.431
-p.Creediidae.Macroalgae                       0.243 0.289 0.374 0.409
-p.Diodontidae.Macroalgae                      0.256 0.303 0.388 0.418
-p.Gobiidae.Macroalgae                         0.270 0.321 0.433 0.476
-p.Holocentridae.Macroalgae                    0.200 0.249 0.309 0.326
-p.Labridae.Macroalgae                         0.246 0.279 0.332 0.352
-p.Mullidae.Macroalgae                         0.283 0.326 0.405 0.434
-p.Pempheridae.Macroalgae                      0.231 0.277 0.347 0.370
-p.Pinguipedidae.Macroalgae                    0.284 0.339 0.462 0.512
-p.Syngnathidae.Macroalgae                     0.275 0.331 0.449 0.499
-p.Apogonidae.POM                              0.589 0.632 0.694 0.718
-p.Balistidae.POM                              0.590 0.627 0.681 0.699
-p.Chaetodontidae.POM                          0.567 0.603 0.655 0.670
-p.Creediidae.POM                              0.635 0.697 0.809 0.852
-p.Diodontidae.POM                             0.617 0.668 0.759 0.792
-p.Gobiidae.POM                                0.581 0.625 0.683 0.703
-p.Holocentridae.POM                           0.681 0.745 0.825 0.846
-p.Labridae.POM                                0.598 0.627 0.668 0.680
-p.Mullidae.POM                                0.590 0.627 0.680 0.699
-p.Pempheridae.POM                             0.639 0.700 0.805 0.836
-p.Pinguipedidae.POM                           0.572 0.616 0.681 0.706
-p.Syngnathidae.POM                            0.579 0.623 0.685 0.707
-p.Anampses caeruleopunctatus.Cyanobacteria    0.174 0.224 0.298 0.322
-p.Balistapus undulatus.Cyanobacteria          0.074 0.098 0.137 0.153
-p.Cabillus tongarevae.Cyanobacteria           0.166 0.214 0.286 0.315
-p.Chaetodon auriga.Cyanobacteria              0.212 0.249 0.306 0.333
-p.Chaetodon lunula.Cyanobacteria              0.140 0.188 0.274 0.302
-p.Chaetodon mertensii.Cyanobacteria           0.138 0.182 0.246 0.266
-p.Chaetodon vagabundus.Cyanobacteria          0.233 0.283 0.370 0.394
-p.Cheilinus chlorourus.Cyanobacteria          0.247 0.293 0.359 0.383
-p.Cheilinus oxycephalus.Cyanobacteria         0.082 0.110 0.158 0.174
-p.Cheilinus trilobatus.Cyanobacteria          0.209 0.247 0.305 0.325
-p.Coris aygula.Cyanobacteria                  0.237 0.311 0.411 0.440
-p.Coris gaimard.Cyanobacteria                 0.124 0.165 0.229 0.247
-p.Corythoichthys flavofasciatus.Cyanobacteria 0.237 0.310 0.400 0.426
-p.Diodon hystrix.Cyanobacteria                0.068 0.097 0.146 0.166
-p.Doryrhamphus excisus.Cyanobacteria          0.117 0.154 0.214 0.239
-p.Forcipiger flavissimus.Cyanobacteria        0.123 0.162 0.213 0.229
-p.Forcipiger longirostris.Cyanobacteria       0.096 0.127 0.169 0.183
-p.Fowleria marmorata.Cyanobacteria            0.139 0.178 0.238 0.257
-p.Gomphosus varius.Cyanobacteria              0.127 0.166 0.218 0.237
-p.Halichoeres hortulanus.Cyanobacteria        0.305 0.364 0.434 0.454
-p.Halichoeres marginatus.Cyanobacteria        0.212 0.272 0.356 0.379
-p.Halichoeres trimaculatus.Cyanobacteria      0.332 0.385 0.457 0.484
-p.Hemigymnus fasciatus.Cyanobacteria          0.125 0.155 0.200 0.213
-p.Limnichthys nitidus.Cyanobacteria           0.038 0.052 0.085 0.099
-p.Mulloidichthys flavolineatus.Cyanobacteria  0.054 0.073 0.105 0.118
-p.Mulloidichthys vanicolensis.Cyanobacteria   0.194 0.256 0.346 0.371
-p.Myripristis berndti.Cyanobacteria           0.071 0.092 0.121 0.130
-p.Myripristis kuntee.Cyanobacteria            0.090 0.117 0.155 0.166
-p.Myripristis violacea.Cyanobacteria          0.073 0.097 0.133 0.145
-p.Nectamia savayensis.Cyanobacteria           0.084 0.110 0.156 0.172
-p.Novaculichthys taeniourus.Cyanobacteria     0.145 0.194 0.272 0.299
-p.Ostorhinchus angustatus.Cyanobacteria       0.208 0.242 0.292 0.311
-p.Parapercis millepunctata.Cyanobacteria      0.180 0.224 0.301 0.329
-p.Parupeneus barberinus.Cyanobacteria         0.125 0.185 0.286 0.321
-p.Parupeneus ciliatus.Cyanobacteria           0.180 0.264 0.382 0.415
-p.Parupeneus insularis.Cyanobacteria          0.117 0.158 0.218 0.239
-p.Parupeneus multifasciatus.Cyanobacteria     0.072 0.098 0.142 0.161
-p.Pempheris oualensis.Cyanobacteria           0.070 0.096 0.137 0.151
-p.Priolepis semidoliata.Cyanobacteria         0.103 0.136 0.190 0.211
-p.Priolepis squamogena.Cyanobacteria          0.078 0.102 0.144 0.162
-p.Pristiapogon exostigma.Cyanobacteria        0.091 0.119 0.171 0.197
-p.Pristiapogon fraenatus.Cyanobacteria        0.174 0.221 0.296 0.319
-p.Pseudocheilinus tetrataenia.Cyanobacteria   0.103 0.133 0.184 0.200
-p.Pseudodax moluccanus.Cyanobacteria          0.074 0.102 0.147 0.171
-p.Rhinecanthus aculeatus.Cyanobacteria        0.232 0.283 0.360 0.386
-p.Rhinecanthus lunula.Cyanobacteria           0.116 0.160 0.225 0.245
-p.Rhinecanthus rectangulus.Cyanobacteria      0.154 0.201 0.256 0.276
-p.Sufflamen bursa.Cyanobacteria               0.112 0.144 0.201 0.218
-p.Thalassoma hardwicke.Cyanobacteria          0.193 0.227 0.285 0.305
-p.Thalassoma lutescens.Cyanobacteria          0.139 0.180 0.246 0.267
-p.Thalassoma purpureum.Cyanobacteria          0.149 0.197 0.270 0.294
-p.Thalassoma quinquevittatum.Cyanobacteria    0.114 0.147 0.200 0.219
-p.Thalassoma trilobatum.Cyanobacteria         0.152 0.198 0.264 0.281
-p.Valenciennea strigata.Cyanobacteria         0.348 0.422 0.523 0.555
-p.Anampses caeruleopunctatus.Macroalgae       0.252 0.330 0.446 0.485
-p.Balistapus undulatus.Macroalgae             0.281 0.316 0.369 0.385
-p.Cabillus tongarevae.Macroalgae              0.301 0.428 0.632 0.690
-p.Chaetodon auriga.Macroalgae                 0.422 0.490 0.585 0.619
-p.Chaetodon lunula.Macroalgae                 0.408 0.479 0.581 0.623
-p.Chaetodon mertensii.Macroalgae              0.286 0.364 0.478 0.511
-p.Chaetodon vagabundus.Macroalgae             0.397 0.467 0.567 0.595
-p.Cheilinus chlorourus.Macroalgae             0.334 0.401 0.504 0.536
-p.Cheilinus oxycephalus.Macroalgae            0.147 0.205 0.318 0.369
-p.Cheilinus trilobatus.Macroalgae             0.294 0.355 0.446 0.477
-p.Coris aygula.Macroalgae                     0.336 0.421 0.566 0.604
-p.Coris gaimard.Macroalgae                    0.206 0.250 0.324 0.353
-p.Corythoichthys flavofasciatus.Macroalgae    0.386 0.500 0.648 0.689
-p.Diodon hystrix.Macroalgae                   0.219 0.272 0.378 0.419
-p.Doryrhamphus excisus.Macroalgae             0.263 0.369 0.546 0.601
-p.Forcipiger flavissimus.Macroalgae           0.285 0.339 0.413 0.436
-p.Forcipiger longirostris.Macroalgae          0.167 0.205 0.266 0.288
-p.Fowleria marmorata.Macroalgae               0.321 0.440 0.613 0.652
-p.Gomphosus varius.Macroalgae                 0.218 0.260 0.326 0.348
-p.Halichoeres hortulanus.Macroalgae           0.270 0.339 0.452 0.497
-p.Halichoeres marginatus.Macroalgae           0.306 0.396 0.536 0.580
-p.Halichoeres trimaculatus.Macroalgae         0.317 0.388 0.490 0.519
-p.Hemigymnus fasciatus.Macroalgae             0.154 0.192 0.253 0.272
-p.Limnichthys nitidus.Macroalgae              0.148 0.223 0.351 0.409
-p.Mulloidichthys flavolineatus.Macroalgae     0.557 0.602 0.671 0.691
-p.Mulloidichthys vanicolensis.Macroalgae      0.271 0.332 0.432 0.470
-p.Myripristis berndti.Macroalgae              0.072 0.094 0.130 0.142
-p.Myripristis kuntee.Macroalgae               0.148 0.187 0.248 0.266
-p.Myripristis violacea.Macroalgae             0.112 0.143 0.181 0.193
-p.Nectamia savayensis.Macroalgae              0.244 0.335 0.488 0.540
-p.Novaculichthys taeniourus.Macroalgae        0.337 0.401 0.506 0.550
-p.Ostorhinchus angustatus.Macroalgae          0.276 0.347 0.456 0.489
-p.Parapercis millepunctata.Macroalgae         0.426 0.497 0.596 0.629
-p.Parupeneus barberinus.Macroalgae            0.279 0.346 0.476 0.524
-p.Parupeneus ciliatus.Macroalgae              0.314 0.396 0.534 0.586
-p.Parupeneus insularis.Macroalgae             0.179 0.223 0.283 0.303
-p.Parupeneus multifasciatus.Macroalgae        0.290 0.328 0.380 0.402
-p.Pempheris oualensis.Macroalgae              0.112 0.146 0.213 0.235
-p.Priolepis semidoliata.Macroalgae            0.254 0.361 0.529 0.584
-p.Priolepis squamogena.Macroalgae             0.219 0.310 0.466 0.517
-p.Pristiapogon exostigma.Macroalgae           0.247 0.348 0.527 0.583
-p.Pristiapogon fraenatus.Macroalgae           0.346 0.459 0.628 0.672
-p.Pseudocheilinus tetrataenia.Macroalgae      0.203 0.289 0.429 0.477
-p.Pseudodax moluccanus.Macroalgae             0.094 0.125 0.200 0.235
-p.Rhinecanthus aculeatus.Macroalgae           0.457 0.520 0.614 0.638
-p.Rhinecanthus lunula.Macroalgae              0.197 0.250 0.340 0.376
-p.Rhinecanthus rectangulus.Macroalgae         0.253 0.329 0.437 0.475
-p.Sufflamen bursa.Macroalgae                  0.269 0.319 0.391 0.413
-p.Thalassoma hardwicke.Macroalgae             0.304 0.361 0.462 0.492
-p.Thalassoma lutescens.Macroalgae             0.221 0.288 0.403 0.447
-p.Thalassoma purpureum.Macroalgae             0.205 0.260 0.348 0.384
-p.Thalassoma quinquevittatum.Macroalgae       0.209 0.286 0.429 0.470
-p.Thalassoma trilobatum.Macroalgae            0.222 0.278 0.378 0.411
-p.Valenciennea strigata.Macroalgae            0.355 0.449 0.598 0.648
-p.Anampses caeruleopunctatus.POM              0.568 0.615 0.675 0.692
-p.Balistapus undulatus.POM                    0.643 0.667 0.698 0.709
-p.Cabillus tongarevae.POM                     0.513 0.594 0.684 0.718
-p.Chaetodon auriga.POM                        0.366 0.415 0.481 0.500
-p.Chaetodon lunula.POM                        0.451 0.486 0.539 0.553
-p.Chaetodon mertensii.POM                     0.573 0.613 0.667 0.685
-p.Chaetodon vagabundus.POM                    0.371 0.405 0.453 0.471
-p.Cheilinus chlorourus.POM                    0.417 0.449 0.492 0.508
-p.Cheilinus oxycephalus.POM                   0.760 0.809 0.872 0.888
-p.Cheilinus trilobatus.POM                    0.496 0.527 0.567 0.582
-p.Coris aygula.POM                            0.421 0.464 0.519 0.536
-p.Coris gaimard.POM                           0.665 0.696 0.734 0.748
-p.Corythoichthys flavofasciatus.POM           0.375 0.433 0.511 0.536
-p.Diodon hystrix.POM                          0.704 0.748 0.800 0.819
-p.Doryrhamphus excisus.POM                    0.605 0.680 0.773 0.799
-p.Forcipiger flavissimus.POM                  0.591 0.620 0.659 0.671
-p.Forcipiger longirostris.POM                 0.733 0.758 0.791 0.802
-p.Fowleria marmorata.POM                      0.532 0.603 0.699 0.719
-p.Gomphosus varius.POM                        0.651 0.678 0.713 0.723
-p.Halichoeres hortulanus.POM                  0.422 0.450 0.492 0.508
-p.Halichoeres marginatus.POM                  0.479 0.528 0.593 0.615
-p.Halichoeres trimaculatus.POM                0.349 0.386 0.438 0.455
-p.Hemigymnus fasciatus.POM                    0.717 0.741 0.774 0.783
-p.Limnichthys nitidus.POM                     0.808 0.865 0.923 0.934
-p.Mulloidichthys flavolineatus.POM            0.385 0.422 0.471 0.489
-p.Mulloidichthys vanicolensis.POM             0.531 0.565 0.613 0.631
-p.Myripristis berndti.POM                     0.852 0.870 0.893 0.901
-p.Myripristis kuntee.POM                      0.760 0.787 0.826 0.837
-p.Myripristis violacea.POM                    0.810 0.831 0.861 0.870
-p.Nectamia savayensis.POM                     0.664 0.732 0.816 0.838
-p.Novaculichthys taeniourus.POM               0.509 0.554 0.611 0.629
-p.Ostorhinchus angustatus.POM                 0.514 0.557 0.614 0.629
-p.Parapercis millepunctata.POM                0.395 0.437 0.494 0.515
-p.Parupeneus barberinus.POM                   0.580 0.635 0.714 0.740
-p.Parupeneus ciliatus.POM                     0.490 0.543 0.618 0.642
-p.Parupeneus insularis.POM                    0.698 0.721 0.757 0.771
-p.Parupeneus multifasciatus.POM               0.633 0.658 0.694 0.705
-p.Pempheris oualensis.POM                     0.812 0.843 0.886 0.897
-p.Priolepis semidoliata.POM                   0.628 0.709 0.798 0.823
-p.Priolepis squamogena.POM                    0.693 0.762 0.836 0.856
-p.Pristiapogon exostigma.POM                  0.647 0.719 0.808 0.828
-p.Pristiapogon fraenatus.POM                  0.471 0.546 0.638 0.658
-p.Pseudocheilinus tetrataenia.POM             0.680 0.740 0.818 0.841
-p.Pseudodax moluccanus.POM                    0.826 0.859 0.904 0.916
-p.Rhinecanthus aculeatus.POM                  0.306 0.337 0.382 0.400
-p.Rhinecanthus lunula.POM                     0.679 0.719 0.769 0.787
-p.Rhinecanthus rectangulus.POM                0.591 0.629 0.676 0.688
-p.Sufflamen bursa.POM                         0.617 0.646 0.687 0.700
-p.Thalassoma hardwicke.POM                    0.502 0.535 0.580 0.596
-p.Thalassoma lutescens.POM                    0.633 0.679 0.736 0.754
-p.Thalassoma purpureum.POM                    0.637 0.674 0.724 0.738
-p.Thalassoma quinquevittatum.POM              0.667 0.728 0.805 0.828
-p.Thalassoma trilobatum.POM                   0.625 0.664 0.712 0.725
-p.Valenciennea strigata.POM                   0.292 0.334 0.389 0.409
+                                                   Mean    SD  2.5%    5%   25%
+family.SD                                         0.759 0.483 0.068 0.131 0.421
+species.SD                                        1.003 0.181 0.671 0.722 0.881
+p.global.Cyanobacteria                            0.065 0.041 0.009 0.013 0.034
+p.global.Green-Brown algae                        0.171 0.123 0.022 0.031 0.081
+p.global.POM                                      0.300 0.098 0.125 0.147 0.231
+p.global.Red algae                                0.464 0.124 0.193 0.251 0.387
+p.Apogonidae.Cyanobacteria                        0.065 0.057 0.003 0.005 0.023
+p.Balistidae.Cyanobacteria                        0.058 0.042 0.007 0.011 0.028
+p.Chaetodontidae.Cyanobacteria                    0.085 0.059 0.013 0.016 0.040
+p.Creediidae.Cyanobacteria                        0.050 0.049 0.001 0.002 0.015
+p.Diodontidae.Cyanobacteria                       0.050 0.050 0.000 0.002 0.014
+p.Gobiidae.Cyanobacteria                          0.080 0.064 0.003 0.007 0.032
+p.Holocentridae.Cyanobacteria                     0.074 0.056 0.008 0.011 0.034
+p.Labridae.Cyanobacteria                          0.090 0.047 0.021 0.027 0.053
+p.Mullidae.Cyanobacteria                          0.038 0.035 0.001 0.002 0.012
+p.Pempheridae.Cyanobacteria                       0.060 0.055 0.002 0.004 0.021
+p.Pinguipedidae.Cyanobacteria                     0.085 0.078 0.005 0.008 0.032
+p.Syngnathidae.Cyanobacteria                      0.083 0.074 0.002 0.006 0.031
+p.Apogonidae.Green-Brown algae                    0.261 0.235 0.013 0.022 0.078
+p.Balistidae.Green-Brown algae                    0.192 0.117 0.028 0.041 0.105
+p.Chaetodontidae.Green-Brown algae                0.176 0.157 0.013 0.020 0.066
+p.Creediidae.Green-Brown algae                    0.161 0.165 0.008 0.013 0.049
+p.Diodontidae.Green-Brown algae                   0.088 0.092 0.002 0.004 0.024
+p.Gobiidae.Green-Brown algae                      0.269 0.233 0.017 0.026 0.094
+p.Holocentridae.Green-Brown algae                 0.071 0.065 0.004 0.007 0.025
+p.Labridae.Green-Brown algae                      0.135 0.107 0.015 0.022 0.060
+p.Mullidae.Green-Brown algae                      0.110 0.076 0.015 0.022 0.054
+p.Pempheridae.Green-Brown algae                   0.117 0.104 0.007 0.011 0.043
+p.Pinguipedidae.Green-Brown algae                 0.235 0.199 0.015 0.022 0.086
+p.Syngnathidae.Green-Brown algae                  0.260 0.241 0.012 0.020 0.078
+p.Apogonidae.POM                                  0.254 0.133 0.032 0.058 0.156
+p.Balistidae.POM                                  0.330 0.119 0.122 0.151 0.243
+p.Chaetodontidae.POM                              0.225 0.108 0.058 0.075 0.145
+p.Creediidae.POM                                  0.367 0.204 0.027 0.061 0.223
+p.Diodontidae.POM                                 0.243 0.164 0.003 0.009 0.117
+p.Gobiidae.POM                                    0.266 0.142 0.015 0.042 0.163
+p.Holocentridae.POM                               0.528 0.176 0.214 0.246 0.390
+p.Labridae.POM                                    0.338 0.097 0.167 0.186 0.269
+p.Mullidae.POM                                    0.183 0.117 0.006 0.015 0.088
+p.Pempheridae.POM                                 0.448 0.199 0.131 0.164 0.296
+p.Pinguipedidae.POM                               0.261 0.142 0.029 0.052 0.157
+p.Syngnathidae.POM                                0.244 0.143 0.014 0.032 0.135
+p.Apogonidae.Red algae                            0.419 0.194 0.046 0.082 0.280
+p.Balistidae.Red algae                            0.420 0.154 0.079 0.161 0.321
+p.Chaetodontidae.Red algae                        0.514 0.196 0.007 0.019 0.437
+p.Creediidae.Red algae                            0.422 0.213 0.040 0.071 0.263
+p.Diodontidae.Red algae                           0.619 0.212 0.168 0.278 0.476
+p.Gobiidae.Red algae                              0.385 0.193 0.029 0.053 0.240
+p.Holocentridae.Red algae                         0.327 0.168 0.044 0.064 0.192
+p.Labridae.Red algae                              0.437 0.152 0.045 0.071 0.370
+p.Mullidae.Red algae                              0.669 0.161 0.359 0.407 0.553
+p.Pempheridae.Red algae                           0.375 0.196 0.036 0.059 0.220
+p.Pinguipedidae.Red algae                         0.418 0.193 0.033 0.073 0.284
+p.Syngnathidae.Red algae                          0.413 0.206 0.030 0.052 0.264
+p.Anampses caeruleopunctatus.Cyanobacteria        0.117 0.083 0.006 0.010 0.047
+p.Balistapus undulatus.Cyanobacteria              0.020 0.018 0.001 0.002 0.007
+p.Cabillus tongarevae.Cyanobacteria               0.083 0.079 0.001 0.003 0.025
+p.Chaetodon auriga.Cyanobacteria                  0.159 0.072 0.028 0.041 0.107
+p.Chaetodon lunula.Cyanobacteria                  0.089 0.068 0.003 0.005 0.027
+p.Chaetodon mertensii.Cyanobacteria               0.070 0.059 0.003 0.005 0.024
+p.Chaetodon vagabundus.Cyanobacteria              0.148 0.098 0.015 0.024 0.065
+p.Cheilinus chlorourus.Cyanobacteria              0.160 0.089 0.031 0.041 0.086
+p.Cheilinus oxycephalus.Cyanobacteria             0.038 0.031 0.003 0.004 0.015
+p.Cheilinus trilobatus.Cyanobacteria              0.143 0.070 0.026 0.037 0.089
+p.Coris aygula.Cyanobacteria                      0.182 0.129 0.005 0.010 0.061
+p.Coris gaimard.Cyanobacteria                     0.044 0.037 0.003 0.004 0.017
+p.Corythoichthys flavofasciatus.Cyanobacteria     0.157 0.125 0.001 0.003 0.047
+p.Diodon hystrix.Cyanobacteria                    0.019 0.025 0.000 0.000 0.003
+p.Doryrhamphus excisus.Cyanobacteria              0.057 0.058 0.001 0.002 0.015
+p.Forcipiger flavissimus.Cyanobacteria            0.057 0.045 0.004 0.006 0.021
+p.Forcipiger longirostris.Cyanobacteria           0.053 0.039 0.004 0.006 0.021
+p.Fowleria marmorata.Cyanobacteria                0.057 0.058 0.001 0.002 0.014
+p.Gomphosus varius.Cyanobacteria                  0.036 0.031 0.002 0.004 0.013
+p.Halichoeres hortulanus.Cyanobacteria            0.204 0.126 0.011 0.017 0.097
+p.Halichoeres marginatus.Cyanobacteria            0.136 0.100 0.006 0.010 0.054
+p.Halichoeres trimaculatus.Cyanobacteria          0.235 0.118 0.057 0.074 0.139
+p.Hemigymnus fasciatus.Cyanobacteria              0.095 0.051 0.009 0.015 0.053
+p.Limnichthys nitidus.Cyanobacteria               0.019 0.026 0.000 0.001 0.004
+p.Mulloidichthys flavolineatus.Cyanobacteria      0.016 0.018 0.000 0.001 0.004
+p.Mulloidichthys vanicolensis.Cyanobacteria       0.067 0.076 0.001 0.001 0.010
+p.Myripristis berndti.Cyanobacteria               0.072 0.053 0.002 0.004 0.022
+p.Myripristis kuntee.Cyanobacteria                0.063 0.043 0.003 0.006 0.027
+p.Myripristis violacea.Cyanobacteria              0.057 0.040 0.003 0.005 0.024
+p.Nectamia savayensis.Cyanobacteria               0.036 0.038 0.001 0.002 0.009
+p.Novaculichthys taeniourus.Cyanobacteria         0.065 0.059 0.003 0.005 0.020
+p.Ostorhinchus angustatus.Cyanobacteria           0.087 0.078 0.002 0.005 0.029
+p.Parapercis millepunctata.Cyanobacteria          0.123 0.095 0.003 0.006 0.044
+p.Parupeneus barberinus.Cyanobacteria             0.042 0.056 0.000 0.001 0.006
+p.Parupeneus ciliatus.Cyanobacteria               0.081 0.106 0.001 0.001 0.009
+p.Parupeneus insularis.Cyanobacteria              0.021 0.026 0.000 0.001 0.004
+p.Parupeneus multifasciatus.Cyanobacteria         0.019 0.021 0.000 0.001 0.004
+p.Pempheris oualensis.Cyanobacteria               0.033 0.033 0.001 0.001 0.009
+p.Priolepis semidoliata.Cyanobacteria             0.054 0.057 0.001 0.002 0.014
+p.Priolepis squamogena.Cyanobacteria              0.038 0.038 0.001 0.002 0.011
+p.Pristiapogon exostigma.Cyanobacteria            0.043 0.047 0.001 0.002 0.011
+p.Pristiapogon fraenatus.Cyanobacteria            0.094 0.084 0.001 0.003 0.025
+p.Pseudocheilinus tetrataenia.Cyanobacteria       0.048 0.041 0.003 0.005 0.018
+p.Pseudodax moluccanus.Cyanobacteria              0.036 0.032 0.002 0.003 0.013
+p.Rhinecanthus aculeatus.Cyanobacteria            0.143 0.118 0.008 0.015 0.059
+p.Rhinecanthus lunula.Cyanobacteria               0.051 0.050 0.002 0.003 0.015
+p.Rhinecanthus rectangulus.Cyanobacteria          0.053 0.047 0.002 0.003 0.015
+p.Sufflamen bursa.Cyanobacteria                   0.044 0.038 0.002 0.004 0.016
+p.Thalassoma hardwicke.Cyanobacteria              0.127 0.057 0.025 0.035 0.084
+p.Thalassoma lutescens.Cyanobacteria              0.086 0.065 0.005 0.008 0.033
+p.Thalassoma purpureum.Cyanobacteria              0.100 0.076 0.006 0.010 0.036
+p.Thalassoma quinquevittatum.Cyanobacteria        0.055 0.044 0.004 0.005 0.021
+p.Thalassoma trilobatum.Cyanobacteria             0.081 0.066 0.004 0.007 0.028
+p.Valenciennea strigata.Cyanobacteria             0.240 0.159 0.001 0.004 0.115
+p.Anampses caeruleopunctatus.Green-Brown algae    0.138 0.132 0.004 0.008 0.039
+p.Balistapus undulatus.Green-Brown algae          0.156 0.087 0.021 0.037 0.097
+p.Cabillus tongarevae.Green-Brown algae           0.292 0.284 0.006 0.011 0.060
+p.Chaetodon auriga.Green-Brown algae              0.191 0.219 0.005 0.008 0.035
+p.Chaetodon lunula.Green-Brown algae              0.167 0.185 0.004 0.007 0.035
+p.Chaetodon mertensii.Green-Brown algae           0.170 0.176 0.004 0.006 0.036
+p.Chaetodon vagabundus.Green-Brown algae          0.330 0.233 0.007 0.012 0.108
+p.Cheilinus chlorourus.Green-Brown algae          0.330 0.210 0.028 0.046 0.141
+p.Cheilinus oxycephalus.Green-Brown algae         0.071 0.069 0.003 0.005 0.022
+p.Cheilinus trilobatus.Green-Brown algae          0.188 0.140 0.010 0.016 0.074
+p.Coris aygula.Green-Brown algae                  0.122 0.170 0.004 0.006 0.025
+p.Coris gaimard.Green-Brown algae                 0.070 0.087 0.003 0.004 0.019
+p.Corythoichthys flavofasciatus.Green-Brown algae 0.404 0.307 0.007 0.012 0.092
+p.Diodon hystrix.Green-Brown algae                0.019 0.035 0.000 0.001 0.004
+p.Doryrhamphus excisus.Green-Brown algae          0.266 0.273 0.004 0.008 0.044
+p.Forcipiger flavissimus.Green-Brown algae        0.152 0.128 0.006 0.010 0.049
+p.Forcipiger longirostris.Green-Brown algae       0.094 0.070 0.006 0.010 0.041
+p.Fowleria marmorata.Green-Brown algae            0.318 0.301 0.005 0.009 0.053
+p.Gomphosus varius.Green-Brown algae              0.064 0.088 0.003 0.004 0.016
+p.Halichoeres hortulanus.Green-Brown algae        0.225 0.166 0.019 0.029 0.096
+p.Halichoeres marginatus.Green-Brown algae        0.233 0.192 0.007 0.011 0.062
+p.Halichoeres trimaculatus.Green-Brown algae      0.355 0.218 0.010 0.019 0.155
+p.Hemigymnus fasciatus.Green-Brown algae          0.079 0.065 0.005 0.008 0.029
+p.Limnichthys nitidus.Green-Brown algae           0.145 0.186 0.002 0.004 0.021
+p.Mulloidichthys flavolineatus.Green-Brown algae  0.263 0.084 0.108 0.128 0.209
+p.Mulloidichthys vanicolensis.Green-Brown algae   0.117 0.080 0.013 0.019 0.058
+p.Myripristis berndti.Green-Brown algae           0.015 0.018 0.001 0.001 0.004
+p.Myripristis kuntee.Green-Brown algae            0.066 0.056 0.002 0.004 0.019
+p.Myripristis violacea.Green-Brown algae          0.035 0.031 0.002 0.003 0.012
+p.Nectamia savayensis.Green-Brown algae           0.249 0.239 0.004 0.008 0.049
+p.Novaculichthys taeniourus.Green-Brown algae     0.133 0.137 0.007 0.012 0.047
+p.Ostorhinchus angustatus.Green-Brown algae       0.305 0.254 0.006 0.011 0.068
+p.Parapercis millepunctata.Green-Brown algae      0.365 0.231 0.007 0.017 0.145
+p.Parupeneus barberinus.Green-Brown algae         0.081 0.075 0.005 0.009 0.029
+p.Parupeneus ciliatus.Green-Brown algae           0.162 0.120 0.015 0.023 0.074
+p.Parupeneus insularis.Green-Brown algae          0.026 0.028 0.002 0.002 0.009
+p.Parupeneus multifasciatus.Green-Brown algae     0.052 0.046 0.003 0.005 0.019
+p.Pempheris oualensis.Green-Brown algae           0.048 0.041 0.002 0.004 0.016
+p.Priolepis semidoliata.Green-Brown algae         0.269 0.270 0.005 0.009 0.052
+p.Priolepis squamogena.Green-Brown algae          0.255 0.251 0.006 0.010 0.054
+p.Pristiapogon exostigma.Green-Brown algae        0.268 0.270 0.005 0.009 0.047
+p.Pristiapogon fraenatus.Green-Brown algae        0.350 0.310 0.005 0.010 0.065
+p.Pseudocheilinus tetrataenia.Green-Brown algae   0.139 0.161 0.004 0.006 0.030
+p.Pseudodax moluccanus.Green-Brown algae          0.030 0.036 0.001 0.002 0.008
+p.Rhinecanthus aculeatus.Green-Brown algae        0.567 0.207 0.018 0.039 0.492
+p.Rhinecanthus lunula.Green-Brown algae           0.100 0.069 0.010 0.016 0.048
+p.Rhinecanthus rectangulus.Green-Brown algae      0.092 0.076 0.006 0.010 0.034
+p.Sufflamen bursa.Green-Brown algae               0.238 0.100 0.029 0.054 0.174
+p.Thalassoma hardwicke.Green-Brown algae          0.119 0.137 0.005 0.007 0.029
+p.Thalassoma lutescens.Green-Brown algae          0.119 0.101 0.005 0.009 0.039
+p.Thalassoma purpureum.Green-Brown algae          0.100 0.087 0.006 0.010 0.038
+p.Thalassoma quinquevittatum.Green-Brown algae    0.131 0.138 0.004 0.006 0.030
+p.Thalassoma trilobatum.Green-Brown algae         0.128 0.105 0.005 0.009 0.044
+p.Valenciennea strigata.Green-Brown algae         0.445 0.268 0.011 0.024 0.227
+p.Anampses caeruleopunctatus.POM                  0.344 0.153 0.042 0.073 0.231
+p.Balistapus undulatus.POM                        0.347 0.118 0.098 0.142 0.277
+p.Cabillus tongarevae.POM                         0.201 0.175 0.006 0.011 0.062
+p.Chaetodon auriga.POM                            0.126 0.095 0.013 0.019 0.055
+p.Chaetodon lunula.POM                            0.082 0.081 0.006 0.010 0.030
+p.Chaetodon mertensii.POM                         0.139 0.111 0.009 0.015 0.057
+p.Chaetodon vagabundus.POM                        0.085 0.067 0.009 0.013 0.037
+p.Cheilinus chlorourus.POM                        0.192 0.075 0.056 0.075 0.138
+p.Cheilinus oxycephalus.POM                       0.636 0.203 0.088 0.174 0.549
+p.Cheilinus trilobatus.POM                        0.277 0.103 0.075 0.100 0.206
+p.Coris aygula.POM                                0.082 0.073 0.009 0.013 0.034
+p.Coris gaimard.POM                               0.254 0.160 0.018 0.033 0.129
+p.Corythoichthys flavofasciatus.POM               0.140 0.105 0.007 0.014 0.059
+p.Diodon hystrix.POM                              0.143 0.159 0.001 0.002 0.026
+p.Doryrhamphus excisus.POM                        0.236 0.188 0.006 0.013 0.080
+p.Forcipiger flavissimus.POM                      0.305 0.121 0.054 0.096 0.229
+p.Forcipiger longirostris.POM                     0.618 0.090 0.414 0.451 0.563
+p.Fowleria marmorata.POM                          0.222 0.163 0.013 0.022 0.096
+p.Gomphosus varius.POM                            0.244 0.153 0.019 0.032 0.127
+p.Halichoeres hortulanus.POM                      0.181 0.097 0.025 0.040 0.106
+p.Halichoeres marginatus.POM                      0.245 0.123 0.029 0.049 0.150
+p.Halichoeres trimaculatus.POM                    0.192 0.077 0.055 0.071 0.138
+p.Hemigymnus fasciatus.POM                        0.621 0.077 0.442 0.482 0.575
+p.Limnichthys nitidus.POM                         0.509 0.270 0.014 0.039 0.297
+p.Mulloidichthys flavolineatus.POM                0.054 0.046 0.003 0.006 0.022
+p.Mulloidichthys vanicolensis.POM                 0.162 0.122 0.004 0.010 0.058
+p.Myripristis berndti.POM                         0.680 0.126 0.433 0.473 0.577
+p.Myripristis kuntee.POM                          0.655 0.091 0.460 0.493 0.595
+p.Myripristis violacea.POM                        0.736 0.086 0.520 0.573 0.693
+p.Nectamia savayensis.POM                         0.337 0.196 0.018 0.042 0.188
+p.Novaculichthys taeniourus.POM                   0.145 0.134 0.010 0.016 0.052
+p.Ostorhinchus angustatus.POM                     0.153 0.130 0.010 0.018 0.064
+p.Parapercis millepunctata.POM                    0.166 0.091 0.016 0.031 0.097
+p.Parupeneus barberinus.POM                       0.202 0.191 0.003 0.006 0.046
+p.Parupeneus ciliatus.POM                         0.188 0.152 0.004 0.008 0.061
+p.Parupeneus insularis.POM                        0.162 0.125 0.002 0.005 0.050
+p.Parupeneus multifasciatus.POM                   0.165 0.114 0.002 0.005 0.065
+p.Pempheris oualensis.POM                         0.727 0.124 0.412 0.496 0.665
+p.Priolepis semidoliata.POM                       0.279 0.212 0.009 0.017 0.095
+p.Priolepis squamogena.POM                        0.398 0.227 0.010 0.033 0.222
+p.Pristiapogon exostigma.POM                      0.294 0.207 0.012 0.024 0.119
+p.Pristiapogon fraenatus.POM                      0.194 0.152 0.010 0.018 0.075
+p.Pseudocheilinus tetrataenia.POM                 0.427 0.215 0.037 0.074 0.262
+p.Pseudodax moluccanus.POM                        0.770 0.144 0.380 0.520 0.719
+p.Rhinecanthus aculeatus.POM                      0.121 0.066 0.018 0.028 0.072
+p.Rhinecanthus lunula.POM                         0.555 0.167 0.136 0.213 0.467
+p.Rhinecanthus rectangulus.POM                    0.204 0.128 0.017 0.029 0.112
+p.Sufflamen bursa.POM                             0.438 0.095 0.218 0.265 0.383
+p.Thalassoma hardwicke.POM                        0.198 0.107 0.033 0.052 0.122
+p.Thalassoma lutescens.POM                        0.447 0.161 0.066 0.133 0.353
+p.Thalassoma purpureum.POM                        0.497 0.144 0.156 0.221 0.416
+p.Thalassoma quinquevittatum.POM                  0.432 0.203 0.042 0.082 0.283
+p.Thalassoma trilobatum.POM                       0.418 0.156 0.063 0.115 0.321
+p.Valenciennea strigata.POM                       0.119 0.078 0.009 0.016 0.058
+p.Anampses caeruleopunctatus.Red algae            0.401 0.234 0.032 0.052 0.215
+p.Balistapus undulatus.Red algae                  0.476 0.182 0.032 0.074 0.390
+p.Cabillus tongarevae.Red algae                   0.424 0.275 0.013 0.028 0.176
+p.Chaetodon auriga.Red algae                      0.523 0.242 0.006 0.015 0.470
+p.Chaetodon lunula.Red algae                      0.662 0.220 0.006 0.016 0.627
+p.Chaetodon mertensii.Red algae                   0.620 0.235 0.005 0.014 0.528
+p.Chaetodon vagabundus.Red algae                  0.436 0.189 0.004 0.014 0.343
+p.Cheilinus chlorourus.Red algae                  0.318 0.163 0.030 0.048 0.186
+p.Cheilinus oxycephalus.Red algae                 0.255 0.211 0.015 0.025 0.102
+p.Cheilinus trilobatus.Red algae                  0.392 0.183 0.035 0.059 0.268
+p.Coris aygula.Red algae                          0.614 0.207 0.031 0.065 0.555
+p.Coris gaimard.Red algae                         0.632 0.229 0.027 0.062 0.540
+p.Corythoichthys flavofasciatus.Red algae         0.300 0.212 0.015 0.028 0.124
+p.Diodon hystrix.Red algae                        0.819 0.184 0.235 0.489 0.753
+p.Doryrhamphus excisus.Red algae                  0.441 0.277 0.016 0.031 0.196
+p.Forcipiger flavissimus.Red algae                0.486 0.213 0.006 0.019 0.389
+p.Forcipiger longirostris.Red algae               0.235 0.129 0.006 0.017 0.144
+p.Fowleria marmorata.Red algae                    0.402 0.263 0.017 0.031 0.168
+p.Gomphosus varius.Red algae                      0.656 0.226 0.025 0.054 0.579
+p.Halichoeres hortulanus.Red algae                0.390 0.168 0.031 0.059 0.289
+p.Halichoeres marginatus.Red algae                0.386 0.222 0.031 0.051 0.212
+p.Halichoeres trimaculatus.Red algae              0.218 0.122 0.029 0.044 0.128
+p.Hemigymnus fasciatus.Red algae                  0.206 0.107 0.029 0.048 0.128
+p.Limnichthys nitidus.Red algae                   0.327 0.261 0.012 0.022 0.107
+p.Mulloidichthys flavolineatus.Red algae          0.667 0.100 0.495 0.528 0.615
+p.Mulloidichthys vanicolensis.Red algae           0.654 0.184 0.231 0.339 0.539
+p.Myripristis berndti.Red algae                   0.233 0.170 0.010 0.015 0.067
+p.Myripristis kuntee.Red algae                    0.217 0.122 0.025 0.040 0.124
+p.Myripristis violacea.Red algae                  0.172 0.103 0.019 0.031 0.097
+p.Nectamia savayensis.Red algae                   0.378 0.242 0.031 0.045 0.170
+p.Novaculichthys taeniourus.Red algae             0.657 0.235 0.030 0.052 0.606
+p.Ostorhinchus angustatus.Red algae               0.455 0.229 0.046 0.074 0.277
+p.Parapercis millepunctata.Red algae              0.345 0.186 0.026 0.046 0.201
+p.Parupeneus barberinus.Red algae                 0.675 0.233 0.119 0.206 0.525
+p.Parupeneus ciliatus.Red algae                   0.568 0.227 0.107 0.169 0.400
+p.Parupeneus insularis.Red algae                  0.791 0.147 0.500 0.546 0.697
+p.Parupeneus multifasciatus.Red algae             0.764 0.143 0.487 0.529 0.673
+p.Pempheris oualensis.Red algae                   0.191 0.137 0.014 0.023 0.087
+p.Priolepis semidoliata.Red algae                 0.398 0.274 0.014 0.028 0.156
+p.Priolepis squamogena.Red algae                  0.310 0.228 0.017 0.028 0.119
+p.Pristiapogon exostigma.Red algae                0.396 0.258 0.021 0.037 0.174
+p.Pristiapogon fraenatus.Red algae                0.362 0.253 0.015 0.030 0.133
+p.Pseudocheilinus tetrataenia.Red algae           0.386 0.241 0.025 0.045 0.189
+p.Pseudodax moluccanus.Red algae                  0.163 0.148 0.013 0.021 0.065
+p.Rhinecanthus aculeatus.Red algae                0.169 0.112 0.019 0.034 0.088
+p.Rhinecanthus lunula.Red algae                   0.294 0.194 0.029 0.049 0.149
+p.Rhinecanthus rectangulus.Red algae              0.652 0.187 0.065 0.312 0.564
+p.Sufflamen bursa.Red algae                       0.279 0.152 0.035 0.056 0.165
+p.Thalassoma hardwicke.Red algae                  0.556 0.201 0.023 0.042 0.496
+p.Thalassoma lutescens.Red algae                  0.348 0.219 0.025 0.047 0.177
+p.Thalassoma purpureum.Red algae                  0.302 0.185 0.029 0.048 0.166
+p.Thalassoma quinquevittatum.Red algae            0.382 0.241 0.024 0.043 0.181
+p.Thalassoma trilobatum.Red algae                 0.374 0.220 0.028 0.049 0.202
+p.Valenciennea strigata.Red algae                 0.196 0.126 0.014 0.027 0.098
+                                                    50%   75%   95% 97.5%
+family.SD                                         0.688 0.998 1.674 1.992
+species.SD                                        0.992 1.115 1.314 1.398
+p.global.Cyanobacteria                            0.056 0.090 0.143 0.161
+p.global.Green-Brown algae                        0.141 0.231 0.399 0.472
+p.global.POM                                      0.295 0.364 0.474 0.505
+p.global.Red algae                                0.472 0.552 0.650 0.683
+p.Apogonidae.Cyanobacteria                        0.050 0.092 0.173 0.208
+p.Balistidae.Cyanobacteria                        0.048 0.079 0.138 0.161
+p.Chaetodontidae.Cyanobacteria                    0.071 0.117 0.198 0.230
+p.Creediidae.Cyanobacteria                        0.036 0.069 0.142 0.175
+p.Diodontidae.Cyanobacteria                       0.036 0.071 0.146 0.173
+p.Gobiidae.Cyanobacteria                          0.065 0.113 0.205 0.237
+p.Holocentridae.Cyanobacteria                     0.060 0.097 0.185 0.221
+p.Labridae.Cyanobacteria                          0.082 0.119 0.179 0.199
+p.Mullidae.Cyanobacteria                          0.028 0.054 0.111 0.128
+p.Pempheridae.Cyanobacteria                       0.046 0.084 0.162 0.197
+p.Pinguipedidae.Cyanobacteria                     0.064 0.114 0.230 0.302
+p.Syngnathidae.Cyanobacteria                      0.063 0.113 0.227 0.281
+p.Apogonidae.Green-Brown algae                    0.172 0.402 0.758 0.823
+p.Balistidae.Green-Brown algae                    0.168 0.256 0.419 0.475
+p.Chaetodontidae.Green-Brown algae                0.126 0.232 0.539 0.615
+p.Creediidae.Green-Brown algae                    0.110 0.206 0.500 0.682
+p.Diodontidae.Green-Brown algae                   0.059 0.121 0.260 0.330
+p.Gobiidae.Green-Brown algae                      0.191 0.377 0.796 0.875
+p.Holocentridae.Green-Brown algae                 0.054 0.099 0.199 0.238
+p.Labridae.Green-Brown algae                      0.106 0.175 0.383 0.438
+p.Mullidae.Green-Brown algae                      0.091 0.145 0.257 0.305
+p.Pempheridae.Green-Brown algae                   0.088 0.158 0.319 0.399
+p.Pinguipedidae.Green-Brown algae                 0.174 0.331 0.672 0.755
+p.Syngnathidae.Green-Brown algae                  0.172 0.372 0.786 0.884
+p.Apogonidae.POM                                  0.243 0.339 0.494 0.549
+p.Balistidae.POM                                  0.319 0.408 0.544 0.584
+p.Chaetodontidae.POM                              0.210 0.287 0.422 0.483
+p.Creediidae.POM                                  0.340 0.489 0.758 0.834
+p.Diodontidae.POM                                 0.231 0.342 0.551 0.621
+p.Gobiidae.POM                                    0.262 0.355 0.515 0.564
+p.Holocentridae.POM                               0.528 0.660 0.818 0.854
+p.Labridae.POM                                    0.332 0.402 0.506 0.540
+p.Mullidae.POM                                    0.172 0.262 0.389 0.441
+p.Pempheridae.POM                                 0.422 0.586 0.817 0.870
+p.Pinguipedidae.POM                               0.249 0.350 0.518 0.572
+p.Syngnathidae.POM                                0.233 0.337 0.494 0.546
+p.Apogonidae.Red algae                            0.437 0.559 0.724 0.777
+p.Balistidae.Red algae                            0.422 0.529 0.661 0.704
+p.Chaetodontidae.Red algae                        0.546 0.639 0.770 0.808
+p.Creediidae.Red algae                            0.428 0.566 0.789 0.851
+p.Diodontidae.Red algae                           0.616 0.776 0.965 0.990
+p.Gobiidae.Red algae                              0.400 0.526 0.687 0.737
+p.Holocentridae.Red algae                         0.322 0.452 0.610 0.651
+p.Labridae.Red algae                              0.455 0.538 0.643 0.676
+p.Mullidae.Red algae                              0.673 0.794 0.918 0.943
+p.Pempheridae.Red algae                           0.379 0.518 0.689 0.756
+p.Pinguipedidae.Red algae                         0.427 0.554 0.718 0.777
+p.Syngnathidae.Red algae                          0.425 0.558 0.746 0.803
+p.Anampses caeruleopunctatus.Cyanobacteria        0.103 0.176 0.269 0.298
+p.Balistapus undulatus.Cyanobacteria              0.014 0.027 0.054 0.067
+p.Cabillus tongarevae.Cyanobacteria               0.059 0.116 0.237 0.291
+p.Chaetodon auriga.Cyanobacteria                  0.159 0.209 0.278 0.303
+p.Chaetodon lunula.Cyanobacteria                  0.078 0.138 0.213 0.235
+p.Chaetodon mertensii.Cyanobacteria               0.055 0.106 0.182 0.208
+p.Chaetodon vagabundus.Cyanobacteria              0.128 0.219 0.325 0.360
+p.Cheilinus chlorourus.Cyanobacteria              0.148 0.224 0.319 0.345
+p.Cheilinus oxycephalus.Cyanobacteria             0.029 0.053 0.099 0.118
+p.Cheilinus trilobatus.Cyanobacteria              0.136 0.192 0.266 0.284
+p.Coris aygula.Cyanobacteria                      0.175 0.285 0.406 0.435
+p.Coris gaimard.Cyanobacteria                     0.034 0.061 0.117 0.139
+p.Corythoichthys flavofasciatus.Cyanobacteria     0.135 0.247 0.390 0.424
+p.Diodon hystrix.Cyanobacteria                    0.010 0.025 0.065 0.087
+p.Doryrhamphus excisus.Cyanobacteria              0.040 0.082 0.175 0.206
+p.Forcipiger flavissimus.Cyanobacteria            0.047 0.083 0.145 0.168
+p.Forcipiger longirostris.Cyanobacteria           0.044 0.076 0.129 0.147
+p.Fowleria marmorata.Cyanobacteria                0.040 0.082 0.176 0.211
+p.Gomphosus varius.Cyanobacteria                  0.028 0.051 0.100 0.120
+p.Halichoeres hortulanus.Cyanobacteria            0.202 0.302 0.413 0.445
+p.Halichoeres marginatus.Cyanobacteria            0.118 0.205 0.323 0.355
+p.Halichoeres trimaculatus.Cyanobacteria          0.214 0.325 0.448 0.480
+p.Hemigymnus fasciatus.Cyanobacteria              0.092 0.132 0.181 0.196
+p.Limnichthys nitidus.Cyanobacteria               0.010 0.024 0.062 0.082
+p.Mulloidichthys flavolineatus.Cyanobacteria      0.010 0.020 0.051 0.067
+p.Mulloidichthys vanicolensis.Cyanobacteria       0.037 0.098 0.232 0.265
+p.Myripristis berndti.Cyanobacteria               0.069 0.117 0.157 0.169
+p.Myripristis kuntee.Cyanobacteria                0.058 0.090 0.142 0.157
+p.Myripristis violacea.Cyanobacteria              0.051 0.083 0.131 0.143
+p.Nectamia savayensis.Cyanobacteria               0.024 0.051 0.115 0.139
+p.Novaculichthys taeniourus.Cyanobacteria         0.045 0.093 0.188 0.216
+p.Ostorhinchus angustatus.Cyanobacteria           0.066 0.119 0.259 0.299
+p.Parapercis millepunctata.Cyanobacteria          0.103 0.189 0.300 0.336
+p.Parupeneus barberinus.Cyanobacteria             0.020 0.055 0.164 0.209
+p.Parupeneus ciliatus.Cyanobacteria               0.035 0.106 0.331 0.399
+p.Parupeneus insularis.Cyanobacteria              0.011 0.027 0.070 0.097
+p.Parupeneus multifasciatus.Cyanobacteria         0.012 0.027 0.060 0.074
+p.Pempheris oualensis.Cyanobacteria               0.023 0.047 0.100 0.120
+p.Priolepis semidoliata.Cyanobacteria             0.035 0.075 0.168 0.200
+p.Priolepis squamogena.Cyanobacteria              0.026 0.053 0.110 0.131
+p.Pristiapogon exostigma.Cyanobacteria            0.026 0.059 0.139 0.175
+p.Pristiapogon fraenatus.Cyanobacteria            0.073 0.141 0.263 0.309
+p.Pseudocheilinus tetrataenia.Cyanobacteria       0.037 0.066 0.126 0.154
+p.Pseudodax moluccanus.Cyanobacteria              0.027 0.051 0.101 0.121
+p.Rhinecanthus aculeatus.Cyanobacteria            0.114 0.189 0.416 0.477
+p.Rhinecanthus lunula.Cyanobacteria               0.035 0.073 0.156 0.183
+p.Rhinecanthus rectangulus.Cyanobacteria          0.039 0.077 0.147 0.172
+p.Sufflamen bursa.Cyanobacteria                   0.034 0.063 0.120 0.142
+p.Thalassoma hardwicke.Cyanobacteria              0.125 0.167 0.221 0.239
+p.Thalassoma lutescens.Cyanobacteria              0.073 0.125 0.213 0.242
+p.Thalassoma purpureum.Cyanobacteria              0.084 0.151 0.245 0.272
+p.Thalassoma quinquevittatum.Cyanobacteria        0.044 0.078 0.140 0.163
+p.Thalassoma trilobatum.Cyanobacteria             0.063 0.118 0.211 0.238
+p.Valenciennea strigata.Cyanobacteria             0.228 0.361 0.513 0.553
+p.Anampses caeruleopunctatus.Green-Brown algae    0.094 0.196 0.428 0.483
+p.Balistapus undulatus.Green-Brown algae          0.143 0.198 0.339 0.379
+p.Cabillus tongarevae.Green-Brown algae           0.185 0.454 0.893 0.945
+p.Chaetodon auriga.Green-Brown algae              0.092 0.243 0.656 0.705
+p.Chaetodon lunula.Green-Brown algae              0.100 0.225 0.649 0.698
+p.Chaetodon mertensii.Green-Brown algae           0.107 0.250 0.568 0.639
+p.Chaetodon vagabundus.Green-Brown algae          0.329 0.510 0.730 0.764
+p.Cheilinus chlorourus.Green-Brown algae          0.294 0.515 0.677 0.714
+p.Cheilinus oxycephalus.Green-Brown algae         0.049 0.099 0.214 0.253
+p.Cheilinus trilobatus.Green-Brown algae          0.156 0.273 0.463 0.516
+p.Coris aygula.Green-Brown algae                  0.059 0.131 0.587 0.671
+p.Coris gaimard.Green-Brown algae                 0.041 0.078 0.300 0.345
+p.Corythoichthys flavofasciatus.Green-Brown algae 0.391 0.685 0.884 0.916
+p.Diodon hystrix.Green-Brown algae                0.010 0.020 0.055 0.100
+p.Doryrhamphus excisus.Green-Brown algae          0.155 0.423 0.842 0.901
+p.Forcipiger flavissimus.Green-Brown algae        0.117 0.217 0.428 0.465
+p.Forcipiger longirostris.Green-Brown algae       0.078 0.128 0.245 0.277
+p.Fowleria marmorata.Green-Brown algae            0.200 0.562 0.874 0.917
+p.Gomphosus varius.Green-Brown algae              0.034 0.066 0.320 0.356
+p.Halichoeres hortulanus.Green-Brown algae        0.188 0.315 0.579 0.643
+p.Halichoeres marginatus.Green-Brown algae        0.193 0.375 0.580 0.643
+p.Halichoeres trimaculatus.Green-Brown algae      0.374 0.531 0.688 0.731
+p.Hemigymnus fasciatus.Green-Brown algae          0.061 0.108 0.218 0.254
+p.Limnichthys nitidus.Green-Brown algae           0.068 0.188 0.570 0.728
+p.Mulloidichthys flavolineatus.Green-Brown algae  0.263 0.316 0.391 0.419
+p.Mulloidichthys vanicolensis.Green-Brown algae   0.102 0.158 0.263 0.307
+p.Myripristis berndti.Green-Brown algae           0.009 0.019 0.049 0.066
+p.Myripristis kuntee.Green-Brown algae            0.051 0.098 0.178 0.203
+p.Myripristis violacea.Green-Brown algae          0.026 0.051 0.099 0.117
+p.Nectamia savayensis.Green-Brown algae           0.160 0.402 0.736 0.807
+p.Novaculichthys taeniourus.Green-Brown algae     0.092 0.153 0.483 0.550
+p.Ostorhinchus angustatus.Green-Brown algae       0.246 0.509 0.753 0.814
+p.Parapercis millepunctata.Green-Brown algae      0.388 0.562 0.709 0.749
+p.Parupeneus barberinus.Green-Brown algae         0.060 0.110 0.226 0.278
+p.Parupeneus ciliatus.Green-Brown algae           0.137 0.222 0.393 0.465
+p.Parupeneus insularis.Green-Brown algae          0.019 0.035 0.072 0.088
+p.Parupeneus multifasciatus.Green-Brown algae     0.041 0.072 0.134 0.154
+p.Pempheris oualensis.Green-Brown algae           0.038 0.070 0.131 0.155
+p.Priolepis semidoliata.Green-Brown algae         0.162 0.426 0.852 0.914
+p.Priolepis squamogena.Green-Brown algae          0.157 0.402 0.786 0.860
+p.Pristiapogon exostigma.Green-Brown algae        0.160 0.429 0.840 0.900
+p.Pristiapogon fraenatus.Green-Brown algae        0.243 0.639 0.888 0.918
+p.Pseudocheilinus tetrataenia.Green-Brown algae   0.076 0.190 0.507 0.608
+p.Pseudodax moluccanus.Green-Brown algae          0.018 0.037 0.108 0.138
+p.Rhinecanthus aculeatus.Green-Brown algae        0.606 0.704 0.822 0.857
+p.Rhinecanthus lunula.Green-Brown algae           0.086 0.136 0.236 0.277
+p.Rhinecanthus rectangulus.Green-Brown algae      0.073 0.128 0.235 0.286
+p.Sufflamen bursa.Green-Brown algae               0.245 0.311 0.393 0.418
+p.Thalassoma hardwicke.Green-Brown algae          0.069 0.143 0.476 0.526
+p.Thalassoma lutescens.Green-Brown algae          0.091 0.170 0.330 0.379
+p.Thalassoma purpureum.Green-Brown algae          0.077 0.134 0.291 0.348
+p.Thalassoma quinquevittatum.Green-Brown algae    0.078 0.189 0.432 0.501
+p.Thalassoma trilobatum.Green-Brown algae         0.102 0.184 0.344 0.391
+p.Valenciennea strigata.Green-Brown algae         0.455 0.654 0.876 0.924
+p.Anampses caeruleopunctatus.POM                  0.356 0.462 0.574 0.605
+p.Balistapus undulatus.POM                        0.347 0.413 0.564 0.597
+p.Cabillus tongarevae.POM                         0.148 0.304 0.554 0.638
+p.Chaetodon auriga.POM                            0.101 0.168 0.331 0.374
+p.Chaetodon lunula.POM                            0.057 0.101 0.284 0.332
+p.Chaetodon mertensii.POM                         0.110 0.189 0.387 0.439
+p.Chaetodon vagabundus.POM                        0.067 0.112 0.225 0.264
+p.Cheilinus chlorourus.POM                        0.190 0.242 0.320 0.344
+p.Cheilinus oxycephalus.POM                       0.685 0.777 0.879 0.903
+p.Cheilinus trilobatus.POM                        0.279 0.351 0.442 0.471
+p.Coris aygula.POM                                0.061 0.102 0.254 0.305
+p.Coris gaimard.POM                               0.232 0.351 0.577 0.615
+p.Corythoichthys flavofasciatus.POM               0.115 0.194 0.351 0.400
+p.Diodon hystrix.POM                              0.091 0.206 0.455 0.604
+p.Doryrhamphus excisus.POM                        0.192 0.354 0.603 0.667
+p.Forcipiger flavissimus.POM                      0.302 0.378 0.520 0.546
+p.Forcipiger longirostris.POM                     0.632 0.683 0.747 0.766
+p.Fowleria marmorata.POM                          0.183 0.321 0.541 0.604
+p.Gomphosus varius.POM                            0.227 0.327 0.574 0.613
+p.Halichoeres hortulanus.POM                      0.173 0.246 0.358 0.385
+p.Halichoeres marginatus.POM                      0.242 0.336 0.451 0.486
+p.Halichoeres trimaculatus.POM                    0.187 0.242 0.326 0.360
+p.Hemigymnus fasciatus.POM                        0.629 0.675 0.732 0.746
+p.Limnichthys nitidus.POM                         0.537 0.731 0.905 0.938
+p.Mulloidichthys flavolineatus.POM                0.044 0.076 0.132 0.161
+p.Mulloidichthys vanicolensis.POM                 0.144 0.240 0.388 0.445
+p.Myripristis berndti.POM                         0.691 0.796 0.846 0.858
+p.Myripristis kuntee.POM                          0.664 0.721 0.788 0.808
+p.Myripristis violacea.POM                        0.750 0.793 0.848 0.864
+p.Nectamia savayensis.POM                         0.322 0.474 0.686 0.747
+p.Novaculichthys taeniourus.POM                   0.103 0.191 0.435 0.502
+p.Ostorhinchus angustatus.POM                     0.113 0.201 0.449 0.516
+p.Parapercis millepunctata.POM                    0.161 0.226 0.326 0.366
+p.Parupeneus barberinus.POM                       0.141 0.314 0.601 0.672
+p.Parupeneus ciliatus.POM                         0.156 0.288 0.478 0.533
+p.Parupeneus insularis.POM                        0.145 0.252 0.381 0.418
+p.Parupeneus multifasciatus.POM                   0.162 0.248 0.354 0.389
+p.Pempheris oualensis.POM                         0.749 0.812 0.888 0.907
+p.Priolepis semidoliata.POM                       0.241 0.426 0.685 0.750
+p.Priolepis squamogena.POM                        0.393 0.570 0.779 0.827
+p.Pristiapogon exostigma.POM                      0.257 0.438 0.683 0.740
+p.Pristiapogon fraenatus.POM                      0.157 0.277 0.494 0.564
+p.Pseudocheilinus tetrataenia.POM                 0.429 0.591 0.779 0.833
+p.Pseudodax moluccanus.POM                        0.802 0.863 0.926 0.939
+p.Rhinecanthus aculeatus.POM                      0.116 0.159 0.231 0.264
+p.Rhinecanthus lunula.POM                         0.584 0.674 0.773 0.801
+p.Rhinecanthus rectangulus.POM                    0.186 0.272 0.445 0.570
+p.Sufflamen bursa.POM                             0.447 0.506 0.575 0.596
+p.Thalassoma hardwicke.POM                        0.184 0.254 0.422 0.451
+p.Thalassoma lutescens.POM                        0.475 0.565 0.663 0.692
+p.Thalassoma purpureum.POM                        0.516 0.599 0.699 0.730
+p.Thalassoma quinquevittatum.POM                  0.442 0.575 0.755 0.808
+p.Thalassoma trilobatum.POM                       0.441 0.536 0.639 0.667
+p.Valenciennea strigata.POM                       0.107 0.168 0.265 0.299
+p.Anampses caeruleopunctatus.Red algae            0.384 0.572 0.816 0.872
+p.Balistapus undulatus.Red algae                  0.497 0.592 0.744 0.790
+p.Cabillus tongarevae.Red algae                   0.413 0.655 0.878 0.917
+p.Chaetodon auriga.Red algae                      0.607 0.689 0.779 0.804
+p.Chaetodon lunula.Red algae                      0.717 0.786 0.885 0.923
+p.Chaetodon mertensii.Red algae                   0.670 0.783 0.906 0.933
+p.Chaetodon vagabundus.Red algae                  0.459 0.569 0.699 0.736
+p.Cheilinus chlorourus.Red algae                  0.331 0.440 0.569 0.609
+p.Cheilinus oxycephalus.Red algae                 0.196 0.349 0.724 0.838
+p.Cheilinus trilobatus.Red algae                  0.402 0.519 0.679 0.721
+p.Coris aygula.Red algae                          0.654 0.744 0.856 0.890
+p.Coris gaimard.Red algae                         0.675 0.792 0.916 0.942
+p.Corythoichthys flavofasciatus.Red algae         0.262 0.438 0.703 0.791
+p.Diodon hystrix.Red algae                        0.873 0.947 0.991 0.996
+p.Doryrhamphus excisus.Red algae                  0.430 0.673 0.900 0.934
+p.Forcipiger flavissimus.Red algae                0.509 0.623 0.807 0.856
+p.Forcipiger longirostris.Red algae               0.228 0.317 0.461 0.509
+p.Fowleria marmorata.Red algae                    0.386 0.615 0.849 0.892
+p.Gomphosus varius.Red algae                      0.697 0.808 0.925 0.948
+p.Halichoeres hortulanus.Red algae                0.410 0.512 0.636 0.669
+p.Halichoeres marginatus.Red algae                0.368 0.546 0.781 0.846
+p.Halichoeres trimaculatus.Red algae              0.202 0.292 0.443 0.502
+p.Hemigymnus fasciatus.Red algae                  0.197 0.272 0.400 0.451
+p.Limnichthys nitidus.Red algae                   0.262 0.498 0.867 0.923
+p.Mulloidichthys flavolineatus.Red algae          0.672 0.727 0.810 0.834
+p.Mulloidichthys vanicolensis.Red algae           0.672 0.798 0.916 0.937
+p.Myripristis berndti.Red algae                   0.226 0.381 0.500 0.541
+p.Myripristis kuntee.Red algae                    0.202 0.298 0.435 0.483
+p.Myripristis violacea.Red algae                  0.158 0.230 0.360 0.422
+p.Nectamia savayensis.Red algae                   0.346 0.560 0.814 0.870
+p.Novaculichthys taeniourus.Red algae             0.725 0.810 0.901 0.930
+p.Ostorhinchus angustatus.Red algae               0.458 0.635 0.820 0.861
+p.Parapercis millepunctata.Red algae              0.345 0.475 0.661 0.708
+p.Parupeneus barberinus.Red algae                 0.732 0.863 0.959 0.970
+p.Parupeneus ciliatus.Red algae                   0.588 0.751 0.907 0.933
+p.Parupeneus insularis.Red algae                  0.807 0.912 0.979 0.987
+p.Parupeneus multifasciatus.Red algae             0.770 0.878 0.966 0.980
+p.Pempheris oualensis.Red algae                   0.166 0.263 0.453 0.525
+p.Priolepis semidoliata.Red algae                 0.363 0.614 0.883 0.920
+p.Priolepis squamogena.Red algae                  0.265 0.458 0.750 0.836
+p.Pristiapogon exostigma.Red algae                0.366 0.597 0.856 0.903
+p.Pristiapogon fraenatus.Red algae                0.325 0.563 0.811 0.866
+p.Pseudocheilinus tetrataenia.Red algae           0.357 0.555 0.827 0.887
+p.Pseudodax moluccanus.Red algae                  0.121 0.212 0.433 0.564
+p.Rhinecanthus aculeatus.Red algae                0.146 0.221 0.392 0.474
+p.Rhinecanthus lunula.Red algae                   0.255 0.398 0.695 0.783
+p.Rhinecanthus rectangulus.Red algae              0.674 0.778 0.900 0.933
+p.Sufflamen bursa.Red algae                       0.265 0.376 0.554 0.625
+p.Thalassoma hardwicke.Red algae                  0.599 0.684 0.794 0.826
+p.Thalassoma lutescens.Red algae                  0.316 0.490 0.770 0.856
+p.Thalassoma purpureum.Red algae                  0.274 0.412 0.666 0.749
+p.Thalassoma quinquevittatum.Red algae            0.353 0.543 0.827 0.887
+p.Thalassoma trilobatum.Red algae                 0.350 0.527 0.777 0.843
+p.Valenciennea strigata.Red algae                 0.177 0.273 0.435 0.482

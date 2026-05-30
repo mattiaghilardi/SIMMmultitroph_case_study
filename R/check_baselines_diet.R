@@ -1,52 +1,77 @@
-#' Check sources contributions to potential baselines using two TDFs (Post and McCutchan)
+#' Check sources contributions to baselines using TDFs from two meta-analyses (Post and McCutchan)
 #'
+#' @param sia_baselines_corrected Output of [baselines_lipid_correction()]
 #' @param sources Output of [prepare_source_data()]
 #' @param run The `run` argument passed to [run_model_parallel()]
+#' @param combine_sources Logical; if sources should be combined
+#' @param groups Only if `combine_sources = TRUE`. Named list; which sources to combine, 
+#' and what names to give the new combined sources
+#' @param colours Vector of colours to use for sources, plotted in alphabetic order.
+#' If NULL (default), the default ggplot2 colour palette will be used
 #'
 #' @return A list with 5 elements:
 #'  - "models": mixing models output
 #'  - "diagnostics": model diagnostics
 #'  - "stats": model summary statistics
 #'  - "plot": patchwork of density plots of source proportions
-#'  - "baselines": names of selected baselines
-check_baselines_diet <- function(sources, run = "test") {
+check_baselines_diet <- function(sia_baselines_corrected, 
+                                 sources,
+                                 run = "test",
+                                 combine_sources = FALSE,
+                                 groups = NULL,
+                                 colours = NULL) {
   
-  # Inverts data
-  sia_inverts <- sources$invertebrates$data
+  # Read sources data and extract names
+  sources <- readr::read_csv(sources)
+  source_names <- levels(as.factor(sources$source))
+  n_sources <- length(source_names)
   
-  # Summarise data
-  summary_inverts <- sia_inverts |>
-    group_by(taxon) |>
-    summarise(n = n(),
-              mean_d13C = mean(d13C, na.rm = TRUE), 
-              sd_d13C = sd(d13C, na.rm = TRUE),
-              mean_d15N = mean(d15N, na.rm = TRUE),
-              sd_d15N = sd(d15N, na.rm = TRUE)) |>
-    ungroup()
+  # Check combined sources
+  if (combine_sources) {
+    is.list(groups) ||
+      cli::cli_abort("If {.arg combine_sources} is TRUE, {.arg groups} must be a named list.")
+    
+    # Stack list
+    groups_df <- stack(groups)
+    all(source_names %in% groups_df$values) ||
+      cli::cli_abort(c("{.arg groups} does not include all initial sources.",
+                       "Please correct source groups."))
+    
+    # New source names
+    new_source_names <- unique(as.character(groups_df$ind))
+    n_sources <- length(new_source_names)
+  }
   
-  # Potential baselines (primary consumers)
-  potential_baselines <- c("Bivalvia", "Porifera", "Gastropoda")
-  consumers <- sia_inverts |> 
-    filter(taxon %in% potential_baselines)
+  # Check colours
+  if (!is.null(colours)) {
+    length(colours) == n_sources ||
+      cli::cli_abort(
+        c("{.arg colours} length incorrect.", 
+          "You provided {.value {length(colours)}} colours, but there are {.value {n_sources}} sources.")
+      )
+  }
   
   # Prepare data for MixSIAR
+  # Consumers
   consumerspath <- tempfile(pattern = "consumers", fileext = ".csv")
-  readr::write_csv(consumers, 
+  readr::write_csv(sia_baselines_corrected |> 
+                     select(baseline, d13C = d13C_corrected, d15N), 
                    file = consumerspath)
-  
+  # Sources
   sourcespath <- tempfile(pattern = "sources", fileext = ".csv")
-  readr::write_csv(sources$sources$data, 
+  readr::write_csv(sources |> 
+                     select(source, d13C, d15N), 
                    file = sourcespath)
   # TDFs from Post 2002
-  TDF_Post <- data.frame(source = c("Macroalgae", "Cyanobacteria", "POM"),
+  TDF_Post <- data.frame(source = unique(sources$source),
                          Meand13C = 0.39,
                          SDd13C = 1.3, 
                          Meand15N = 3.4, 
                          SDd15N = 0.98)
   # TDFs from McCutchan 2003
-  TDF_McCutchan <- data.frame(source = c("Macroalgae", "Cyanobacteria", "POM"),
+  TDF_McCutchan <- data.frame(source = unique(sources$source),
                               Meand13C = 1.3,
-                              SDd13C = 0.3,
+                              SDd13C = 0.30,
                               Meand15N = 2.9, 
                               SDd15N = 0.32)
   tdfpath_Post <- tempfile(pattern = "tdf_Post", fileext = ".csv")
@@ -59,7 +84,7 @@ check_baselines_diet <- function(sources, run = "test") {
   # Load mixture data
   mix <- MixSIAR::load_mix_data(consumerspath, 
                                 iso_names = c("d13C", "d15N"), 
-                                factors = "taxon",
+                                factors = "baseline",
                                 fac_random = FALSE,
                                 fac_nested = NULL,
                                 cont_effects = NULL)
@@ -83,16 +108,20 @@ check_baselines_diet <- function(sources, run = "test") {
                             mix = mix, 
                             source = source)
   
+  # # Plot isospace Post
   # MixSIAR::plot_data_two_iso(isotopes = 1:2,
   #                            mix = mix,
-  #                            source = source, 
-  #                            discr = tdf_Post, 
+  #                            source = source,
+  #                            discr = tdf_Post,
   #                            plot_save_pdf = FALSE,
   #                            plot_save_png = FALSE,
-  #                            return_obj = TRUE)
+  #                            return_obj = TRUE) +
+  #   theme(legend.position = "inside",
+  #         legend.position.inside = c(0, 0.1),
+  #         legend.background = element_rect(fill = NA))
   
   # Fit models with TDFs from Post and McCutchan
-  fit_inverts <- purrr::map(
+  fit_baselines <- purrr::map(
     list(Post = tdf_Post,
          McCutchan = tdf_McCutchan),
     ~ run_model_parallel(run = run, 
@@ -101,7 +130,8 @@ check_baselines_diet <- function(sources, run = "test") {
                          discr = .x, 
                          model_filename = modelpath, 
                          alpha.prior = 1,
-                         seed = 123))
+                         jags.seed = 123) # default seed
+    )
   
   # Set output options to avoid saving summary, diagnostics and plots
   mixsiar_options <- list(summary_save = FALSE,
@@ -128,55 +158,72 @@ check_baselines_diet <- function(sources, run = "test") {
                           return_obj = TRUE)
   
   # Get diagnostics
-  diagnostics <- purrr::map(fit_inverts,
-                            ~ MixSIAR::output_diagnostics(.x,
-                                                          mix = mix,
-                                                          source = source,
-                                                          output_options = mixsiar_options))
+  diagnostics <- purrr::map(
+    fit_baselines,
+    ~ MixSIAR::output_diagnostics(.x,
+                                  mix = mix,
+                                  source = source,
+                                  output_options = mixsiar_options)
+  )
   
   # Get statistics
-  stats <- purrr::map(fit_inverts,
-                      ~ MixSIAR::output_stats(.x,
-                                              mix = mix,
-                                              source = source,
-                                              output_options = mixsiar_options) |>
-                        as.data.frame() |>
-                        tibble::rownames_to_column("parameter"))
+  stats <- purrr::map(
+    fit_baselines,
+    ~ MixSIAR::output_stats(.x,
+                            mix = mix,
+                            source = source,
+                            output_options = mixsiar_options) |>
+      as.data.frame() |>
+      tibble::rownames_to_column("parameter")
+  )
   
-  # Plot posteriors
-  source_names <- source$source_names
-  p <- purrr::map(
+  # Get posteriors
+  df <- purrr::map(
     c("Post", "McCutchan"),
-    ~ apply(fit_inverts[[.x]][["BUGSoutput"]][["sims.list"]][["p.fac1"]], 
+    ~ apply(fit_baselines[[.x]][["BUGSoutput"]][["sims.list"]][["p.fac1"]], 
             3, 
             function(x) as.data.frame(x) |> 
-              rlang::set_names(mix$FAC[[1]]$labels)) |> 
+              rlang::set_names(mix$FAC[[1]]$labels) |> 
+              mutate(draw = 1:3000) |> 
+              tidyr::pivot_longer(cols = -draw, names_to = "taxon")) |> 
       bind_rows(.id = "source") |> 
-      tidyr::pivot_longer(cols = -source, names_to = "taxon") |> 
       mutate(source = factor(source, labels = source_names),
              tdf = factor(.x))
   ) |> 
-    bind_rows() |> 
+    bind_rows()
+  
+  # Combine sources
+  if (combine_sources) {
+    df <- df |>
+      dplyr::left_join(groups_df,
+                       by = c("source" = "values")) |> 
+      dplyr::group_by(taxon, tdf, draw, ind) |> 
+      dplyr::summarise(value = sum(value), 
+                       .groups = "drop") |> 
+      dplyr::rename("source" = "ind") |> 
+      dplyr::mutate(source = as.character(source))
+  }
+  
+  # Plot posterior
+  p <- df |> 
     ggplot(aes(x = value, color = source, fill = source)) +
-    geom_density(aes(y = after_stat(scaled)), alpha = 0.3) +
+    geom_density(aes(y = after_stat(scaled)), alpha = 0.5) +
     facet_grid(rows = vars(tdf),
                cols = vars(taxon)) +
-    xlab("Proportion") +
-    ylab("Scaled Posterior Density") +
-    scale_fill_viridis_d(aesthetics = c("color", "fill")) +
-    theme_bw() +
-    theme(legend.title = element_blank())
+    labs(x = "Proportion",
+         y = "Scaled Posterior Density",
+         color = "Source",
+         fill = "Source") +
+    theme_bw()
   
-  ggsave(here::here("output", "figures", "mixsiar_baselines.png"), 
-         p,
-         width = 18, height = 12, units = "cm")
+  if (!is.null(colours)) {
+    p <- p +
+      scale_colour_manual(values = colours, 
+                          aesthetics = c("colour", "fill")) 
+  }
   
-  # Use Bivalvia (more pelagic) and Gastropoda (benthic)
-  selected_baselines <- c("Bivalvia", "Gastropoda")
-  
-  return(list(models = fit_inverts,
+  return(list(models = fit_baselines,
               diagnostics = diagnostics,
               stats = stats,
-              plot = p,
-              baselines = selected_baselines))
+              plot = p))
 }

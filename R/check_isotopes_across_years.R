@@ -1,46 +1,50 @@
 #' Check variation in fish d13C and d15N across years
 #'
-#' @param sia_fish Raw sia_fish data
+#' @param sia_fish_corrected Output of [fish_lipid_correction()]
 #'
-#' @return A list with two brmsfit objects:
-#'  - "fit_n": d15N model
-#'  - "fit_c": d13C model
-check_isotopes_across_years <- function(sia_fish) {
+#' @return A list with two elements:
+#'  - "models": a list of two brmsfit objects
+#'    - "fit_n": d15N model
+#'    - "fit_c": d13C model
+#'  - "plot": a patchwork object
+check_isotopes_across_years <- function(sia_fish_corrected) {
   
-  # keep species in all 3 years
-  sp_year <- sia_fish |> 
+  # Keep species in all 3 years
+  sp_year <- sia_fish_corrected |> 
     select(year, species) |> 
     distinct() |>
-    group_by(species) |> count()
-  sia_fish_all_years <- sia_fish |> 
+    group_by(species) |> 
+    count()
+  sia_fish_all_years <- sia_fish_corrected |> 
     filter(species %in% (sp_year |> filter(n > 2) |> pull(species))) |> 
     mutate(year = as.factor(year))
   
-  # models
+  # Bayesian regression models
   fit_n <- brms::brm(d15N ~ 0 + year:species, 
                      data = sia_fish_all_years, 
                      cores = 4,
                      backend = "cmdstan",
-                     seed = 123)
+                     seed = NA) # Seed set through targets
   fit_c <- brms::brm(d13C ~ 0 + year:species, 
                      data = sia_fish_all_years, 
                      cores = 4,
                      backend = "cmdstan",
-                     seed = 123)
+                     seed = NA) # Seed set through targets
   
   brms::pp_check(fit_n)
   brms::pp_check(fit_c)
   brms::bayes_R2(fit_n) # 0.88
   brms::bayes_R2(fit_c) # 0.64
   
-  # species-level predictions
+  # Species-level predictions
   nd <- sia_fish_all_years |> 
     select(year, species) |> 
     distinct() |> 
     arrange(species)
   preds <- purrr::map2(
     .x = list(fit_n, fit_c),
-    .y = c("&delta;<sup>15</sup>N (&permil;)", "&delta;<sup>13</sup>C (&permil;)"),
+    .y = c("&delta;<sup>15</sup>N (&permil;)", 
+           "&delta;<sup>13</sup>C (&permil;)"),
     ~ nd |> 
       tidybayes::add_epred_draws(.x) |> 
       mutate(isotope = .y)) |> 
@@ -53,7 +57,8 @@ check_isotopes_across_years <- function(sia_fish) {
                             "&delta;<sup>13</sup>C (&permil;)")) |> 
     ggplot(aes(x = species, color = year)) + 
     geom_point(aes(y = value), alpha = 0.2, 
-               position = position_jitterdodge(jitter.width = 0.25, dodge.width = 0.8)) + 
+               position = position_jitterdodge(jitter.width = 0.25, 
+                                               dodge.width = 0.8)) + 
     ggdist::stat_pointinterval(data = preds,
                                aes(y = .epred),
                                position = position_dodge(width = 0.8),
@@ -72,10 +77,11 @@ check_isotopes_across_years <- function(sia_fish) {
           legend.title = element_text(size = 9),
           legend.text = element_text(size = 7))
   
-  # contrasts
+  # Contrasts
   p2 <- purrr::map2(
     .x = list(fit_n, fit_c),
-    .y = c("&delta;<sup>15</sup>N", "&delta;<sup>13</sup>C"),
+    .y = c("&delta;<sup>15</sup>N", 
+           "&delta;<sup>13</sup>C"),
     ~ nd |> 
       tidybayes::add_epred_draws(.x) |> 
       ungroup() |> 
@@ -107,20 +113,23 @@ check_isotopes_across_years <- function(sia_fish) {
           axis.title.y = element_text(size = 10),
           axis.text = element_text(size = 8))
   
-  p1 / p2 + 
+  # Final plot
+  p <- p1 / (p2 + scale_y_discrete(position = "right")) + 
     patchwork::plot_layout(
-      heights = c(0.7, 1),
       design = "
-  AAAAAAAAAAAAAAAAAAAAAAAAAA
-  #BBBBBBBBBBBBBBBBBBBBBBBBB
-  ", 
+      AAAAAAAAAAAAAAA
+      AAAAAAAAAAAAAAA
+      BBBBBBBBBBBBBB#
+      BBBBBBBBBBBBBB#
+      BBBBBBBBBBBBBB#
+      ", 
       guides = "collect") +
     patchwork::plot_annotation(tag_levels = "A") & 
     theme(plot.tag.position = c(0, 1),
           plot.tag = element_text(hjust = 1, vjust = 0, face = "bold"))
   
-  ggsave(here::here("output", "figures", "isotope_variation_across_years.png"),
-         width = 20, height = 18, units = "cm")
-  
-  list(fit_n = fit_n, fit_c = fit_c)
+  return(list(models = list(fit_n = fit_n, 
+                            fit_c = fit_c), 
+              plot = p)
+         )
 }
