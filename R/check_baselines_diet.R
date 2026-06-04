@@ -120,6 +120,24 @@ check_baselines_diet <- function(sia_baselines_corrected,
   #         legend.position.inside = c(0, 0.1),
   #         legend.background = element_rect(fill = NA))
   
+  # Make Dirichlet prior for p.global (Bivalvia)
+  prior_bivalve <- data.frame(Algae = 30, 
+                              Cyanobacteria = 20, 
+                              POM = 50) |> 
+    # Divide algae by the two groups
+    mutate("Green-Brown algae" = Algae/2,
+           "Red algae" = Algae/2) |> 
+    # Rescale to sum equal to number of sources (i.e. 4)
+    select(-Algae) |> 
+    tidyr::pivot_longer(cols = everything(), 
+                        names_to = "source", 
+                        values_to = "prior") |> 
+    mutate(prior = prior / 100 * 4) |> 
+    # Alphabethical order of sources as in MixSIAR
+    arrange(source) |> 
+    # Extract the vector
+    pull(prior)
+  
   # Fit models with TDFs from Post and McCutchan
   fit_baselines <- purrr::map(
     list(Post = tdf_Post,
@@ -129,9 +147,9 @@ check_baselines_diet <- function(sia_baselines_corrected,
                          source = source, 
                          discr = .x, 
                          model_filename = modelpath, 
-                         alpha.prior = 1,
+                         alpha.prior = prior_bivalve,
                          jags.seed = 123) # default seed
-    )
+  )
   
   # Set output options to avoid saving summary, diagnostics and plots
   mixsiar_options <- list(summary_save = FALSE,
@@ -184,7 +202,7 @@ check_baselines_diet <- function(sia_baselines_corrected,
             3, 
             function(x) as.data.frame(x) |> 
               rlang::set_names(mix$FAC[[1]]$labels) |> 
-              mutate(draw = 1:3000) |> 
+              mutate(draw = 1:fit_baselines[[.x]][["BUGSoutput"]][["n.sims"]]) |> 
               tidyr::pivot_longer(cols = -draw, names_to = "taxon")) |> 
       bind_rows(.id = "source") |> 
       mutate(source = factor(source, labels = source_names),
